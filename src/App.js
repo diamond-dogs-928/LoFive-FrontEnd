@@ -2,6 +2,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Feed from './components/Feed';
+import Sidebar from './components/Sidebar';
+import CreatePost from './components/CreatePost';
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
         </div>
         <div className='col-6'>
           <Feed />
+        </div>
+        <div className='col-3'>
+          <Sidebar />
         </div>
       </div>
     </div>
