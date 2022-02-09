@@ -4,10 +4,12 @@ import Header from './components/Header';
 import Feed from './components/Feed';
 import Sidebar from './components/Sidebar';
 import CreatePost from './components/CreatePost';
+import TopBar from './components/TopBar';
 
 function App() {
   return (
     <div className='bg-dark container-flex'>
+      <TopBar />
       <div className='row'>
         <div className='col-2'>
           <Header />

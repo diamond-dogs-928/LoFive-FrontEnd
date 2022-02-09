@@ -1,12 +1,9 @@
-import useState from 'react';
+// import { useState } from 'react';
 
 const Sidebar = () => {
-  //   const [today, setToday] = useState();
-  //   const today = new Date();
-  //   console.log(today);
   return (
     <>
-      <h3 className='text-muted'>Today's Date</h3>
+      <h4 className='text-muted'>Fun Times</h4>
       <form action=''>
         <input type='text' placeholder='Search LoFive' />
       </form>

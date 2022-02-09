@@ -4,8 +4,11 @@ import CreatePost from './CreatePost';
 
 const Feed = () => {
   return (
-    <div>
-      <h3 className='text-muted'>Username</h3>
+    <div
+      className='border-left border-right border-white'
+      style={{ borderLeftColor: 'white' }}
+    >
+      {/* <h5 className='text-muted'>Username</h5> */}
       <div>
         <CreatePost />
       </div>
