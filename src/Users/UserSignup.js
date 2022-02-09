@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useEffect } from 'react';
 import { useState } from 'react';
  
@@ -34,6 +35,10 @@ function SignUp () {
 =======
 // import React, { useEffect } from 'react';
 import { useState, useEffect } from 'react';
+=======
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+>>>>>>> a927bc9 (signup update)
 
 function SignUp() {
   const initialState = {
@@ -45,12 +50,29 @@ function SignUp() {
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    //   set up the route from the localhost or site
+  let getUser = () => {
+    const requestData = {
+      method: 'POST',
+      username: { 'content-type': 'register/json' },
+      body: JSON.stringify({ username: 'example route' }),
+    };
 
+<<<<<<< HEAD
     fetch('http://localhost:3000/budget/');
   });
 >>>>>>> bd11e13 (front end signup)
+=======
+    fetch('http://localhost:4000/register', requestData)
+      .then((data) => data.json())
+      .then((parsedData) => {
+        console.log(parsedData);
+        setFormState(parsedData);
+      });
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
+>>>>>>> a927bc9 (signup update)
 
   const handleChange = (e) => {
     setFormState({
