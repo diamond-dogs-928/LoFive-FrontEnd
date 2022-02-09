@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import SignUp from './Users/UserSignup';
 import './App.css';
 import Header from './components/Header';
 import Feed from './components/Feed';
@@ -22,6 +23,8 @@ function App() {
           <Sidebar />
         </div>
       </div>
+      {/* <div className="App"> */}
+      <SignUp />
     </div>
   );
 }
