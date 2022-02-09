@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import Feed from './components/Feed';
+import Sidebar from './components/Sidebar';
+import CreatePost from './components/CreatePost';
+import TopBar from './components/TopBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-dark container-flex'>
+      <TopBar />
+      <div className='row'>
+        <div className='col-2'>
+          <Header />
+        </div>
+        <div className='col-6'>
+          <Feed />
+        </div>
+        <div className='col-3'>
+          <Sidebar />
+        </div>
+      </div>
     </div>
   );
 }
