@@ -25,10 +25,10 @@ function App() {
           <Sidebar />
         </div>
       </div>
-      <div className='App'>
-        <SignUp />
-      </div>
+      {/* <div className="App"> */}
+      <SignUp />
     </div>
+    // </div>
   );
 }
 
