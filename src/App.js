@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 
 import { useState, useEffect } from 'react';
 
 import SignUp from './Users/UserSignup';
 
+=======
+import { useState } from 'react';
+import SignUp from './Users/UserSignup';
+>>>>>>> bd11e13 (front end signup)
 import './App.css';
 import Header from './components/Header';
 import Feed from './components/Feed';
@@ -29,8 +34,13 @@ function App() {
           <Sidebar />
         </div>
       </div>
+<<<<<<< HEAD
     <div className="App">
         <SignUp/>
+=======
+      {/* <div className="App"> */}
+      <SignUp />
+>>>>>>> bd11e13 (front end signup)
     </div>
   </div>
   );
