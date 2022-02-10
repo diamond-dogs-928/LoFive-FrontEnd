@@ -11,4 +11,11 @@
   background-color: #1f2124;
   font-weight: bold;
 }
+<<<<<<< HEAD
 >>>>>>> 7cba859 (trying to fix my messed up commits)
+=======
+#createPost {
+  display: flex;
+  justify-content: center;
+}
+>>>>>>> 041ac70 (Centered post bar. Figured out some more of the layers of the CSS. Next: Complete nav bar)
