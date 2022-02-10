@@ -13,7 +13,7 @@ function SignUp () {
     let getUser = () => {
       const requestData = {
         method: 'POST',
-        username: {'content-type': 'register/json'},
+        username: {'content-type': 'application/json'},
         body: JSON.stringify({username: 'example route'})
       }
 
