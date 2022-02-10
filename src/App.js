@@ -6,14 +6,16 @@ import Feed from './components/Feed';
 import Sidebar from './components/Sidebar';
 import CreatePost from './components/CreatePost';
 import TopBar from './components/TopBar';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <div className='bg-dark container-flex' id="backgroundColor">
+  <div className='bg-dark container-flex' id="backgroundColor">
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-          <Header />
+          <Navigation/>
+          {/* <Header /> */}
         </div>
         <div className='col-6'>
           <Feed />
@@ -25,6 +27,7 @@ function App() {
     <div className="App">
         <SignUp/>
     </div>
+  </div>
   );
 }
 

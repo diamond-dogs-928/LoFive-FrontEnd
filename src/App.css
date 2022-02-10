@@ -1,7 +1,20 @@
-#backgroundColor{
-    background-color: #1F2124;
-}
+
 
 .row{
     display: flex;
+}
+
+.col-2{
+    width: 20%;
+    display: flex;
+    
+}
+
+.col-6{
+    width: 60%;
+    padding-right: 6rem;
+}
+
+.col-3{
+    width: 20%;
 }
