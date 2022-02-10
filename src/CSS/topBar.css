@@ -59,7 +59,6 @@
 input::placeholder {
   color: #606a71;
 }
-/*///////////////////////////////////////////////////*/
 
 textarea:focus,
 input:focus {
@@ -92,14 +91,6 @@ input:focus {
   align-items: flex-end;
 }
 
-#lineMaroon {
-  margin: 0;
-  padding: 0;
-  height: 10px;
-  width: 80%;
-  background-color: #701555;
-}
-
 #lineOrange {
   height: 10px;
   width: 85%;
@@ -119,6 +110,6 @@ input:focus {
 /*For visualization*/
 /*///////////////////////////////////////////////////*/
 /* .border{
-    border: blue solid 1px;
+  border: blue solid 1px;
 } */
 /*///////////////////////////////////////////////////*/
