@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 #backgroundColor {
   /* background-color: #1F2124; */
-=======
-#backgroundColor{
-    /* background-color: #1F2124; */
->>>>>>> 7d23284 (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
+
 }
 
 .App-logo {
@@ -67,7 +62,6 @@
 .col-3 {
   width: 20%;
 }
-=======
 
 
 .row{
@@ -81,10 +75,11 @@
 }
 
 .col-6{
-    width: 70%;
+    width: 60%;
+    padding-right: 6rem;
 }
 
 .col-3{
-    width: 10%;
+    width: 20%;
 }
->>>>>>> 8e43293 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
+

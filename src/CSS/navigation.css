@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .LiAndBar {
   display: flex;
   flex-direction: row;
@@ -14,19 +13,3 @@
   background-color: #701555;
   margin: 0;
 }
-=======
-.LiAndBar{
-    display: flex;
-    flex-direction: row;
-}
-
-#sideBar{
-    display: flex;
-    flex-direction: row;
-    width: 10px;
-    height: 50px;
-    background-color: #701555;
-    margin: 0;
-}
-
->>>>>>> 8e43293 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
