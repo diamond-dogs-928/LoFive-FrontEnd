@@ -28,14 +28,14 @@ const TopBar = () => {
           <h3 className='' id='topBarDateText'>
             {day}
           </h3>
-          <form className='SearchLoFive' action=''>
-            <input id='SearchBox' type='text' placeholder='Search LoFive' />
+          <form className="SearchLoFive" action="">
+            <input id="SearchBox" type="text" placeholder="Search LoFive" />
           </form>
         </div>
       </div>
-      <div id='lineHolders'>
-        <div id='lineOrange'></div>
-        <div id='lineMaroon'></div>
+      <div id="lineHolders">
+        <div id="lineOrange"></div>
+        <div id="lineMaroon"></div>
       </div>
     </div>
   );
