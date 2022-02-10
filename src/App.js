@@ -1,3 +1,4 @@
+import SignUp from './Users/UserSignup';
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
@@ -21,6 +22,8 @@ function App() {
           <Sidebar />
         </div>
       </div>
+    <div className="App">
+        <SignUp/>
     </div>
   );
 }
