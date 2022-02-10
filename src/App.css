@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #backgroundColor {
   /* background-color: #1F2124; */
 =======
@@ -66,3 +67,24 @@
 .col-3 {
   width: 20%;
 }
+=======
+
+
+.row{
+    display: flex;
+}
+
+.col-2{
+    width: 20%;
+    display: flex;
+    
+}
+
+.col-6{
+    width: 70%;
+}
+
+.col-3{
+    width: 10%;
+}
+>>>>>>> 8e43293 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)

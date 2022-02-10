@@ -19,7 +19,11 @@ function App() {
       <TopBar />
       <div className='row'>
         <div className='col-2'>
+<<<<<<< HEAD
           <Navigation />
+=======
+          <Navigation/>
+>>>>>>> 8e43293 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
           {/* <Header /> */}
         </div>
         <div className='col-6'>
