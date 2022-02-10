@@ -1,9 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation';
+import '../CSS/navigation.css';
 
 const Header = () => {
   return (
-    <div className='bg-dark col-3'>
+    <div>
       <Navigation />
     </div>
   );

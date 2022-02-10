@@ -6,6 +6,7 @@ import Feed from './components/Feed';
 import Sidebar from './components/Sidebar';
 import CreatePost from './components/CreatePost';
 import TopBar from './components/TopBar';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-          <Header />
+          <Navigation/>
+          {/* <Header /> */}
         </div>
         <div className='col-6'>
           <Feed />

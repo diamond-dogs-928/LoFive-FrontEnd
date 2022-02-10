@@ -1,23 +1,26 @@
-import { Button, Navbar, Container, Nav } from 'react-bootstrap';
+// import { Button, Navbar, Container, Nav } from 'react-bootstrap';
+import '../CSS/navigation.css';
+
+
 
 const Navigation = () => {
   return (
-    <div className='row'>
-      <div className='col-2'>
-        <Navbar bg='dark' variant='dark'>
-          {/* <Container> */}
-          <ul className='me-auto bg-dark'>
-            {/* <Navbar.Brand href='#home'>LoFive</Navbar.Brand> */}
-            <Nav.Link href='#help'>Feed</Nav.Link>
-            <Nav.Link href='#safety'>Friends</Nav.Link>
-            <Nav.Link href='#pricing'>Discover</Nav.Link>
-            <Nav.Link href='#feedback'>Listen</Nav.Link>
-            <Nav.Link href='#terms'>Profile</Nav.Link>
-            {/* </Nav> */}
+    
+  <div className="liAndBar">
+        <div id="navBar">
+          {/* ROUTES NEED TO BE PUT IN HERE INSTEAD OF THE TEXT */}
+          <ul className='NavBarUl'>
+            <li> ROUTE TO Home</li>
+            <li> ROUTE TO Friends</li>
+            <li> ROUTE TO Home</li>
+            <li> ROUTE TO Messages</li>
+            <li> ROUTE TO Lists</li>
+            <li> ROUTE TO Profile</li>
           </ul>
-        </Navbar>
-      </div>
     </div>
+    <div id='sideBar'></div>
+  </div>
+    
   );
 };
 
