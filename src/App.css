@@ -42,6 +42,7 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< HEAD
 =======
 
 
@@ -64,3 +65,22 @@
     width: 20%;
 }
 
+=======
+
+.row {
+  display: flex;
+}
+
+.col-2 {
+  width: 20%;
+  display: flex;
+}
+
+.col-6 {
+  width: 70%;
+}
+
+.col-3 {
+  width: 10%;
+}
+>>>>>>> 80cb701 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
