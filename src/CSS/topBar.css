@@ -1,160 +1,119 @@
 /*Containers*/
 /*///////////////////////////////////////////////////*/
-.topBarContainer .topbarItems{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 6rem;
-    margin-left: 3rem;
+.topBarContainer .topbarItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 6rem;
+  margin-left: 3rem;
 }
 /*///////////////////////////////////////////////////*/
-
-
-
 
 /*TEXT*/
 /*///////////////////////////////////////////////////*/
-#topBarText{
-    color: #606A71;
-    font-size: 30px;
-    font-family: Montserrat Subrayada;
-
+#topBarText {
+  color: #606a71;
+  font-size: 30px;
+  font-family: Montserrat Subrayada;
 }
 
-
-#topBarUsernameText{
-    margin-left: 3rem;
+#topBarUsernameText {
+  margin-left: 3rem;
 }
 
-
-#topBarDateText{
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+#topBarDateText {
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-#topBarDateTextContainer{
-    /*Why won't the search bar center?*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#topBarDateTextContainer {
+  /*Why won't the search bar center?*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*///////////////////////////////////////////////////*/
-
-
-
-
-
-
-
-
 
 /*Search Box*/
 /*///////////////////////////////////////////////////*/
-.SearchLoFive{
-    /*Why won't the search bar center?*/
-    height: 2rem;
-    font-size: 15px;
-    background-color:#1F2124 ;
-    font-weight: bold;
-    font-family: Roboto Mono;
+.SearchLoFive {
+  /*Why won't the search bar center?*/
+  height: 2rem;
+  font-size: 15px;
+  background-color: #1f2124;
+  font-weight: bold;
+  font-family: Roboto Mono;
 }
 
-#SearchBox{
-    margin-top: 5px;
-    margin-left: 35px;
-    background-color:#1F2124 ;  
-    outline: none;
-    font-family: Roboto Mono;
+#SearchBox {
+  margin-top: 5px;
+  margin-left: 35px;
+  background-color: #1f2124;
+  outline: none;
+  font-family: Roboto Mono;
 }
 
-input::placeholder{
-    color: #606A71;
-  }
+input::placeholder {
+  color: #606a71;
+}
 
-textarea:focus, input:focus {
-    color: #606A71;
-    font-weight: bold;
+textarea:focus,
+input:focus {
+  color: #606a71;
+  font-weight: bold;
 }
 /*///////////////////////////////////////////////////*/
-
-
-
-
-
-
-
-
 
 /*Logo*/
 /*///////////////////////////////////////////////////*/
-.topBarLogo{
-    margin-top: 1rem;
-    margin-left: 1rem;
-    height: 100px;
-    width: 100px;
-    z-index: +10;
+.topBarLogo {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  height: 100px;
+  width: 100px;
+  z-index: +10;
 
-    object-fit: cover;
+  object-fit: cover;
 }
 
 /*Spin Effect*/
 
 /*///////////////////////////////////////////////////*/
 
-
-
-
 /*Underlines*/
 /*///////////////////////////////////////////////////*/
-#lineHolders{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+#lineHolders {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-
-#lineOrange{
-    height: 10px;
-    width: 85%;
-    background-color: #FA7A39;
+#lineMaroon {
+  margin: 0;
+  padding: 0;
+  height: 10px;
+  width: 80%;
+  background-color: #701555;
 }
 
-#lineMaroon{
-    margin: 0;
-    padding: 0;
-    height: 10px;
-    width: 80%;
-    background-color: #701555;
+#lineOrange {
+  height: 10px;
+  width: 85%;
+  background-color: #fa7a39;
+}
+
+#lineMaroon {
+  margin: 0;
+  padding: 0;
+  height: 10px;
+  width: 80%;
+  background-color: #701555;
 }
 
 /*///////////////////////////////////////////////////*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*For visualization*/
 /*///////////////////////////////////////////////////*/
