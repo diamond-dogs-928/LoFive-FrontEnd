@@ -25,6 +25,7 @@ function App() {
     <div className="App">
         <SignUp/>
     </div>
+    </div>
   );
 }
 

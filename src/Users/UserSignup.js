@@ -14,7 +14,7 @@ function SignUp () {
       const requestData = {
         method: 'POST',
         username: {'content-type': 'application/json'},
-        body: JSON.stringify({username: 'example route'})
+        body: JSON.stringify({username: 'example route', password: 'sample', verifyPassword:'sample' })
       }
 
       fetch('http://localhost:4000/register', requestData)
