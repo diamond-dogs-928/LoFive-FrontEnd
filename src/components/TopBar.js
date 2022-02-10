@@ -15,6 +15,7 @@ const TopBar = () => {
     <div className='topBarContainer border'>
       <div className='topbarItems border' id='topBarText'>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <img
 <<<<<<< HEAD
           className="topBarItems topBarLogo border"
@@ -42,9 +43,16 @@ const TopBar = () => {
         <img className='topBarItems topBarLogo border' src={logo} alt='' />
 >>>>>>> a1269b8 (fixing lost changes - sidebar accordion, logo, deezer plugin)
         {/* <h3 className="brand col-3">LoFive</h3> */}
+=======
+        <img
+          className='topBarItems topBarLogo border'
+          src='/images/Logo_Solo.jpg'
+          alt='Logo'
+        />
+>>>>>>> b14f74d (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
         <div className='border'>
           <h3 className='col-6 border' id='topBarUsernameText'>
-            Username
+            Christian410
           </h3>
         </div>
         <div id='topBarDateTextContainer' className='border'>
@@ -57,9 +65,15 @@ const TopBar = () => {
           </form>
         </div>
       </div>
+<<<<<<< HEAD
       <div id="lineHolders">
         <div id="lineOrange"></div>
         <div id="lineMaroon"></div>
+=======
+      <div id='lineHolders'>
+        <div id='lineOrange'></div>
+        <div id='lineMaroon'></div>
+>>>>>>> b14f74d (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
       </div>
     </div>
   );

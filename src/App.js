@@ -19,8 +19,12 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   return (
+<<<<<<< HEAD
     <div className='bg-dark container-flex' id='backgroundColor'>
 
+=======
+  <div className='bg-dark container-flex' id="backgroundColor">
+>>>>>>> b14f74d (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
       <TopBar />
       <div className='row'>
         <div className='col-2'>
