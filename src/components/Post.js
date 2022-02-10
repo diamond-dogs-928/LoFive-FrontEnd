@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 const Post = () => {
   return (
-    <div className='card bg-dark textmuted'>
+    <div className='card bg-dark textmuted post'>
       <h4 className='text-muted'>Author</h4>
       <p className='text-muted'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugiat
