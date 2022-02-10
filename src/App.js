@@ -9,7 +9,7 @@ import TopBar from './components/TopBar';
 
 function App() {
   return (
-    <div className='bg-dark container-flex' id="backgroundColor">
+  <div className='bg-dark container-flex' id="backgroundColor">
       <TopBar />
       <div className='row'>
         <div className='col-2'>
@@ -25,6 +25,7 @@ function App() {
     <div className="App">
         <SignUp/>
     </div>
+  </div>
   );
 }
 

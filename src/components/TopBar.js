@@ -14,23 +14,26 @@ const TopBar = () => {
       <div className="topbarItems border" id="topBarText">
         <img
           className="topBarItems topBarLogo border"
-          src="../../public/images/logo.png"
-          alt=""
+          src="/images/Logo_Solo.jpg"
+          alt="Logo"
         />
-        {/* <h3 className="brand col-3">LoFive</h3> */}
         <div className="border">
           <h3 className="col-6 border" id="topBarUsernameText">
-            Username
+            Christian410
           </h3>
         </div>
         <div id="topBarDateTextContainer" className="border">
           <h3 className="col-3" id="topBarDateText">
             {day}
           </h3>
-          <form  className="SearchLoFive" action="">
+          <form className="SearchLoFive" action="">
             <input id="SearchBox" type="text" placeholder="Search LoFive" />
           </form>
         </div>
+      </div>
+      <div id="lineHolders">
+        <div id="lineOrange"></div>
+        <div id="lineMaroon"></div>
       </div>
     </div>
   );
