@@ -29,8 +29,6 @@ const Navigation = () => {
       </div>
       <div id='sideBar'></div>
     </div>
-    
-    
   );
 };
 
