@@ -1,6 +1,5 @@
-import { Navbar, Container, Nav } from 'react-bootstrap';
-import Button from './Button';
-import Popup from 'reactjs-popup';
+// import { Button, Navbar, Container, Nav } from 'react-bootstrap';
+import '../CSS/navigation.css';
 
 const Navigation = () => {
   const PopupExample = () => (
@@ -17,30 +16,19 @@ const Navigation = () => {
   );
 
   return (
-    <div className='row'>
-      <div className='col-2'>
-        <Navbar bg='dark' variant='dark'>
-          {/* <Container> */}
-          <ul className='me-auto bg-dark'>
-            {/* <Navbar.Brand href='#home'>LoFive</Navbar.Brand> */}
-            <Button name={'Sign Up'} onClick={PopupExample} />
-            <li>
-              {' '}
-              <Nav.Link href='#safety'>Friends</Nav.Link>
-            </li>
-            <li>
-              <Nav.Link href='#pricing'>Discover</Nav.Link>
-            </li>
-            <li>
-              <Nav.Link href='#feedback'>Listen</Nav.Link>
-            </li>
-            <li>
-              <Nav.Link href='#terms'>Profile</Nav.Link>
-            </li>
-            {/* </Nav> */}
-          </ul>
-        </Navbar>
+    <div className='liAndBar'>
+      <div id='navBar'>
+        {/* ROUTES NEED TO BE PUT IN HERE INSTEAD OF THE TEXT */}
+        <ul className='NavBarUl'>
+          <li> ROUTE TO Home</li>
+          <li> ROUTE TO Friends</li>
+          <li> ROUTE TO Home</li>
+          <li> ROUTE TO Messages</li>
+          <li> ROUTE TO Lists</li>
+          <li> ROUTE TO Profile</li>
+        </ul>
       </div>
+      <div id='sideBar'></div>
     </div>
   );
 };

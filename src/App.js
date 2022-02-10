@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Feed from './components/Feed';
 import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
+import Navigation from './components/Navigation';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,8 @@ function App() {
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-          <Header />
+          <Navigation/>
+          {/* <Header /> */}
         </div>
         <div className='col-6'>
           <Feed />
