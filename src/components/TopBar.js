@@ -1,18 +1,37 @@
-import { useState } from 'react';
+import { useState } from "react";
+import "../CSS/topBar.css";
 
 const TopBar = () => {
   const [today, setToday] = useState();
 
   const setDay = () => {
-    setToday('blueberry');
+    setToday("blueberry");
   };
   //   setDay();
-  let day = "today's date";
+  let day = "Today's Date";
   return (
-    <div className='bg-dark container-fluid text-muted row'>
-      <h3 className='brand col-3'>LoFive</h3>
-      <h3 className='col-6'>Username</h3>
-      <h3 className='col-3 '>{day}</h3>
+    <div className="topBarContainer border">
+      <div className="topbarItems border" id="topBarText">
+        <img
+          className="topBarItems topBarLogo border"
+          src="../../public/images/logo.png"
+          alt=""
+        />
+        {/* <h3 className="brand col-3">LoFive</h3> */}
+        <div className="border">
+          <h3 className="col-6 border" id="topBarUsernameText">
+            Username
+          </h3>
+        </div>
+        <div id="topBarDateTextContainer" className="border">
+          <h3 className="col-3" id="topBarDateText">
+            {day}
+          </h3>
+          <form  className="SearchLoFive" action="">
+            <input id="SearchBox" type="text" placeholder="Search LoFive" />
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
