@@ -53,3 +53,11 @@
 .col-3 {
   width: 10%;
 }
+.col-6 {
+  width: 60%;
+  padding-right: 6rem;
+}
+
+.col-3 {
+  width: 20%;
+}

@@ -5,3 +5,7 @@
   background-color: #1f2124;
   font-weight: bold;
 }
+#createPost {
+  display: flex;
+  justify-content: center;
+}
