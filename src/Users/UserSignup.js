@@ -50,12 +50,19 @@ function SignUp() {
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
 
-  let getUser = () => {
-    const requestData = {
-      method: 'POST',
-      username: { 'content-type': 'register/json' },
-      body: JSON.stringify({ username: 'example route' }),
-    };
+function SignUp () {
+  const initialState = { username: '', password: '', confirmPassword: '', valid: ''}
+  const [formState, setFormState] = useState(initialState)
+  const [message, setMessage] = useState('')
+    
+  
+  
+    let getUser = () => {
+      const requestData = {
+        method: 'POST',
+        username: {'content-type': 'application/json'},
+        body: JSON.stringify({username: 'example route'})
+      }
 
 <<<<<<< HEAD
     fetch('http://localhost:3000/budget/');
