@@ -18,6 +18,8 @@
 #topBarText{
     color: #606A71;
     font-size: 30px;
+    font-family: Montserrat Subrayada;
+
 }
 
 
@@ -48,6 +50,7 @@
     font-size: 15px;
     background-color:#1F2124 ;
     font-weight: bold;
+    font-family: Roboto Mono;
 }
 
 #SearchBox{
@@ -55,6 +58,7 @@
     margin-left: 35px;
     background-color:#1F2124 ;  
     outline: none;
+    font-family: Roboto Mono;
 }
 
 input::placeholder{
@@ -75,7 +79,8 @@ textarea:focus, input:focus {
     height: 100px;
     width: 100px;
     z-index: +10;
-    border: blue solid 1px;
+
+    object-fit: cover;
 }
 
 /*Spin Effect*/
@@ -85,8 +90,30 @@ textarea:focus, input:focus {
 
 
 
+/*Underlines*/
+/*///////////////////////////////////////////////////*/
+#lineHolders{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 
+#lineOrange{
+    height: 10px;
+    width: 85%;
+    background-color: #FA7A39;
+}
+
+#lineMaroon{
+    margin: 0;
+    padding: 0;
+    height: 10px;
+    width: 80%;
+    background-color: #701555;
+}
+
+/*///////////////////////////////////////////////////*/
 
 
 
@@ -114,7 +141,7 @@ textarea:focus, input:focus {
 
 /*For visualization*/
 /*///////////////////////////////////////////////////*/
-.border{
+/* .border{
     border: blue solid 1px;
-}
+} */
 /*///////////////////////////////////////////////////*/
