@@ -1,5 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
 // import { Card } from 'react-bootstrap';
+=======
+import { Card } from 'react-bootstrap';
+import '../CSS/post.css';
+>>>>>>> 9a4c628 (updated icon to show, added accordian, partially styled text color)
 
 const Post = () => {
   return (

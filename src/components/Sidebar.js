@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 // import { useState } from 'react';
 import { Accordion } from "bootstrap";
 import "../../src/App.css";
+=======
+// import ControlledAccordions from './AccordionInsert';
+import LightAccordion from './LightAccordion';
+>>>>>>> 9a4c628 (updated icon to show, added accordian, partially styled text color)
 
 const Sidebar = () => {
   return (
     <>
+<<<<<<< HEAD
       <h4 className="text-muted">Fun Times</h4>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -101,6 +107,11 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
+=======
+      <h4 className='text-muted'>Fun Times</h4>
+      {/* <ControlledAccordions /> */}
+      <LightAccordion />
+>>>>>>> 9a4c628 (updated icon to show, added accordian, partially styled text color)
     </>
   );
 };

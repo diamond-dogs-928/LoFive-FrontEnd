@@ -11,6 +11,8 @@ import TopBar from './components/TopBar';
 import Navigation from './components/Navigation';
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
   return (
     <div className='bg-dark container-flex' id='backgroundColor'>
 
