@@ -1,17 +1,24 @@
+
 import { useState, useEffect } from 'react';
+
+import SignUp from './Users/UserSignup';
+
 import './App.css';
 import Header from './components/Header';
 import Feed from './components/Feed';
 import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div className='bg-dark container-flex' id='backgroundColor'>
+
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-          <Header />
+          <Navigation/>
+          {/* <Header /> */}
         </div>
         <div className='col-6'>
           <Feed />
@@ -20,7 +27,10 @@ function App() {
           <Sidebar />
         </div>
       </div>
+    <div className="App">
+        <SignUp/>
     </div>
+  </div>
   );
 }
 
