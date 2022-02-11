@@ -12,8 +12,24 @@ const Post = () => {
         harum?
       </p>
       <p className='text-muted'>
-        <a href=''>tag</a> <a href=''>tag</a> <a href=''>tag</a>{' '}
-        <a href=''>tag</a> <a href=''>tag</a>
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
       </p>
       <h5 className='d-flex justify-content-between text-muted'>
         Date &amp; Time <span>⬆️ Likes</span>
