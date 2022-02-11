@@ -1,6 +1,7 @@
 .LiAndBar {
   display: flex;
   flex-direction: row;
+  color: #696969;
 }
 
 #sideBar {
@@ -8,6 +9,7 @@
   flex-direction: row;
   width: 10px;
   height: 50px;
+  color: #696969;
   background-color: #701555;
   margin: 0;
 }
