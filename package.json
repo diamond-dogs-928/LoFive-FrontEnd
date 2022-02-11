@@ -19,7 +19,10 @@
     "react-light-accordion": "^0.1.4",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+<<<<<<< HEAD
     "reactjs-popup": "^2.0.5",
+=======
+>>>>>>> f8f51d1 (updated icon to show, added accordian, partially styled text color)
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
