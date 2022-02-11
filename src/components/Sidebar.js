@@ -5,6 +5,7 @@ import "../../src/App.css";
 =======
 // import ControlledAccordions from './AccordionInsert';
 import LightAccordion from './LightAccordion';
+<<<<<<< HEAD
 >>>>>>> 9a4c628 (updated icon to show, added accordian, partially styled text color)
 
 const Sidebar = () => {
@@ -113,6 +114,17 @@ const Sidebar = () => {
       <LightAccordion />
 >>>>>>> 9a4c628 (updated icon to show, added accordian, partially styled text color)
     </>
+=======
+import '../CSS/sideBar.css';
+
+const Sidebar = () => {
+  return (
+    <div className='sidebar'>
+      <h4>Fun Times</h4>
+      {/* <ControlledAccordions /> */}
+      <LightAccordion />
+    </div>
+>>>>>>> 1db80ae (latest changes)
   );
 };
 
