@@ -4,7 +4,7 @@ import ShazamSearch from './ShazamSearch';
 
 const LightAccordion = () => (
   <div>
-    <h1 style={{ color: '#696969' }}>EXPLORE</h1>
+    <h1 style={{ color: '#696969' }}>EXPLORE </h1>
     <Accordion atomic={true}>
       <AccordionItem title='Listen to a Random Song'>
         <iframe
