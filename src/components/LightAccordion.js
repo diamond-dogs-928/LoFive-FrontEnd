@@ -1,5 +1,6 @@
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import 'react-light-accordion/demo/css/index.css';
+import ShazamSearch from './ShazamSearch';
 
 const LightAccordion = () => (
   <div>
@@ -17,8 +18,8 @@ const LightAccordion = () => (
         ></iframe>
       </AccordionItem>
 
-      <AccordionItem title='Title 2'>
-        <DummyContent />
+      <AccordionItem title='Shazam!'>
+        <ShazamSearch />
       </AccordionItem>
 
       <AccordionItem title='Title 3'>
