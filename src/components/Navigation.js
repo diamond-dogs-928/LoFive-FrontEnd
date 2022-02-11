@@ -27,7 +27,6 @@ const Navigation = () => {
           <li> ROUTE TO Profile</li>
         </ul>
       </div>
-      <div id='sideBar'></div>
     </div>
   );
 };

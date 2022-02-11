@@ -1,11 +1,12 @@
+#createPost {
+  display: flex;
+  justify-content: center;
+}
+
 .CreatePost {
   /*Why won't the search bar center?*/
   height: 2rem;
   font-size: 15px;
   background-color: #1f2124;
   font-weight: bold;
-}
-#createPost {
-  display: flex;
-  justify-content: center;
 }
