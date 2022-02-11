@@ -9,7 +9,7 @@ const TopBar = () => {
   const setDay = () => {
     setToday('blueberry');
   };
-  //   setDay();
+  // setDay();
   let day = "Today's Date";
   return (
     <div className='topBarContainer border'>
@@ -49,7 +49,7 @@ const TopBar = () => {
         </div>
         <div id='topBarDateTextContainer' className='border'>
           <h3 className='col-3' id='topBarDateText'>
-            {day}
+            {`today`}
           </h3>
           <form className='SearchLoFive' action=''>
             <input id='SearchBox' type='text' placeholder='Search LoFive' />
