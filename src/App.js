@@ -20,15 +20,19 @@ function App() {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className='bg-dark container-flex' id='backgroundColor'>
 
 =======
   <div className='bg-dark container-flex' id="backgroundColor">
 >>>>>>> b14f74d (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
+=======
+    <div className='bg-dark container-flex' id='backgroundColor'>
+>>>>>>> f8c18d5 (cleaning up changes with correct files)
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-          <Navigation/>
+          <Navigation />
           {/* <Header /> */}
         </div>
         <div className='col-6'>
@@ -46,7 +50,7 @@ function App() {
       <SignUp />
 >>>>>>> bd11e13 (front end signup)
     </div>
-  </div>
+    // </div>
   );
 }
 

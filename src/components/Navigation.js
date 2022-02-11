@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import { Button, Navbar, Container, Nav } from 'react-bootstrap';
+=======
+>>>>>>> f8c18d5 (cleaning up changes with correct files)
 import '../CSS/navigation.css';
 
 
@@ -15,20 +18,21 @@ import '../CSS/navigation.css';
 >>>>>>> 80cb701 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
 
 const Navigation = () => {
-  const PopupExample = () => (
-    <Popup trigger={<button>Trigger</button>} position='top left'>
-      {(close) => (
-        <div>
-          Content here
-          <a className='close' onClick={close}>
-            &times;
-          </a>
-        </div>
-      )}
-    </Popup>
-  );
+  // const PopupExample = () => (
+  //   <Popup trigger={<button>Trigger</button>} position='top left'>
+  //     {(close) => (
+  //       <div>
+  //         Content here
+  //         <a className='close' onClick={close}>
+  //           &times;
+  //         </a>
+  //       </div>
+  //     )}
+  //   </Popup>
+  // );
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     
@@ -68,6 +72,9 @@ const Navigation = () => {
           </ul>
 =======
     <div className='liAndBar'>
+=======
+    <div className='LiAndBar'>
+>>>>>>> f8c18d5 (cleaning up changes with correct files)
       <div id='navBar'>
         {/* ROUTES NEED TO BE PUT IN HERE INSTEAD OF THE TEXT */}
         <ul className='NavBarUl'>

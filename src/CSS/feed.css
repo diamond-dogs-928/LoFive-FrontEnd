@@ -1,9 +1,11 @@
-#createPostDiv{
-    margin: 0 auto;
+#createPostDiv {
+  margin: 0 auto;
 }
 
-#createPost{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
+#createPost {
+  color: #696969;
+
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }

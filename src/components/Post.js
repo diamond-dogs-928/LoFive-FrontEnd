@@ -1,6 +1,7 @@
 import React from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import { Card } from 'react-bootstrap';
 =======
 import { Card } from 'react-bootstrap';
@@ -9,6 +10,9 @@ import '../CSS/post.css';
 =======
 // import { Card } from 'react-bootstrap';
 >>>>>>> 80cb701 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
+=======
+import '../CSS/post.css';
+>>>>>>> f8c18d5 (cleaning up changes with correct files)
 
 const Post = () => {
   return (
