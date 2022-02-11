@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../CSS/topBar.css';
-// import logo from '../../public/images/logo.png';
-import logo from './logoTEST.png';
+
+import logo from '../images/logo.png';
 
 const TopBar = () => {
   const [today, setToday] = useState();
@@ -14,12 +14,7 @@ const TopBar = () => {
   return (
     <div className='topBarContainer border'>
       <div className='topbarItems border' id='topBarText'>
-        <img
-          className='topBarItems topBarLogo border'
-          // src='../../public/images/logo.png'
-          src={logo}
-          alt=''
-        />
+        <img className='topBarItems topBarLogo border' src={logo} alt='' />
         {/* <h3 className="brand col-3">LoFive</h3> */}
         <div className='border'>
           <h3 className='col-6 border' id='topBarUsernameText'>
