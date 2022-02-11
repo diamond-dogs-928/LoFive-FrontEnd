@@ -11,11 +11,11 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   return (
-  <div className='bg-dark container-flex' id="backgroundColor">
+    <div className='bg-dark container-flex' id='backgroundColor'>
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-          <Navigation/>
+          <Navigation />
           {/* <Header /> */}
         </div>
         <div className='col-6'>
@@ -28,7 +28,7 @@ function App() {
       {/* <div className="App"> */}
       <SignUp />
     </div>
-  </div>
+    // </div>
   );
 }
 

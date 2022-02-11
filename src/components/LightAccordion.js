@@ -3,7 +3,7 @@ import 'react-light-accordion/demo/css/index.css';
 
 const LightAccordion = () => (
   <div>
-    <h1>React Accordion</h1>
+    <h1>EXPLORE</h1>
     <Accordion atomic={true}>
       <AccordionItem title='Listen to a Random Song'>
         <iframe

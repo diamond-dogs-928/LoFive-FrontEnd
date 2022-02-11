@@ -1,6 +1,16 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 
+// function SignUp() {
+//   const initialState = {
+//     username: '',
+//     password: '',
+//     confirmPassword: '',
+//     valid: '',
+//   };
+//   const [formState, setFormState] = useState(initialState);
+//   const [message, setMessage] = useState('');
+
 function SignUp() {
   const initialState = {
     username: '',
@@ -11,19 +21,12 @@ function SignUp() {
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
 
-function SignUp () {
-  const initialState = { username: '', password: '', confirmPassword: '', valid: ''}
-  const [formState, setFormState] = useState(initialState)
-  const [message, setMessage] = useState('')
-    
-  
-  
-    let getUser = () => {
-      const requestData = {
-        method: 'POST',
-        username: {'content-type': 'application/json'},
-        body: JSON.stringify({username: 'example route'})
-      }
+  let getUser = () => {
+    const requestData = {
+      method: 'POST',
+      username: { 'content-type': 'application/json' },
+      body: JSON.stringify({ username: 'example route' }),
+    };
 
     fetch('http://localhost:4000/register', requestData)
       .then((data) => data.json())

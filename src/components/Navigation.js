@@ -1,22 +1,21 @@
-// import { Button, Navbar, Container, Nav } from 'react-bootstrap';
 import '../CSS/navigation.css';
 
 const Navigation = () => {
-  const PopupExample = () => (
-    <Popup trigger={<button>Trigger</button>} position='top left'>
-      {(close) => (
-        <div>
-          Content here
-          <a className='close' onClick={close}>
-            &times;
-          </a>
-        </div>
-      )}
-    </Popup>
-  );
+  // const PopupExample = () => (
+  //   <Popup trigger={<button>Trigger</button>} position='top left'>
+  //     {(close) => (
+  //       <div>
+  //         Content here
+  //         <a className='close' onClick={close}>
+  //           &times;
+  //         </a>
+  //       </div>
+  //     )}
+  //   </Popup>
+  // );
 
   return (
-    <div className='liAndBar'>
+    <div className='LiAndBar'>
       <div id='navBar'>
         {/* ROUTES NEED TO BE PUT IN HERE INSTEAD OF THE TEXT */}
         <ul className='NavBarUl'>

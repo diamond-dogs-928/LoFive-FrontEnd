@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Card } from 'react-bootstrap';
+import '../CSS/post.css';
 
 const Post = () => {
   return (
