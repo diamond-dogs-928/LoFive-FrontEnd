@@ -9,7 +9,7 @@ const LightAccordion = () => (
       <AccordionItem title='Listen to a Random Song'>
         <iframe
           title='deezer-widget'
-          src='https://widget.deezer.com/widget/auto/playlist/1479458365'
+          src='https://widget.deezer.com/widget/auto/playlist/1059795261'
           width='100%'
           height='300'
           frameborder='0'
