@@ -6,6 +6,8 @@ import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
   return (
     <div className='bg-dark container-flex' id='backgroundColor'>
       <TopBar />
