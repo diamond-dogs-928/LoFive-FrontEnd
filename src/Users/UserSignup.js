@@ -24,7 +24,7 @@ function SignUp() {
       username: { 'content-type': 'application/json' },
       body: JSON.stringify({ username: 'example route' }),
     };
-    fetch('http://localhost:4000/register', requestData)
+    fetch('http://localhost:4000/session/register', requestData)
       .then((data) => data.json())
       .then((parsedData) => {
         console.log(parsedData);
