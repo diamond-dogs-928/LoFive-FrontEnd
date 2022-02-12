@@ -14,15 +14,15 @@ const CreatePost = ({ addNote }) => {
 
       fetch('http://localhost:4000/notes', {
         method: 'POST',
-        body: JSON.stringify({name: formState.name, note: formState.note,}),
+        body: JSON.stringify({owner: formState.name, post: formState.note,}),
         headers: {
           'Content-Type': 'application/json'
         }
       })
       .then (res => res.json())
       .then(resJson => {
-        // addNote(resJson)
-        console.log(resJson)
+        addNote(resJson)
+        //console.log(resJson)
         setFormState(initialState)
       })
 
@@ -36,7 +36,7 @@ const CreatePost = ({ addNote }) => {
 
   return (
     <>
-      <form action='' id='createPost'>
+      <form onSubmit = { handleSubmit } id='createPost'>
 
         <label htmlFor='name'>Name</label>
         <input 
@@ -59,7 +59,10 @@ const CreatePost = ({ addNote }) => {
         />
           
 
-        <input type="submit" value="Post" />
+        <input 
+          type="submit" 
+          value="Post" 
+        />
 
       </form>
     </>

@@ -114,27 +114,8 @@ textarea:focus, input:focus {
     flex-direction: column;
     align-items: flex-end;
 }
-<<<<<<< HEAD
 
 
-#lineOrange{
-    height: 10px;
-    width: 85%;
-    background-color: #FA7A39;
-}
-=======
->>>>>>> 7d23284 (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
-
-#lineMaroon{
-    margin: 0;
-    padding: 0;
-    height: 10px;
-    width: 80%;
-    background-color: #701555;
-}
-
-<<<<<<< HEAD
-=======
 #lineOrange{
     height: 10px;
     width: 85%;
@@ -149,7 +130,6 @@ textarea:focus, input:focus {
     background-color: #701555;
 }
 
->>>>>>> 7d23284 (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
 /*///////////////////////////////////////////////////*/
 
 

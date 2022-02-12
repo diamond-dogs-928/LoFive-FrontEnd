@@ -11,19 +11,11 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   return (
-<<<<<<< HEAD
     <div className='bg-dark container-flex' id='backgroundColor'>
-=======
-  <div className='bg-dark container-flex' id="backgroundColor">
->>>>>>> 7d23284 (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
       <TopBar />
       <div className='row'>
         <div className='col-2'>
-<<<<<<< HEAD
           <Navigation />
-=======
-          <Navigation/>
->>>>>>> 8e43293 (Point at which I took out the header component. Added Basis of accordian on the side. Still playing around with Navigation bar.)
           {/* <Header /> */}
         </div>
         <div className='col-6'>
@@ -36,11 +28,7 @@ function App() {
       {/* <div className="App"> */}
       <SignUp />
     </div>
-<<<<<<< HEAD
     // </div>
-=======
-  </div>
->>>>>>> 7d23284 (88% of top bar done. Added lines, Added font-family, Fixed Logo. Added back in index.html)
   );
 }
 

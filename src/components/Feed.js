@@ -49,7 +49,14 @@ const Feed = () => {
 
           return(
             <li key={ note._id }>
-              { note.post }
+              {/* { note.post } */}
+              <Post 
+                note={ note.post } 
+                name={ note.owner }
+                likes={ note.likes }
+                comments={ note.comments }
+                tags={ note.tags }
+              />
             </li>
           )
         })}
