@@ -14,7 +14,7 @@ const CreatePost = ({ addNote }) => {
 
       fetch('http://localhost:4000/notes', {
         method: 'POST',
-        body: JSON.stringify({name: name, note: note,}),
+        body: JSON.stringify({name: formState.name, note: formState.note,}),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -43,7 +43,7 @@ const CreatePost = ({ addNote }) => {
           type='text' 
           id="name" 
           name="name" 
-          value={name} 
+          value={formState.name} 
           placeholder='Name' 
           onChange={ handleChange }
         />
@@ -53,7 +53,7 @@ const CreatePost = ({ addNote }) => {
           type='text' 
           id="note" 
           name="note" 
-          value={note}
+          value={formState.note}
           placeholder='say something' 
           onChange={ handleChange }
         />
@@ -62,7 +62,7 @@ const CreatePost = ({ addNote }) => {
         <input type="submit" value="Post" />
 
       </form>
-    </div>
+    </>
   );
 };
 
