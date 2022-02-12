@@ -1,9 +1,12 @@
 import { useState } from 'react'
 
-const CreatePost = () => {
+const CreatePost = ({ addNote }) => {
+    // addNote is a function passed as props from the "Feed" component
 
-    const [name, setName] = useState('')
-    const [note, setNote] = useState('')
+    const initialState = { name: '', note: '' }
+    const [formState, setFormState] = useState(initialState)
+    // const [name, setName] = useState('')
+    // const [note, setNote] = useState('')
 
     let handleSubmit = (e) => {
 
@@ -20,7 +23,7 @@ const CreatePost = () => {
       .then(resJson => {
         // addNote(resJson)
         console.log(resJson)
-
+        setFormState(initialState)
       })
 
       .catch (error => console.error({'Error': error}))
@@ -28,7 +31,7 @@ const CreatePost = () => {
     }
 
     let handleChange = (e) => {
-      setName(e.target.value)
+      setFormState({...formState, [e.target.id]: e.target.value})
     }
 
   return (
@@ -46,7 +49,15 @@ const CreatePost = () => {
         />
 
         <label htmlFor='note'>Post</label>
-        <input type='text' id="note" name="note" placeholder='say something' />
+        <input 
+          type='text' 
+          id="note" 
+          name="note" 
+          value={note}
+          placeholder='say something' 
+          onChange={ handleChange }
+        />
+          
 
         <input type="submit" value="Post" />
 
