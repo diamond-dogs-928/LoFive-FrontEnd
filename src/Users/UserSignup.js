@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Link, Route } from 'react-router-dom';
+
 import { useState } from 'react';
 // function SignUp() {
 //   const initialState = {
@@ -11,10 +13,10 @@ import { useState } from 'react';
 //   const [message, setMessage] = useState('');
 function SignUp() {
   const initialState = {
+    email: '',
     username: '',
     password: '',
-    confirmPassword: '',
-    valid: '',
+    verifyPassword: '',
   };
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
@@ -29,6 +31,9 @@ function SignUp() {
       .then((parsedData) => {
         console.log(parsedData);
         setFormState(parsedData);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
   useEffect(() => {
@@ -42,7 +47,7 @@ function SignUp() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formState.password === formState.confirmPassword) {
+    if (formState.password === formState.verifyPassword) {
       formState.valid = true;
       setMessage(`welcome ${formState.username}`);
     } else {
@@ -62,6 +67,13 @@ function SignUp() {
           value={formState.username}
           onChange={handleChange}
         />
+        <input
+          type='text'
+          placeholder='email'
+          id='email'
+          value={formState.email}
+          onChange={handleChange}
+        />
         <label htmlFor='username'>Username</label>
         <input
           type='password'
@@ -73,13 +85,15 @@ function SignUp() {
         <label htmlFor='password'>Password</label>
         <input
           type='password'
-          placeholder='Confirm password'
-          id='confirmPassword'
-          value={formState.confirmPassword}
+          placeholder='Verify password'
+          id='verifyPassword'
+          value={formState.verifyPassword}
           onChange={handleChange}
         />
-        <label htmlFor='confirmPassword'>Confirm password</label>
-        <button type='submit'>Sign Up</button>
+        <label htmlFor='confirmPassword'>Verify password</label>
+        <Link to='/feed'>
+          <button type='submit'>Sign Up</button>
+        </Link>
         <p>{message}</p>
       </form>
     </div>
