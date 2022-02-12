@@ -71,6 +71,15 @@ function SignUp() {
         <label htmlFor='username'>Username</label>
 
         <input
+          type='text'
+          placeholder='E-mail'
+          id='email'
+          value={formState.email}
+          onChange={handleChange}
+        />
+        <label htmlFor='username'>Username</label>
+
+        <input
           type='password'
           placeholder='Password'
           id='password'

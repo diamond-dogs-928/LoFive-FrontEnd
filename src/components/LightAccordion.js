@@ -1,6 +1,7 @@
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import 'react-light-accordion/demo/css/index.css';
 import ShazamSearch from './ShazamSearch';
+import Kanye from './Kanye';
 
 const LightAccordion = () => (
   <div>
@@ -9,7 +10,7 @@ const LightAccordion = () => (
       <AccordionItem title='Listen to a Random Song'>
         <iframe
           title='deezer-widget'
-          src='https://widget.deezer.com/widget/auto/playlist/1479458365'
+          src='https://widget.deezer.com/widget/auto/playlist/1282495565'
           width='100%'
           height='300'
           frameborder='0'
@@ -23,7 +24,7 @@ const LightAccordion = () => (
       </AccordionItem>
 
       <AccordionItem title='Title 3'>
-        <DummyContent />
+        <Kanye />
       </AccordionItem>
     </Accordion>
   </div>
