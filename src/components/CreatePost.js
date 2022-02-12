@@ -9,7 +9,21 @@ const CreatePost = () => {
 
       e.preventDefault()
 
-      fetch('http://localhost:4000/notes')
+      fetch('http://localhost:4000/notes', {
+        method: 'POST',
+        body: JSON.stringify({name: name, note: note,}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then (res => res.json())
+      .then(resJson => {
+        // addNote(resJson)
+        console.log(resJson)
+
+      })
+
+      .catch (error => console.error({'Error': error}))
 
     }
 
