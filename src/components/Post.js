@@ -5,16 +5,30 @@ const Post = ({ note, name, likes, tags }) => {
   return (
     <div className='card bg-dark textmuted post'>
       <h4 className='text-muted'>Author: {name}</h4>
+      <p className='text-muted'>{note}</p>
+
       <p className='text-muted'>
-        {note}
-      </p>
-     
-      <p className='text-muted'>
-        <a href=''>tag</a> <a href=''>tag</a> <a href=''>tag</a>{' '}
-        <a href=''>tag</a> <a href=''>tag</a>
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
+        <button>
+          <a href=''>tag</a>
+        </button>{' '}
       </p>
       <h5 className='d-flex justify-content-between text-muted'>
-        Date &amp; Time <span>⬆️ Likes: { likes }</span>
+        Date &amp; Time <span>⬆️ Likes: {likes}</span>
       </h5>
     </div>
   );

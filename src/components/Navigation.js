@@ -1,19 +1,6 @@
 import '../CSS/navigation.css';
 
 const Navigation = () => {
-  // const PopupExample = () => (
-  //   <Popup trigger={<button>Trigger</button>} position='top left'>
-  //     {(close) => (
-  //       <div>
-  //         Content here
-  //         <a className='close' onClick={close}>
-  //           &times;
-  //         </a>
-  //       </div>
-  //     )}
-  //   </Popup>
-  // );
-
   return (
     <div className='LiAndBar'>
       <div id='navBar'>
@@ -27,10 +14,7 @@ const Navigation = () => {
           <li> ROUTE TO Profile</li>
         </ul>
       </div>
-      <div id='sideBar'></div>
     </div>
-    
-    
   );
 };
 

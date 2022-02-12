@@ -1,13 +1,13 @@
-// import ControlledAccordions from './AccordionInsert';
 import LightAccordion from './LightAccordion';
+import '../CSS/sideBar.css';
 
 const Sidebar = () => {
   return (
-    <>
-      <h4 className='text-muted'>Fun Times</h4>
-      {/* <ControlledAccordions /> */}
+    <div className='sidebar'>
+      <h4>Fun Times</h4>
+
       <LightAccordion />
-    </>
+    </div>
   );
 };
 

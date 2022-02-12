@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-
 // function SignUp() {
 //   const initialState = {
 //     username: '',
@@ -10,7 +9,6 @@ import { useState } from 'react';
 //   };
 //   const [formState, setFormState] = useState(initialState);
 //   const [message, setMessage] = useState('');
-
 function SignUp() {
   const initialState = {
     username: '',
@@ -20,15 +18,13 @@ function SignUp() {
   };
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
-
   let getUser = () => {
     const requestData = {
       method: 'POST',
       username: { 'content-type': 'application/json' },
       body: JSON.stringify({ username: 'example route' }),
     };
-
-    fetch('http://localhost:4000/register', requestData)
+    fetch('http://localhost:4000/session/register', requestData)
       .then((data) => data.json())
       .then((parsedData) => {
         console.log(parsedData);
@@ -38,7 +34,6 @@ function SignUp() {
   useEffect(() => {
     getUser();
   }, []);
-
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -56,7 +51,6 @@ function SignUp() {
     }
     setFormState(initialState);
   };
-
   return (
     <div className='form'>
       <h1>Sign Up</h1>
@@ -69,7 +63,6 @@ function SignUp() {
           onChange={handleChange}
         />
         <label htmlFor='username'>Username</label>
-
         <input
           type='password'
           placeholder='Password'
@@ -78,7 +71,6 @@ function SignUp() {
           onChange={handleChange}
         />
         <label htmlFor='password'>Password</label>
-
         <input
           type='password'
           placeholder='Confirm password'
@@ -87,12 +79,10 @@ function SignUp() {
           onChange={handleChange}
         />
         <label htmlFor='confirmPassword'>Confirm password</label>
-
         <button type='submit'>Sign Up</button>
         <p>{message}</p>
       </form>
     </div>
   );
 }
-
 export default SignUp;
