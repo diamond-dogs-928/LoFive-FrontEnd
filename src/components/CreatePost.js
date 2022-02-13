@@ -49,6 +49,7 @@ const CreatePost = ({ addNote }) => {
 
         <label htmlFor='note'></label>
         <textarea
+          rows='5'
           type='text'
           id='note'
           name='note'
@@ -58,7 +59,12 @@ const CreatePost = ({ addNote }) => {
           className='createPostInput'
         />
 
-        <input type='submit' value='Post' id='button-74' />
+        <button type='submit' value='Post' class='button-56' role='button'>
+          post
+        </button>
+        {/* <button class='button-56' role='button'>
+          Button 56
+        </button> */}
       </form>
     </>
   );

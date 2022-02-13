@@ -59,33 +59,6 @@ const Feed = () => {
           );
         })}
       </ul>
-
-      <ul>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-        <li>
-          <Post />
-        </li>
-      </ul>
     </div>
   );
 };
