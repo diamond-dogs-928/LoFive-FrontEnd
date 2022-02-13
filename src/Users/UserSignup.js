@@ -98,9 +98,9 @@ function SignUp() {
           onChange={handleChange}
         />
         <label htmlFor='confirmPassword'>Verify password</label>
-        {/* <Link to='/feed'> */}
+        <Link to='/feed'>
           <button type='submit'>Sign Up</button>
-        {/* </Link>  */}
+        </Link> 
         <p>{message}</p>
       </form>
     </div>
