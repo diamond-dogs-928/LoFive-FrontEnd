@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
-
 import { useState } from 'react';
+import { FormGroup } from 'react-bootstrap';
 // function SignUp() {
 //   const initialState = {
 //     username: '',
@@ -17,14 +17,20 @@ function SignUp() {
     username: '',
     password: '',
     verifyPassword: '',
+    valid: null
   };
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
   let getUser = () => {
     const requestData = {
       method: 'POST',
-      username: { 'content-type': 'application/json' },
-      body: JSON.stringify({ username: 'example route' }),
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        email: formState.email,
+        username: formState.username,
+        password: formState.password,
+        verifyPassword: formState.verifyPassword
+      }),
     };
     fetch('http://localhost:4000/session/register', requestData)
       .then((data) => data.json())
@@ -33,12 +39,12 @@ function SignUp() {
         setFormState(parsedData);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -50,6 +56,7 @@ function SignUp() {
     if (formState.password === formState.verifyPassword) {
       formState.valid = true;
       setMessage(`welcome ${formState.username}`);
+      getUser()
     } else {
       formState.valid = false;
       setMessage(`passwords do not match`);
@@ -93,7 +100,7 @@ function SignUp() {
         <label htmlFor='confirmPassword'>Verify password</label>
         <Link to='/feed'>
           <button type='submit'>Sign Up</button>
-        </Link>
+        </Link> 
         <p>{message}</p>
       </form>
     </div>

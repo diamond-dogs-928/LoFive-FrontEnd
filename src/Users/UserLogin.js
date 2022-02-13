@@ -1,6 +1,7 @@
 import { Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import SignUp from './UserSignup';
+import '../CSS/users.css';
 
 function UserLogin() {
   const initialState = useState({
@@ -25,16 +26,73 @@ function UserLogin() {
   };
 
   return (
-    <div className='UserLogin'>
+    <div className="UserLogin">
       <form onSubmit={login}>
-        <input type='text' placeholder='username'></input>
-        <input type='password' placeholder='password'></input>
-        <Link to='/feed'>
-          <button type='submit'>login</button>
+        <div class="control block-cube block-input">
+          <input name="username" type="text" placeholder="Username" />
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+        </div>
+
+        {/* OLD USER BLOCK */}
+        {/* <input type='text' placeholder='username'></input> */}
+
+        <div class="control block-cube block-input">
+          <input name="password" type="password" placeholder="Password" />
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+        </div>
+
+        {/* OLD password BLOCK */}
+        {/* <input type="password" placeholder="password"></input> */}
+        <Link to="/feed">
+          <button class="btn block-cube block-cube-hover" type="button">
+            <div class="bg-top">
+              <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+              <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+              <div class="bg-inner"></div>
+            </div>
+            <div class="text">Log In</div>
+          </button>
+          <div class="credits"></div>
+          {/* <button type="submit">login</button> */}
         </Link>
       </form>
-      <Link to='/signup'>
-        <button>Not Registered? Become a Member!</button>
+
+      <Link to="/signup">
+        <div class="btn_2">
+          <button class="btn block-cube block-cube-hover" type="button">
+            <div class="bg-top">
+              <div class="bg-inner"></div>
+            </div>
+            <div class="bg-right">
+              <div class="bg-inner"></div>
+            </div>
+            <div class="bg">
+              <div class="bg-inner"></div>
+            </div>
+            <div class="text">Register</div>
+          </button>
+          <div class="credits"></div>
+        </div>
       </Link>
     </div>
   );
