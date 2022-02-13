@@ -10,8 +10,6 @@
     letter-spacing: 0.05em;
   }
 
-
-
   h1 {
     font-size: 23px;
   }
@@ -126,22 +124,15 @@
   .block-cube.block-cube-hover:focus .bg .bg-inner, .block-cube.block-cube-hover:hover .bg .bg-inner {
     top: 100%;
   }
-  .credits {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    padding: 15px 15px;
-    width: 100%;
-    z-index: 111;
-  }
-  .credits a {
-    opacity: 0.6;
-    color: #fff;
-    font-size: 11px;
-    text-decoration: none;
-  }
 
 
   .btn_2{
       margin-top: 20px;
+  }
+
+
+
+
+  .UserLogin{
+    margin: 0 auto;
   }

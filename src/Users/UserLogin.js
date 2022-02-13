@@ -27,7 +27,7 @@ function UserLogin() {
 
   return (
     <div className="UserLogin">
-      <form onSubmit={login}>
+      <form onSubmit={login} className='form'>
         <div class="control block-cube block-input">
           <input name="username" type="text" placeholder="Username" />
           <div class="bg-top">
@@ -75,7 +75,7 @@ function UserLogin() {
           <div class="credits"></div>
           {/* <button type="submit">login</button> */}
         </Link>
-      </form>
+      
 
       <Link to="/signup">
         <div class="btn_2">
@@ -94,6 +94,7 @@ function UserLogin() {
           <div class="credits"></div>
         </div>
       </Link>
+      </form>
     </div>
   );
 }
