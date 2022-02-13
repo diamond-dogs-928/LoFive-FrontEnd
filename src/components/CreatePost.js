@@ -48,7 +48,7 @@ const CreatePost = ({ addNote }) => {
         />
 
         <label htmlFor='note'></label>
-        <input
+        <textarea
           type='text'
           id='note'
           name='note'
