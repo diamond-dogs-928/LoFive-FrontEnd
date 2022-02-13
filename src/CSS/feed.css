@@ -1,5 +1,6 @@
 #createPostDiv {
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #createPost {
@@ -7,5 +8,15 @@
 
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+input::placeholder {
+  color: #606a71;
+}
+
+textarea:focus,
+input:focus {
+  color: #606a71;
+  font-weight: bold;
 }

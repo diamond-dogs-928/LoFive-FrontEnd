@@ -27,7 +27,7 @@ function UserLogin() {
   return (
     <div className='UserLogin'>
       <form onSubmit={login}>
-        <input type='text' placeholder='password'></input>
+        <input type='text' placeholder='username'></input>
         <input type='password' placeholder='password'></input>
         <Link to='/feed'>
           <button type='submit'>login</button>
