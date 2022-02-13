@@ -1,6 +1,6 @@
 #createPost {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .CreatePost {
@@ -10,3 +10,109 @@
   background-color: #1f2124;
   font-weight: bold;
 }
+
+.createPostInput {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+
+
+/* <form className='SearchLoFive' action=''>
+<input id='SearchBox' type='text' placeholder='Search LoFive' />
+</form> */
+
+
+/* <form onSubmit={handleSubmit} id='createPost'> */
+/* <label htmlFor='note'></label>
+<input
+  type='text'
+  id='note'
+  name='note'
+  value={formState.note}
+  placeholder='say something'
+  onChange={handleChange}
+  className='createPostInput'
+/> */
+
+
+/*Search Box*/
+/*///////////////////////////////////////////////////*/
+/* Form */
+#createPost {
+  /*Why won't the search bar center?*/
+  height: 2rem;
+  font-size: 15px;
+  background-color: #1f2124;
+  font-weight: bold;
+  font-family: Roboto Mono;
+}
+
+/* input */
+.createPostInput {
+  margin-top: 5px;
+  margin-left: 15px;
+  background-color: #1f2124;
+  outline: none;
+  font-family: Roboto Mono;
+}
+
+input::placeholder {
+  color: #606a71;
+}
+
+textarea:focus,
+input:focus {
+  color: #606a71;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+/*BUTTON*/
+/*///////////////////////////////////////////////////*/
+
+#button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#button-74:hover {
+  background-color: #fff;
+}
+
+#button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+
+#button-74:placeholder {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  #button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+/*///////////////////////////////////////////////////*/

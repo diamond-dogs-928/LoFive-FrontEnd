@@ -13,3 +13,15 @@
   background-color: #701555;
   margin: 0;
 }
+
+.NavBarUl{
+  list-style: none;
+  font-family: Roboto Mono;
+  margin-top: 2rem ;
+  margin-left: 2.8rem;
+}
+
+.NavBarLi{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}

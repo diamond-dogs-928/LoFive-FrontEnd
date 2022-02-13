@@ -39,7 +39,7 @@ const Feed = () => {
 
   return (
     <div>
-      <div>
+      <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>
 

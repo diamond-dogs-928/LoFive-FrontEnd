@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../CSS/createPost.css';
 
 const CreatePost = ({ addNote }) => {
   // addNote is a function passed as props from the "Feed" component
@@ -35,7 +36,7 @@ const CreatePost = ({ addNote }) => {
   return (
     <>
       <form onSubmit={handleSubmit} id='createPost'>
-        <label htmlFor='name'>Name</label>
+        <label htmlFor='name'></label>
         <input
           type='text'
           id='name'
@@ -43,9 +44,10 @@ const CreatePost = ({ addNote }) => {
           value={formState.name}
           placeholder='Name'
           onChange={handleChange}
+          className='createPostInput'
         />
 
-        <label htmlFor='note'>Post</label>
+        <label htmlFor='note'></label>
         <input
           type='text'
           id='note'
@@ -53,9 +55,10 @@ const CreatePost = ({ addNote }) => {
           value={formState.note}
           placeholder='say something'
           onChange={handleChange}
+          className='createPostInput'
         />
 
-        <input type='submit' value='Post' />
+        <input type='submit' value='Post' id='button-74' />
       </form>
     </>
   );
