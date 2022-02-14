@@ -33,7 +33,7 @@
 <h3 align="center">LoFive</h3>
 
   <p align="center">
-    This project is a virtual rendition of the mathematical puzzle, Tower of Hanoi. Built with HTML, CSS, and Javascript
+    This project was built for the purpose of adding a social media element to sharing music. 
     <br />
     <a href="https://github.com/diamond-dogs-928"><strong>Explore the docs</strong></a>
     <br />
