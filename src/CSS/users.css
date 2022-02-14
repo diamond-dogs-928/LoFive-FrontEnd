@@ -17,6 +17,7 @@
     width: 300px;
     padding: 64px 15px 24px;
     margin: 0 auto;
+    /* margin-left: 13rem; */
   }
   .form .control {
     margin: 0 0 24px;
@@ -129,7 +130,6 @@
   .btn_2{
       margin-top: 20px;
   }
-
 
 
 

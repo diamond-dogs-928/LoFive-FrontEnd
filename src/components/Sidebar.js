@@ -5,7 +5,6 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
       {/* <h4>Fun Times</h4> */}
-
       <LightAccordion />
     </div>
   );

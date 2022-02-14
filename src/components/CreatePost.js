@@ -37,14 +37,14 @@ const CreatePost = ({ addNote }) => {
     <>
       <form onSubmit={handleSubmit} id='createPost'>
         <label htmlFor='name'></label>
-        <input
+        <textarea
           type='text'
           id='name'
           name='name'
           value={formState.name}
           placeholder='Name'
           onChange={handleChange}
-          className='createPostInput'
+          className='createPostNameInput'
         />
 
         <label htmlFor='note'></label>
@@ -54,13 +54,13 @@ const CreatePost = ({ addNote }) => {
           id='note'
           name='note'
           value={formState.note}
-          placeholder='say something'
+          placeholder='Say something'
           onChange={handleChange}
           className='createPostInput'
         />
 
-        <button type='submit' value='Post' class='button-56' role='button'>
-          post
+        <button type='submit' value='Post' class='button-56'>
+          <strong>Post</strong>
         </button>
         {/* <button class='button-56' role='button'>
           Button 56
