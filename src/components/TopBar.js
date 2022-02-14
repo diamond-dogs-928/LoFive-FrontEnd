@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Route, Link } from 'react-router-dom';
 import '../CSS/topBar.css';
 
 import logo from '../images/logo.png';
@@ -34,6 +35,7 @@ const TopBar = () => {
         </div>
       </div>
       <div id='lineHolders'>
+
         <div id='lineOrange'><a href="https://open.spotify.com/" alt="Link to Spotify" target="_blank" rel='noreferrer'><span className='link'></span></a></div>
 
         <div id='lineMaroon'><a href="https://www.apple.com/apple-music/" alt="Link to apple Music" target="_blank" rel='noreferrer'> <span className='link'></span></a></div>

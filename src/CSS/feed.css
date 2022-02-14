@@ -20,3 +20,8 @@ input:focus {
   color: #606a71;
   font-weight: bold;
 }
+
+input, select, textarea{
+  color: #606a71;
+  font-weight: bold;
+}
