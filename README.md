@@ -96,7 +96,7 @@ Features:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Built With
+### Built With:
 
 **Front End:**
 - HTML
@@ -186,13 +186,13 @@ See the [open issues](https://github.com/diamond-dogs-928/LoFive-FrontEnd/issues
 
 ## Contributors
 
-Christian Fortin -[GitHub](https://github.com/christian-fortin) - christian.ep.410@gmail.com - [LinkedIn](https://www.linkedin.com/in/christian-fortin/)
+Garri Kats (Project Leader) -[GitHub](https://github.com/garrigoose) - gkats11@gmail.com - [LinkedIn](https://www.linkedin.com/in/garrikats/) - Front End
 
-Garri Kats -[GitHub](https://github.com/garrigoose) - gkats11@gmail.com - [LinkedIn](https://www.linkedin.com/in/garrikats/)
+Christian Fortin -[GitHub](https://github.com/christian-fortin) - christian.ep.410@gmail.com - [LinkedIn](https://www.linkedin.com/in/christian-fortin/) - Front End
 
-Nazar Basistyy -[GitHub](https://github.com/nazar301) - nazar.basistyy@gmail.com - [LinkedIn]()
+Nazar Basistyy -[GitHub](https://github.com/nazar301) - nazar.basistyy@gmail.com - [LinkedIn]() - Back End
 
-Christian Fortin -[GitHub](https://github.com/JustinDHerpin?tab=repositories) - justindherpin@yahoo.com - [LinkedIn](https://www.linkedin.com/in/justin-herpin-ba5a8a217/)
+Christian Fortin -[GitHub](https://github.com/JustinDHerpin?tab=repositories) - justindherpin@yahoo.com - [LinkedIn](https://www.linkedin.com/in/justin-herpin-ba5a8a217/) - Back End
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
