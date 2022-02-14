@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { FormGroup } from 'react-bootstrap';
+import '../CSS/users.css';
 // function SignUp() {
 //   const initialState = {
 //     username: '',
@@ -17,7 +18,7 @@ function SignUp() {
     username: '',
     password: '',
     verifyPassword: '',
-    valid: null
+    valid: null,
   };
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
@@ -29,7 +30,7 @@ function SignUp() {
         email: formState.email,
         username: formState.username,
         password: formState.password,
-        verifyPassword: formState.verifyPassword
+        verifyPassword: formState.verifyPassword,
       }),
     };
     fetch('http://localhost:4000/session/register', requestData)
@@ -56,7 +57,7 @@ function SignUp() {
     if (formState.password === formState.verifyPassword) {
       formState.valid = true;
       setMessage(`welcome ${formState.username}`);
-      getUser()
+      getUser();
     } else {
       formState.valid = false;
       setMessage(`passwords do not match`);
@@ -64,43 +65,109 @@ function SignUp() {
     setFormState(initialState);
   };
   return (
-    <div className='form'>
+    <div className="form">
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          placeholder='Username'
-          id='username'
-          value={formState.username}
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          placeholder='email'
-          id='email'
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <label htmlFor='username'>Username</label>
-        <input
-          type='password'
-          placeholder='Password'
-          id='password'
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <label htmlFor='password'>Password</label>
-        <input
-          type='password'
-          placeholder='Verify password'
-          id='verifyPassword'
-          value={formState.verifyPassword}
-          onChange={handleChange}
-        />
-        <label htmlFor='confirmPassword'>Verify password</label>
-        <Link to='/feed'>
-          <button type='submit'>Sign Up</button>
-        </Link> 
+        <div class="control block-cube block-input">
+          <input
+            type="text"
+            placeholder="Username"
+            id="username"
+            value={formState.username}
+            onChange={handleChange}
+          />
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+        </div>
+
+        <div class="control block-cube block-input">
+          <input
+            type="text"
+            placeholder="Email"
+            id="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+        </div>
+
+        {/* Should this htmlFor label be for username? I think it is meant to be password */}
+        <label htmlFor="username"></label>
+
+        <label htmlFor="password"></label>
+
+        <div class="control block-cube block-input">
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            value={formState.password}
+            onChange={handleChange}
+          />
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+        </div>
+
+        <div class="control block-cube block-input">
+          <input
+            type="password"
+            placeholder="Verify password"
+            id="verifyPassword"
+            value={formState.verifyPassword}
+            onChange={handleChange}
+          />
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+        </div>
+
+        <label htmlFor="confirmPassword"></label>
+
+        <Link to="/feed">
+          <div class="btn_2">
+            <button class="btn block-cube block-cube-hover" type="button">
+              <div class="bg-top">
+                <div class="bg-inner"></div>
+              </div>
+              <div class="bg-right">
+                <div class="bg-inner"></div>
+              </div>
+              <div class="bg">
+                <div class="bg-inner"></div>
+              </div>
+              <div class="text">Register</div>
+            </button>
+            <div class="credits"></div>
+          </div>
+        </Link>
         <p>{message}</p>
       </form>
     </div>

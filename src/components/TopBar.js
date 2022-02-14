@@ -34,8 +34,10 @@ const TopBar = () => {
         </div>
       </div>
       <div id='lineHolders'>
-        <div id='lineOrange'></div>
-        <div id='lineMaroon'></div>
+        <div id='lineOrange'><a href="https://open.spotify.com/" alt="Link to Spotify" target="_blank" rel='noreferrer'><span className='link'></span></a></div>
+
+        <div id='lineMaroon'><a href="https://www.apple.com/apple-music/" alt="Link to apple Music" target="_blank" rel='noreferrer'> <span className='link'></span></a></div>
+        
       </div>
     </div>
   );
