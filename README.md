@@ -103,7 +103,7 @@ Features:
 - CSS
 - React.js
 
-**Back End: **
+**Back End:**
 - MongoDB
 - Express
 - Mongoose
