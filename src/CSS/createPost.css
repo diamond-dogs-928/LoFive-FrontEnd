@@ -1,11 +1,11 @@
-#createPost {
+/* #createPost {
   display: flex;
   justify-content: space-evenly;
 }
 
-.CreatePost {
+.CreatePost { */
   /*Why won't the search bar center?*/
-  height: 2rem;
+  /* height: 2rem;
   font-size: 15px;
   background-color: #1f2124;
   font-weight: bold;
@@ -14,7 +14,7 @@
 .createPostInput {
   margin-left: 5%;
   margin-right: 5%;
-}
+} */
 
 /* <form className='SearchLoFive' action=''>
 <input id='SearchBox' type='text' placeholder='Search LoFive' />
@@ -47,7 +47,8 @@
 /* input */
 .createPostInput {
   margin-top: 5px;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: #1f2124;
   outline: none;
   font-family: Roboto Mono;
@@ -57,7 +58,8 @@
 
 .createPostNameInput{
   margin-top: 5px;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: #1f2124;
   outline: none;
   font-family: Roboto Mono;
