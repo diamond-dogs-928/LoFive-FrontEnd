@@ -1,3 +1,21 @@
 .post {
   color: #696969;
 }
+
+.postBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.likeButton {
+  transition: transform 0.2s;
+}
+
+.likeButton:hover {
+  transform: scale(1.5);
+}
+
+.likeBlock {
+  display: flex;
+  flex-direction: row;
+}
