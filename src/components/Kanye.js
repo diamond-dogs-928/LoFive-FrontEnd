@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Kanye = () => {
   const [quote, setQuote] = useState('');
 
-  fetch('https://api.kanye.rest')
-    .then((response) => {
-      response = response.json();
-    })
-    .then((response) => {
-      console.log(response);
-      setQuote(response);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  let getKanye = async () => {
+    let data = await fetch('https://api.kanye.rest');
+    let json = await data.json();
+    setQuote(json);
+    console.log(json.quote);
+  };
 
+  useEffect(() => {
+    getKanye();
+  }, []);
   return (
     <div>
-      <p>{quote}</p>
+      <p>{quote.quote}</p>
+      <p>-Kanye</p>
     </div>
   );
 };

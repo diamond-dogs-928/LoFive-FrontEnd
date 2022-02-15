@@ -7,23 +7,17 @@ const Navigation = () => {
       <div id='navBar'>
         {/* ROUTES NEED TO BE PUT IN HERE INSTEAD OF THE TEXT */}
         <ul className='NavBarUl'>
-          
-          <Link to="/feed" className='NavBarLink'>
-          <li className='NavBarLi effect-underline'>Feed</li>
+          <Link to='/feed' className='NavBarLink'>
+            <li className='NavBarLi effect-underline'>Feed</li>
           </Link>
-
 
           <li className='NavBarLi'>Profile</li>
           <li className='NavBarLi'>Friends</li>
           <li className='NavBarLi'>Messages</li>
 
-
-          <Link to="/signup" className='NavBarLink'>
-          <li className='NavBarLi effect-underline'> Logout</li>
+          <Link to='/' className='NavBarLink'>
+            <li className='NavBarLi effect-underline'> Logout</li>
           </Link>
-
-
-
         </ul>
       </div>
     </div>
