@@ -2,6 +2,7 @@ import React from 'react';
 import Post from './Post';
 import CreatePost from './CreatePost';
 import '../CSS/feed.css';
+import '../CSS/card.css';
 import { useState, useEffect } from 'react';
 
 const Feed = () => {
@@ -68,11 +69,11 @@ const Feed = () => {
       <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>
-
-      <ul>
+    <div className='postsContainer'>
+      <ul className='postUl'>
         {notes.map((note) => {
           return (
-            <li key={note._id}>
+            <li key={note._id} >
               {/* { note.post } */}
               <Post
                 note={note.post}
@@ -87,6 +88,7 @@ const Feed = () => {
           );
         })}
       </ul>
+    </div>
     </div>
   );
 };
