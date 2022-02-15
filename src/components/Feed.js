@@ -12,7 +12,9 @@ const Feed = () => {
   let getNotes = async () => {
     let data = await fetch('http://localhost:4000/notes');
     let json = await data.json();
-    setNotes(json);
+    if(json) {
+      setNotes(json);
+    }
     //console.log(json);
   };
 
@@ -48,6 +50,7 @@ const Feed = () => {
   };
 
   let deleteNote = async (note) => {
+    console.log(note);
     let data = await fetch('http://localhost:4000/notes/' + note._id, {
       method: 'DELETE',
       body: null,
@@ -59,13 +62,15 @@ const Feed = () => {
     if (json) {
       let data = notes.map((datum) => {
         if (datum._id === note._id) {
+          console.log('json: ' + json)
           return json;
         }
+        console.log('datum: ' + datum)
         return datum;
       });
       setNotes(data);
     }
-    //console.log('add like function ran.')
+    console.log('delete function ran.')
   }
 
 
@@ -89,6 +94,7 @@ const Feed = () => {
                 tags={note.tags}
                 date={note.createdAt}
                 addLike={addLike}
+                deleteNote={deleteNote}
               />
             </li>
           );
