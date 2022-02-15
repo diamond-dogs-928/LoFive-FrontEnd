@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../CSS/post.css';
 
-const Post = ({ note, name, likes, tags, addLike, date }) => {
+const Post = ({ post, note, name, likes, tags, addLike, date }) => {
   // const [postDate, setPostDate] = useState('');
 
   // use
@@ -14,9 +14,13 @@ const Post = ({ note, name, likes, tags, addLike, date }) => {
         <div className="postBottom">
           {date}
           <span className="likeBlock">
-            <p className="likeButton" onClick={() => addLike(note)}>
+            {/* <p className="likeButton" onClick={() => addLike(note)}> */}
+            <p className="likeButton" onClick={() => addLike(post)}>
               ⬆️ <span>Likes: {likes}</span>
             </p>{' '}
+            {/* <p className="likeButton" onClick={() => addLike(note)}>
+              <button onClick={() => addLike(note) }>⬆️</button><span>Likes: {likes}</span>
+            </p>{' '} */}
           </span>
           {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
         </div>
