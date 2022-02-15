@@ -24,7 +24,28 @@ const Feed = () => {
     setNotes([...notes, note]);
   };
 
-  // Starting function to control liking comments 
+  let addLike = async (note) => {
+    // let data = await fetch('http://localhost:4000/notes/' + note._id, {
+    //   method: 'PUT',
+    //   body: JSON.stringify({ likes: (note.likes += 1) }),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // });
+    // let json = await data.json();
+    // if (json) {
+    //   let data = notes.map((datum) => {
+    //     if (datum._id === note._id) {
+    //       return json;
+    //     }
+    //     return datum;
+    //   });
+    //   setNotes(data);
+    // }
+    setNotes(note.likes++);
+  };
+
+  // Starting function to control liking comments
   // const incrementLikes = () => {
   //   setTotalLikes(totalLikes +1)
   // }
@@ -59,6 +80,8 @@ const Feed = () => {
                 likes={note.likes}
                 comments={note.comments}
                 tags={note.tags}
+                date={note.createdAt}
+                addLike={addLike}
               />
             </li>
           );

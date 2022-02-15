@@ -1,29 +1,26 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import '../CSS/post.css';
 
-const Post = ({ note, name, likes, tags }) => {
+const Post = ({ note, name, likes, tags, addLike, date }) => {
+  // const [postDate, setPostDate] = useState('');
+
+  // use
+  // setPostDate(date);
+  // console.log(postDate);
+
   return (
     <div className='card bg-dark textmuted post'>
       <h4 className='text-muted'>Author: {name}</h4>
       <p className='text-muted'>{note}</p>
 
-      
-      
-
-
-      { tags.map((value, index) => {
-
-        return(
-
-          <button key={ index }>
-            <a href='#'>{ value }</a>
+      {tags.map((value, index) => {
+        return (
+          <button key={index}>
+            <a href='#'>{value}</a>
           </button>
+        );
+      })}
 
-        )} 
-      )}
-        
-      
-      
       {/* <p className='text-muted'>
         <button>
           <a href=''>tag</a>
@@ -44,10 +41,15 @@ const Post = ({ note, name, likes, tags }) => {
           <a href=''>tag</a>
         </button>{' '}
       </p> */}
-      <h5 className='d-flex justify-content-between text-muted'>
-        Date &amp; Time <span><button>⬆️</button> Likes: {likes}</span>
+      <div className='postBottom'>
+        {date}
+        <span className='likeBlock'>
+          <p className='likeButton' onClick={() => addLike(note)}>
+            ⬆️ <span>Likes: {likes}</span>
+          </p>{' '}
+        </span>
         {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
-      </h5>
+      </div>
     </div>
   );
 };
