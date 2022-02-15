@@ -4,7 +4,7 @@ import '../CSS/createPost.css';
 const CreatePost = ({ addNote }) => {
   // addNote is a function passed as props from the "Feed" component
 
-  const initialState = { name: '', note: '' };
+  const initialState = { name: '', note: '', tags: [] };
   const [formState, setFormState] = useState(initialState);
   // const [name, setName] = useState('')
   // const [note, setNote] = useState('')
@@ -14,7 +14,7 @@ const CreatePost = ({ addNote }) => {
 
     fetch('http://localhost:4000/notes', {
       method: 'POST',
-      body: JSON.stringify({ owner: formState.name, post: formState.note }),
+      body: JSON.stringify({ owner: formState.name, post: formState.note, tags: formState.tags }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -58,6 +58,20 @@ const CreatePost = ({ addNote }) => {
           onChange={handleChange}
           className='createPostInput'
         />
+
+        <label htmlFor='tags'></label>
+        <textarea
+          rows='5'
+          type='text'
+          id='tags'
+          name='tags'
+          value={formState.tags}
+          placeholder='Tag IT!'
+          onChange={handleChange}
+          className='createPostInput'
+        />
+
+
 
         <button type='submit' value='Post' class='button-56'>
           <strong>Post</strong>

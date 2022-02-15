@@ -24,6 +24,11 @@ const Feed = () => {
     setNotes([...notes, note]);
   };
 
+  // Starting function to control liking comments 
+  // const incrementLikes = () => {
+  //   setTotalLikes(totalLikes +1)
+  // }
+
   // useEffect(() => {
 
   //   fetch('http://localhost:4000/notes')

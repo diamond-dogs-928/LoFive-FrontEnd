@@ -7,6 +7,23 @@ const Post = ({ note, name, likes, tags }) => {
       <h4 className='text-muted'>Author: {name}</h4>
       <p className='text-muted'>{note}</p>
 
+      
+      
+
+
+      { tags.map((value, index) => {
+
+        return(
+
+          <button key={ index }>
+            <a href='#'>{ value }</a>
+          </button>
+
+        )} 
+      )}
+        
+      
+      
       {/* <p className='text-muted'>
         <button>
           <a href=''>tag</a>
@@ -28,7 +45,8 @@ const Post = ({ note, name, likes, tags }) => {
         </button>{' '}
       </p> */}
       <h5 className='d-flex justify-content-between text-muted'>
-        Date &amp; Time <span>⬆️ Likes: {likes}</span>
+        Date &amp; Time <span><button>⬆️</button> Likes: {likes}</span>
+        {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
       </h5>
     </div>
   );
