@@ -26,7 +26,7 @@ const Feed = () => {
   };
 
   let addLike = async (note) => {
-    console.log(note)
+    //console.log(note)
     let data = await fetch('http://localhost:4000/notes/' + note._id, {
       method: 'PUT',
       body: JSON.stringify({ likes: (note.likes + 1) }),
@@ -44,27 +44,30 @@ const Feed = () => {
       });
       setNotes(data);
     }
-    console.log('add like function ran.')
-    // setNotes(note.likes++);
+    //console.log('add like function ran.')
   };
 
-  // Starting function to control liking comments
-  // const incrementLikes = () => {
-  //   setTotalLikes(totalLikes +1)
-  // }
+  let deleteNote = async (note) => {
+    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+      method: 'DELETE',
+      body: null,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    let json = await data.json();
+    if (json) {
+      let data = notes.map((datum) => {
+        if (datum._id === note._id) {
+          return json;
+        }
+        return datum;
+      });
+      setNotes(data);
+    }
+    //console.log('add like function ran.')
+  }
 
-  // useEffect(() => {
-
-  //   fetch('http://localhost:4000/notes')
-
-  //   .then(data => data.json())
-
-  //   .then((parsedData) => {
-  //     console.log(parsedData);
-  //     setNotes(parsedData)
-  //   })
-
-  // }, [])
 
   return (
     <div>
