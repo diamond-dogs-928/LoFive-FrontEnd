@@ -53,14 +53,16 @@ function SignUp() {
     });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     if (formState.password === formState.verifyPassword) {
       formState.valid = true;
       setMessage(`welcome ${formState.username}`);
+      console.log(message);
       getUser();
     } else {
       formState.valid = false;
       setMessage(`passwords do not match`);
+      console.log(message);
     }
     setFormState(initialState);
   };
@@ -151,24 +153,44 @@ function SignUp() {
 
         <label htmlFor='confirmPassword'></label>
 
-        <Link to='/feed'>
-          <div class='btn_2'>
-            <button class='btn block-cube block-cube-hover' type='button'>
-              <div class='bg-top'>
-                <div class='bg-inner'></div>
-              </div>
-              <div class='bg-right'>
-                <div class='bg-inner'></div>
-              </div>
-              <div class='bg'>
-                <div class='bg-inner'></div>
-              </div>
-              <div class='text'>Register</div>
-            </button>
-            <div class='credits'></div>
-          </div>
-        </Link>
-        <p>{message}</p>
+        {formState.password === formState.verifyPassword ? (
+          <Link to='/feed'>
+            <div class='btn_2'>
+              <button class='btn block-cube block-cube-hover' type='button'>
+                <div class='bg-top'>
+                  <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                  <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                  <div class='bg-inner'></div>
+                </div>
+                <div class='text'>Register</div>
+              </button>
+              <div class='credits'></div>
+            </div>
+          </Link>
+        ) : (
+          <Link to='/login'>
+            <div class='btn_2'>
+              <button class='btn block-cube block-cube-hover' type='button'>
+                <div class='bg-top'>
+                  <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                  <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                  <div class='bg-inner'></div>
+                </div>
+                <div class='text'>passwords must match</div>
+              </button>
+              <div class='credits'></div>
+            </div>
+          </Link>
+        )}
+        <p style={{ color: 'white' }}>{message}</p>
       </form>
     </div>
   );
