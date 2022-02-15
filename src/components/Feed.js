@@ -13,7 +13,7 @@ const Feed = () => {
     let data = await fetch('http://localhost:4000/notes');
     let json = await data.json();
     setNotes(json);
-    console.log(json);
+    //console.log(json);
   };
 
   // useEffect here to populate Notes/Posts section with Notes from backend on component mounting
@@ -26,43 +26,48 @@ const Feed = () => {
   };
 
   let addLike = async (note) => {
-    // let data = await fetch('http://localhost:4000/notes/' + note._id, {
-    //   method: 'PUT',
-    //   body: JSON.stringify({ likes: (note.likes += 1) }),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // });
-    // let json = await data.json();
-    // if (json) {
-    //   let data = notes.map((datum) => {
-    //     if (datum._id === note._id) {
-    //       return json;
-    //     }
-    //     return datum;
-    //   });
-    //   setNotes(data);
-    // }
-    setNotes(note.likes++);
+    //console.log(note)
+    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+      method: 'PUT',
+      body: JSON.stringify({ likes: (note.likes + 1) }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    let json = await data.json();
+    if (json) {
+      let data = notes.map((datum) => {
+        if (datum._id === note._id) {
+          return json;
+        }
+        return datum;
+      });
+      setNotes(data);
+    }
+    //console.log('add like function ran.')
   };
 
-  // Starting function to control liking comments
-  // const incrementLikes = () => {
-  //   setTotalLikes(totalLikes +1)
-  // }
+  let deleteNote = async (note) => {
+    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+      method: 'DELETE',
+      body: null,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    let json = await data.json();
+    if (json) {
+      let data = notes.map((datum) => {
+        if (datum._id === note._id) {
+          return json;
+        }
+        return datum;
+      });
+      setNotes(data);
+    }
+    //console.log('add like function ran.')
+  }
 
-  // useEffect(() => {
-
-  //   fetch('http://localhost:4000/notes')
-
-  //   .then(data => data.json())
-
-  //   .then((parsedData) => {
-  //     console.log(parsedData);
-  //     setNotes(parsedData)
-  //   })
-
-  // }, [])
 
   return (
     <div>
@@ -76,6 +81,7 @@ const Feed = () => {
             <li key={note._id} >
               {/* { note.post } */}
               <Post
+                post={note}
                 note={note.post}
                 name={note.owner}
                 likes={note.likes}
