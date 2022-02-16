@@ -40,9 +40,10 @@ const ShowCard = ({
     marginLeft: '8.5rem',
     marginTop: '5rem'
 }}>
+    <h4>{note}</h4>
         {/* Make the href the users profile --- Show route goes here*/}
         <div className='postBottom'>
-
+        
         </div>
         <h4>{doc ? doc.owner : null}</h4>
         <p>
@@ -55,6 +56,8 @@ const ShowCard = ({
             );
           })} */}
 
+          {/* Why can't it read map? */}
+          
           <span className='likeBlock'>
             <p className='likeButton' onClick={() => addLike(doc ? doc : null)}>
               <span><img src='/images/heart.jpg' alt='like'/>Likes: {doc ? doc.likes : null}</span>
