@@ -27,23 +27,37 @@ const ShowCard = ({
     getNote(id);
   }, []);
 
+  console.log(deleteNote)
   console.log(doc);
 
   return (
   <div className='showCardDiv'>
     <div className='test'>
-    <div className='data-card'>
+    <div className='data-card' style={{
+    display: 'flex',
+    justifyContent: 'center',
+    width: '500px',
+    marginLeft: '8.5rem',
+    marginTop: '5rem'
+}}>
         {/* Make the href the users profile --- Show route goes here*/}
         <div className='postBottom'>
 
         </div>
         <h4>{doc ? doc.owner : null}</h4>
         <p>
-          {' '}
+        {' '}
+          {/* {tags.map((value, index) => {
+            return (
+              <button className='tagButton' key={index}>
+                <div className='tagDiv'>{value} </div>
+              </button>
+            );
+          })} */}
 
           <span className='likeBlock'>
             <p className='likeButton' onClick={() => addLike(doc ? doc : null)}>
-              ⬆️ <span>Likes: {doc ? doc.likes : null}</span>
+              <span><img src='/images/heart.jpg' alt='like'/>Likes: {doc ? doc.likes : null}</span>
             </p>{' '}
           </span>
 

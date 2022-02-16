@@ -5,40 +5,60 @@
   justify-content: space-between;
   margin-top: 200px;
   margin-bottom: 200px;
+  
 }
 
 .postBottom {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .likeButton {
   transition: transform 0.2s;
+  
 }
 
 .likeButton:hover {
   transform: scale(1.5);
+  
 }
 
 .likeBlock {
   display: flex;
   flex-direction: row;
   z-index: +100;
+  
 }
 
 
 .cardDateDiv{
   margin-top: 10px;
   color: #701555;
+  
 }
 
-.postCard{
-  margin-bottom: 5rem;
-}
+/* .postCard{
+
+} */
 
 
 .showCardDiv{
     display: flex;
     width:600px;
     margin: 0 auto;
+}
+
+
+.tagButton{
+  background-color: #701555;
+  border: none;
+  color: whitesmoke;
+  height: 30px;
+  font-family: Roboto Mono;
+  font-weight: bold;
+}
+
+.tagDiv{
+
 }
