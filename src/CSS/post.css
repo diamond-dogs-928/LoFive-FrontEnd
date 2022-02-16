@@ -24,3 +24,9 @@
   display: flex;
   flex-direction: row;
 }
+
+
+.cardDateDiv{
+  margin-top: 10px;
+  color: #701555;
+}

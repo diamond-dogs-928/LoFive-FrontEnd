@@ -54,6 +54,11 @@
   background-color: #1f2124;
   outline: none;
   font-family: Roboto Mono;
+  border: 2px #1f2124 solid;
+}
+
+#SearchBox:hover {
+  border: 2px whitesmoke solid;
 }
 
 input::placeholder {
@@ -64,6 +69,7 @@ textarea:focus,
 input:focus {
   color: #606a71;
   font-weight: bold;
+  border: 2px whitesmoke solid;
 }
 /*///////////////////////////////////////////////////*/
 
