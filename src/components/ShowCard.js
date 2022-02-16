@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import '../CSS/post.css';
 
 const ShowCard = ({
@@ -40,22 +40,27 @@ const ShowCard = ({
     marginLeft: '8.5rem',
     marginTop: '5rem'
 }}>
-    <h4>{note}</h4>
+    {/* <h4>{note}</h4> */}
+    <h4>{doc ? doc.owner : null}</h4>
+    {/* <h4>{doc ? doc.post : null}</h4> */}
         {/* Make the href the users profile --- Show route goes here*/}
         <div className='postBottom'>
         
         </div>
-        <h4>{doc ? doc.owner : null}</h4>
+        {/* <h4>{doc ? doc.owner : null}</h4> */}
+        <h4>{doc ? doc.post : null}</h4>
         <p>
         {' '}
-          {/* {tags.map((value, index) => {
+          {console.log(tags)}
+          { doc ? doc.tags.map((value, index) => {
+            console.log(tags);
             return (
               <button className='tagButton' key={index}>
                 <div className='tagDiv'>{value} </div>
               </button>
             );
-          })} */}
-
+          }) : null}
+          {/* not sure why below?  mine is mapping fine? */}
           {/* Why can't it read map? */}
           
           <span className='likeBlock'>
