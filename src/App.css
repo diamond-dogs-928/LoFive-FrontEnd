@@ -47,13 +47,6 @@
 }
 
 .col-6 {
-  width: 70%;
-}
-
-.col-3 {
-  width: 10%;
-}
-.col-6 {
   width: 60%;
   padding-right: 6rem;
 }
@@ -62,21 +55,4 @@
   width: 20%;
 }
 
-.row {
-  display: flex;
-}
-
-.col-2 {
-  width: 20%;
-  display: flex;
-}
-
-.col-6 {
-  width: 60%;
-  padding-right: 6rem;
-}
-
-.col-3 {
-  width: 20%;
-}
 

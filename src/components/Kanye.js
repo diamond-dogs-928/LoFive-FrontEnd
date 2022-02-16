@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../CSS/sideBar.css';
 
 const Kanye = () => {
   const [quote, setQuote] = useState('');
@@ -14,7 +15,7 @@ const Kanye = () => {
     getKanye();
   }, []);
   return (
-    <div>
+    <div className='kanyeQuoteDiv'>
       <p>{quote.quote}</p>
       <p>-Kanye</p>
     </div>
