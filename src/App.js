@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
 import Navigation from './components/Navigation';
 import { Route, Routes } from 'react-router-dom';
+import ShowCard from './components/ShowCard';
 
 function App() {
   const [setPosts, posts] = useState([]);
@@ -24,8 +25,8 @@ function App() {
             <Route path='/signup' element={<SignUp />}></Route>
             <Route path='/' element={<UserLogin />}></Route>
             <Route path='/feed' element={<Feed />}></Route>
+            <Route path='/:id' element={<ShowCard />}></Route>
           </Routes>
-          {/* <Feed /> */}
         </div>
         <div className='col-3'>
           <Sidebar />

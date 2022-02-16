@@ -12,10 +12,9 @@ const Feed = () => {
   let getNotes = async () => {
     let data = await fetch('http://localhost:4000/notes');
     let json = await data.json();
-    if(json) {
+    if (json) {
       setNotes(json);
     }
-    //console.log(json);
   };
 
   // useEffect here to populate Notes/Posts section with Notes from backend on component mounting
@@ -24,14 +23,14 @@ const Feed = () => {
   }, []);
 
   let addNote = (note) => {
-    setNotes([ ...notes, note]);
+    setNotes([...notes, note]);
   };
 
   let addLike = async (note) => {
     //console.log(note)
     let data = await fetch('http://localhost:4000/notes/' + note._id, {
       method: 'PUT',
-      body: JSON.stringify({ likes: (note.likes + 1) }),
+      body: JSON.stringify({ likes: note.likes + 1 }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -62,45 +61,45 @@ const Feed = () => {
     if (json) {
       let data = notes.map((datum) => {
         if (datum._id === note._id) {
-          console.log('json: ' + json)
+          console.log('json: ' + json);
           return json;
         }
-        console.log('datum: ' + datum)
+        console.log('datum: ' + datum);
         return datum;
       });
       setNotes(data);
     }
-    console.log('delete function ran.')
-  }
-
+    console.log('delete function ran.');
+  };
 
   return (
     <div>
       <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>
-    <div className='postsContainer'>
-      <ul className='postUl'>
-        {notes.map((note) => {
-          return (
-            <li key={note._id} >
-              {/* { note.post } */}
-              <Post
-                post={note}
-                note={note.post}
-                name={note.owner}
-                likes={note.likes}
-                comments={note.comments}
-                tags={note.tags}
-                date={note.createdAt}
-                addLike={addLike}
-                deleteNote={deleteNote}
-              />
-            </li>
-          );
-        }).reverse()}
-      </ul>
-    </div>
+      <div className='postsContainer'>
+        <ul className='postUl'>
+          {notes
+            .map((note) => {
+              return (
+                <li key={note._id}>
+                  <Post
+                    post={note}
+                    note={note.post}
+                    name={note.owner}
+                    likes={note.likes}
+                    comments={note.comments}
+                    tags={note.tags}
+                    date={note.createdAt}
+                    addLike={addLike}
+                    deleteNote={deleteNote}
+                  />
+                </li>
+              );
+            })
+            .reverse()}
+        </ul>
+      </div>
     </div>
   );
 };
