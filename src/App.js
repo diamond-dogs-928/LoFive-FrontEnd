@@ -8,6 +8,7 @@ import TopBar from './components/TopBar';
 import Navigation from './components/Navigation';
 import { Route, Routes } from 'react-router-dom';
 import ShowCard from './components/ShowCard';
+import EditCard from './components/EditCard';
 
 function App() {
   const [setPosts, posts] = useState([]);
@@ -26,6 +27,7 @@ function App() {
             <Route path='/' element={<UserLogin />}></Route>
             <Route path='/feed' element={<Feed />}></Route>
             <Route path='/:id' element={<ShowCard />}></Route>
+            <Route path='/edit/:id' element={<EditCard />}></Route>
           </Routes>
         </div>
         <div className='col-3'>

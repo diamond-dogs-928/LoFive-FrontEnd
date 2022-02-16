@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../CSS/post.css';
 
 const ShowCard = ({
@@ -14,6 +15,31 @@ const ShowCard = ({
 }) => {
   const [doc, setdoc] = useState();
   const { id } = useParams();
+
+  // Testing if deletNote will work if I write the function in ShowCard.js
+  // let deleteNote = async (doc) => {
+  //   console.log(doc);
+  //   let data = await fetch('http://localhost:4000/notes/' + doc._id, {
+  //     method: 'DELETE',
+  //     body: null,
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  //   let json = await data.json();
+  //   if (json) {
+  //     let data = notes.map((datum) => {
+  //       if (datum._id === note._id) {
+  //         console.log('json: ' + json);
+  //         return json;
+  //       }
+  //       console.log('datum: ' + datum);
+  //       return datum;
+  //     });
+  //     setNotes(data);
+  //   }
+  //   console.log('delete function ran.');
+  // };
 
   let getNote = async (id) => {
     let data = await fetch('http://localhost:4000/notes/' + id);
@@ -40,23 +66,26 @@ const ShowCard = ({
     marginLeft: '8.5rem',
     marginTop: '5rem'
 }}>
-    <h4>{note}</h4>
+    {/* <h4>{note}</h4> */}
+    <h4>{doc ? doc.owner : null}</h4>
+    {/* <h4>{doc ? doc.post : null}</h4> */}
         {/* Make the href the users profile --- Show route goes here*/}
         <div className='postBottom'>
         
         </div>
-        <h4>{doc ? doc.owner : null}</h4>
+        {/* <h4>{doc ? doc.owner : null}</h4> */}
+        <h4>{doc ? doc.post : null}</h4>
         <p>
         {' '}
-          {/* {tags.map((value, index) => {
+          { doc ? doc.tags.map((value, index) => {
+
             return (
               <button className='tagButton' key={index}>
                 <div className='tagDiv'>{value} </div>
               </button>
             );
-          })} */}
-
-          {/* Why can't it read map? */}
+          }) : null}
+          {/* Why can't it read map? Edit - it can now :) - justin*/}
           
           <span className='likeBlock'>
             <p className='likeButton' onClick={() => addLike(doc ? doc : null)}>
@@ -68,6 +97,9 @@ const ShowCard = ({
 
 
         </p>
+        <Link
+          to={`/edit/${id}`}
+        >
         <span class='link-text'>
           Edit
           <svg
@@ -85,8 +117,9 @@ const ShowCard = ({
             />
           </svg>
         </span>
+        </Link>
         <span onClick={() => deleteNote(doc ? doc : null)} class='link-text'>
-          Delete
+          <button onClick={() => deleteNote(doc ? doc : null)}>Delete</button>
           <svg
             width='25'
             height='16'

@@ -60,6 +60,12 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
         
         <div className='cardDateDiv'>{date}</div>
         </Link>
+        <span className='likeBlock'>
+            <p className='likeButton' onClick={() => addLike(post)}>
+             <span> <img src='/images/heart.jpg' alt='like'/> Likes: {likes}</span>
+            </p>{' '}
+
+          </span>
     </div>
   </div>
   );
