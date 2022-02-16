@@ -24,7 +24,7 @@ const Feed = () => {
   }, []);
 
   let addNote = (note) => {
-    setNotes([...notes, note]);
+    setNotes([ ...notes, note]);
   };
 
   let addLike = async (note) => {
@@ -98,7 +98,7 @@ const Feed = () => {
               />
             </li>
           );
-        })}
+        }).reverse()}
       </ul>
     </div>
     </div>

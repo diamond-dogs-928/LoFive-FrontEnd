@@ -26,6 +26,13 @@
   margin-bottom: 10%;
 }
 
+.NavBarLi:hover{
+  color: whitesmoke;
+  cursor: default;
+}
+
+
+
 
 .NavBarLink{
   color: #696969;

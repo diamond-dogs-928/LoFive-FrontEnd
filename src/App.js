@@ -9,7 +9,7 @@ import Navigation from './components/Navigation';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [posts, setPosts] = useState([]);
+  const [setPosts, posts] = useState([]);
 
   return (
     <div className='bg-dark container-flex' id='backgroundColor'>
