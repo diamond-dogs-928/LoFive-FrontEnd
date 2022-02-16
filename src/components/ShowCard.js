@@ -19,14 +19,13 @@ const ShowCard = ({
     let data = await fetch('http://localhost:4000/notes/' + id);
     let json = await data.json();
     if (json) {
+      setdoc(json);
     }
   };
 
   useEffect(() => {
     getNote(id);
   }, []);
-
-  getNote(id);
 
   console.log(doc);
 
@@ -37,7 +36,7 @@ const ShowCard = ({
         <div className='postBottom'>
           {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
         </div>
-        <h4>{doc.owner}</h4>
+        <h4>{doc ? doc.owner : null}</h4>
         <p>
           {' '}
           {/* {tags.map((value, index) => {
@@ -49,8 +48,8 @@ const ShowCard = ({
           })} */}
           <span className='likeBlock'>
             {/* <p className="likeButton" onClick={() => addLike(note)}> */}
-            <p className='likeButton' onClick={() => addLike(doc)}>
-              ⬆️ <span>Likes: {likes}</span>
+            <p className='likeButton' onClick={() => addLike(doc ? doc : null)}>
+              ⬆️ <span>Likes: {doc ? doc.likes : null}</span>
             </p>{' '}
             {/* <p className="likeButton" onClick={() => addLike(note)}>
               <button onClick={() => addLike(note) }>⬆️</button><span>Likes: {likes}</span>
@@ -74,7 +73,7 @@ const ShowCard = ({
             />
           </svg>
         </span>
-        <span onClick={() => deleteNote(doc)} class='link-text'>
+        <span onClick={() => deleteNote(doc ? doc : null)} class='link-text'>
           Delete
           <svg
             width='25'
@@ -91,7 +90,7 @@ const ShowCard = ({
             />
           </svg>
         </span>
-        <div className='cardDateDiv'>{doc.date}</div>
+        <div className='cardDateDiv'>{doc ? doc.date : null}</div>
       </a>
     </div>
   );
