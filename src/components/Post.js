@@ -16,7 +16,8 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
   };
 
   return (
-    <div>
+  <div>
+    <div className='postCard'>
       <Link
         to={`/${post._id}`}
         post={post}
@@ -31,6 +32,8 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
         className='data-card'
         getNote={getNote}
       >
+     
+      
         {/* Make the href the users profile --- Show route goes here*/}
         <div className='postBottom'>
           {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
@@ -45,6 +48,7 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
               </button>
             );
           })}
+  
           <span className='likeBlock'>
             {/* <p className="likeButton" onClick={() => addLike(note)}> */}
             <p className='likeButton' onClick={() => addLike(post)}>
@@ -54,6 +58,8 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
               <button onClick={() => addLike(note) }>⬆️</button><span>Likes: {likes}</span>
             </p>{' '} */}
           </span>
+
+          
         </p>
         <span class='link-text'>
           Edit
@@ -90,52 +96,10 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
           </svg>
         </span>
         <div className='cardDateDiv'>{date}</div>
-      </Link>
+        </Link>
     </div>
+  </div>
   );
 };
 
 export default Post;
-
-// <div className="card bg-dark textmuted post">
-//   <h4 className="text-muted">Author: {name}</h4>
-//   <p className="text-muted">{note}</p>
-
-//   {tags.map((value, index) => {
-//     return (
-//       <button key={index}>
-//         <a href="#">{value}</a>
-//       </button>
-//     );
-//   })}
-
-//   {/* <p className='text-muted'>
-//   <button>
-//     <a href=''>tag</a>
-//   </button>{' '}
-//   <button>
-//     <a href=''>tag</a>
-//   </button>{' '}
-//   <button>
-//     <a href=''>tag</a>
-//   </button>{' '}
-//   <button>
-//     <a href=''>tag</a>
-//   </button>{' '}
-//   <button>
-//     <a href=''>tag</a>
-//   </button>{' '}
-//   <button>
-//     <a href=''>tag</a>
-//   </button>{' '}
-// </p> */}
-//   <div className="postBottom">
-//     {date}
-//     <span className="likeBlock">
-//       <p className="likeButton" onClick={() => addLike(note)}>
-//         ⬆️ <span>Likes: {likes}</span>
-//       </p>{' '}
-//     </span>
-//     {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
-//   </div>
-// </div>;

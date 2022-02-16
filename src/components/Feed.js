@@ -82,7 +82,7 @@ const Feed = () => {
           {notes
             .map((note) => {
               return (
-                <li key={note._id}>
+                <li key={note._id} className='postLi'>
                   <Post
                     post={note}
                     note={note.post}

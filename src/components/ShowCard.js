@@ -30,31 +30,26 @@ const ShowCard = ({
   console.log(doc);
 
   return (
-    <div>
-      <a href='' class='data-card'>
+  <div className='showCardDiv'>
+    <div className='test'>
+    <div className='data-card'>
         {/* Make the href the users profile --- Show route goes here*/}
         <div className='postBottom'>
-          {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
+
         </div>
         <h4>{doc ? doc.owner : null}</h4>
         <p>
           {' '}
-          {/* {tags.map((value, index) => {
-            return (
-              <button key={index}>
-                <a href='#'>{value}</a>
-              </button>
-            );
-          })} */}
+
           <span className='likeBlock'>
-            {/* <p className="likeButton" onClick={() => addLike(note)}> */}
             <p className='likeButton' onClick={() => addLike(doc ? doc : null)}>
               ⬆️ <span>Likes: {doc ? doc.likes : null}</span>
             </p>{' '}
-            {/* <p className="likeButton" onClick={() => addLike(note)}>
-              <button onClick={() => addLike(note) }>⬆️</button><span>Likes: {likes}</span>
-            </p>{' '} */}
           </span>
+
+
+
+
         </p>
         <span class='link-text'>
           Edit
@@ -91,8 +86,9 @@ const ShowCard = ({
           </svg>
         </span>
         <div className='cardDateDiv'>{doc ? doc.date : null}</div>
-      </a>
     </div>
+    </div>
+  </div>
   );
 };
 

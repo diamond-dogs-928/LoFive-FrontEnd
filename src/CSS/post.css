@@ -23,10 +23,22 @@
 .likeBlock {
   display: flex;
   flex-direction: row;
+  z-index: +100;
 }
 
 
 .cardDateDiv{
   margin-top: 10px;
   color: #701555;
+}
+
+.postCard{
+  margin-bottom: 5rem;
+}
+
+
+.showCardDiv{
+    display: flex;
+    width:600px;
+    margin: 0 auto;
 }
