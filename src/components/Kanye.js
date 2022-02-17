@@ -14,8 +14,9 @@ const Kanye = () => {
   useEffect(() => {
     getKanye();
   }, []);
+
   return (
-    <div className='kanyeQuoteDiv'>
+    <div className='kanyeQuoteDiv' style={{ width: '100%' }}>
       <p>{quote.quote}</p>
       <p>-Kanye</p>
     </div>

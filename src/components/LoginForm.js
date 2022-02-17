@@ -18,21 +18,21 @@ function LoginForm() {
   // Note that we need to use `htmlFor` instead of `for` in JSX
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
+      <label htmlFor='username'>Username:</label>
       <input
-        id="username"
-        type="text"
+        id='username'
+        type='text'
         onChange={handleChange}
         value={formState.username}
       />
-      <label htmlFor="password">Password:</label>
+      <label htmlFor='password'>Password:</label>
       <input
-        id="password"
-        type="password"
+        id='password'
+        type='password'
         onChange={handleChange}
         value={formState.password}
       />
-      <button type="submit">Login</button>
+      <button type='submit'>Login</button>
     </form>
   );
 }

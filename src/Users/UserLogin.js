@@ -15,7 +15,8 @@ function UserLogin() {
     console.log('login clicked');
     const options = {
       method: 'POST',
-      username: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({
         username: formState.username,
         password: formState.password,
