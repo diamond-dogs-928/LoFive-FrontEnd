@@ -3,16 +3,9 @@ import { Link, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FormGroup } from 'react-bootstrap';
 import '../CSS/users.css';
-// function SignUp() {
-//   const initialState = {
-//     username: '',
-//     password: '',
-//     confirmPassword: '',
-//     valid: '',
-//   };
-//   const [formState, setFormState] = useState(initialState);
-//   const [message, setMessage] = useState('');
+
 function SignUp() {
+  const navigate = useNavigate();
   const [passMatch, setPassMatch] = useState(false);
   const initialState = {
     email: '',
@@ -25,12 +18,13 @@ function SignUp() {
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
 
-  //
+  // post a new user
   let getUser = () => {
     console.log('getUser Running Now');
     const requestData = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({
         email: formState.email,
         username: formState.username,
@@ -45,7 +39,7 @@ function SignUp() {
         setFormState(parsedData);
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
       });
   };
   // useEffect(() => {
