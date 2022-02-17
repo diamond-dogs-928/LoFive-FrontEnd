@@ -4,6 +4,8 @@ import CreatePost from './CreatePost';
 import '../CSS/feed.css';
 import '../CSS/card.css';
 import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import ShowCard from './ShowCard';
 
 const Feed = () => {
   const [notes, setNotes] = useState([]);
@@ -74,15 +76,15 @@ const Feed = () => {
 
   return (
     <div>
-      <div id='createPostDiv'>
+      <div id="createPostDiv">
         <CreatePost addNote={addNote} />
       </div>
-      <div className='postsContainer'>
-        <ul className='postUl'>
+      <div className="postsContainer">
+        <ul className="postUl">
           {notes
             .map((note) => {
               return (
-                <li key={note._id} className='postLi'>
+                <li key={note._id} className="postLi">
                   <Post
                     post={note}
                     note={note.post}
@@ -100,6 +102,11 @@ const Feed = () => {
             .reverse()}
         </ul>
       </div>
+      <Routes>
+        <Route element={<ShowCard addLike={addLike} deleteNote={deleteNote}/>}>
+          {' '}
+        </Route>
+      </Routes>
     </div>
   );
 };
