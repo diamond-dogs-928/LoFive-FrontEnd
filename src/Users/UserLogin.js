@@ -12,6 +12,7 @@ function UserLogin() {
   const [userToLogin, setUserToLogin] = useState();
 
   const login = () => {
+    console.log('login clicked');
     const options = {
       method: 'POST',
       username: { 'content-type': 'application/json' },
@@ -79,8 +80,8 @@ function UserLogin() {
           {/* <button type="submit">login</button> */}
         </Link>
 
-        <Link to='/signup'>
-          <div class='btn_2'>
+        <div class='btn_2' onClick={login}>
+          <Link to='/signup'>
             <button class='btn block-cube block-cube-hover' type='button'>
               <div class='bg-top'>
                 <div class='bg-inner'></div>
@@ -93,9 +94,9 @@ function UserLogin() {
               </div>
               <div class='text'>Register</div>
             </button>
-            <div class='credits'></div>
-          </div>
-        </Link>
+          </Link>
+          <div class='credits'></div>
+        </div>
       </form>
     </div>
   );

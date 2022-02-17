@@ -172,23 +172,23 @@ function SignUp() {
             </div>
           </Link>
         ) : (
-          <Link to='/login'>
-            <div class='btn_2'>
-              <button class='btn block-cube block-cube-hover' type='button'>
-                <div class='bg-top'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='bg-right'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='bg'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='text'>passwords must match</div>
-              </button>
-              <div class='credits'></div>
-            </div>
-          </Link>
+          // <Link to='/login'>
+          <div class='btn_2'>
+            <button class='btn block-cube block-cube-hover' type='button'>
+              <div class='bg-top'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='bg-right'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='bg'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='text'>passwords must match</div>
+            </button>
+            <div class='credits'></div>
+          </div>
+          // </Link>
         )}
         <p style={{ color: 'white' }}>{message}</p>
       </form>
