@@ -41,7 +41,6 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
       <div className='postCard'>
         <Link to={`/${post._id}`} addLike={addLike}>
           <p style={{ marginTop: '0' }}>View Post</p>
-          {/* Make the href the users profile --- Show route goes here*/}
           <div className='postBottom'>
             {/* Date &amp; Time <span><button onClick={ incrementLikes }>⬆️</button> Likes: {likes}</span> */}
           </div>
@@ -70,7 +69,7 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
             <span>
               {' '}
               <span className='heartEmoji'>♡</span> Likes: {likes}{' '}
-              <span className='heartEmoji'>♡</span>{' '}
+              <span className='heartEmoji'>{/* ♡ */}</span>{' '}
             </span>
           </p>{' '}
         </span>

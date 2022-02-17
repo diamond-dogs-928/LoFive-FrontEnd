@@ -1,9 +1,10 @@
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import SignUp from './UserSignup';
 import '../CSS/users.css';
 
 function UserLogin() {
+  const navigate = useNavigate();
   const initialState = useState({
     username: '',
     password: '',
@@ -11,6 +12,7 @@ function UserLogin() {
   const [formState, setFormState] = useState(initialState);
   const [userToLogin, setUserToLogin] = useState();
 
+  // post and existing to login
   const login = () => {
     console.log('login clicked');
     const options = {
@@ -27,14 +29,34 @@ function UserLogin() {
       .then((parsedData) => {
         console.log(parsedData);
         setUserToLogin(parsedData);
+      })
+      .catch((err) => {
+        console.log(err);
       });
+  };
+
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    login();
   };
 
   return (
     <div className='UserLogin'>
       <form onSubmit={login} className='form'>
         <div class='control block-cube block-input'>
-          <input name='username' type='text' placeholder='Username' />
+          <input
+            name='username'
+            type='text'
+            placeholder='Username'
+            value={formState.username}
+            onChange={handleChange}
+          />
           <div class='bg-top'>
             <div class='bg-inner'></div>
           </div>
@@ -50,7 +72,13 @@ function UserLogin() {
         {/* <input type='text' placeholder='username'></input> */}
 
         <div class='control block-cube block-input'>
-          <input name='password' type='password' placeholder='Password' />
+          <input
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={formState.password}
+            onChange={handleChange}
+          />
           <div class='bg-top'>
             <div class='bg-inner'></div>
           </div>
@@ -62,9 +90,26 @@ function UserLogin() {
           </div>
         </div>
 
-        {/* OLD password BLOCK */}
-        {/* <input type="password" placeholder="password"></input> */}
-        <Link to='/feed'>
+        {/* LOGIN BUTTON */}
+        <button
+          class='btn block-cube block-cube-hover'
+          type='button'
+          onClick={login}
+        >
+          <div class='bg-top'>
+            <div class='bg-inner'></div>
+          </div>
+          <div class='bg-right'>
+            <div class='bg-inner'></div>
+          </div>
+          <div class='bg'>
+            <div class='bg-inner'></div>
+          </div>
+          <div class='text'>Log In</div>
+        </button>
+        <div class='credits'></div>
+
+        <div class='btn_2'>
           <button class='btn block-cube block-cube-hover' type='button'>
             <div class='bg-top'>
               <div class='bg-inner'></div>
@@ -75,27 +120,10 @@ function UserLogin() {
             <div class='bg'>
               <div class='bg-inner'></div>
             </div>
-            <div class='text'>Log In</div>
-          </button>
-          <div class='credits'></div>
-          {/* <button type="submit">login</button> */}
-        </Link>
-
-        <div class='btn_2' onClick={login}>
-          <Link to='/signup'>
-            <button class='btn block-cube block-cube-hover' type='button'>
-              <div class='bg-top'>
-                <div class='bg-inner'></div>
-              </div>
-              <div class='bg-right'>
-                <div class='bg-inner'></div>
-              </div>
-              <div class='bg'>
-                <div class='bg-inner'></div>
-              </div>
+            <Link to='/signup'>
               <div class='text'>Register</div>
-            </button>
-          </Link>
+            </Link>
+          </button>
           <div class='credits'></div>
         </div>
       </form>

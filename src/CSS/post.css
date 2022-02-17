@@ -5,52 +5,43 @@
   justify-content: space-between;
   margin-top: 200px;
   margin-bottom: 200px;
-  
 }
 
 .postBottom {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .likeButton {
   transition: transform 0.2s;
-  
 }
 
 .likeButton:hover {
   transform: scale(1.5);
-  
 }
 
 .likeBlock {
   display: flex;
   flex-direction: row;
   z-index: +100;
-  
 }
 
-
-.cardDateDiv{
+.cardDateDiv {
   margin-top: 10px;
   color: #701555;
-  
 }
 
 /* .postCard{
 
 } */
 
-
-.showCardDiv{
-    display: flex;
-    width:600px;
-    margin: 0 auto;
+.showCardDiv {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
 }
 
-
-.tagButton{
+.tagButton {
   background-color: #701555;
   border: none;
   color: whitesmoke;
@@ -60,9 +51,9 @@
   margin-bottom: 3px;
 }
 
-.buttonTagDiv{
+.buttonTagDiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -82,6 +73,10 @@
   width: 20px;
 } */
 
-.heartEmoji{
-font-size: 30px;
+.heartEmoji {
+  font-size: 30px;
+}
+
+.heartEmoji:hover {
+  cursor: pointer;
 }
