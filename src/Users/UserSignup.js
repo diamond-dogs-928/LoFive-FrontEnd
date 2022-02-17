@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FormGroup } from 'react-bootstrap';
 import '../CSS/users.css';
@@ -13,16 +13,21 @@ import '../CSS/users.css';
 //   const [formState, setFormState] = useState(initialState);
 //   const [message, setMessage] = useState('');
 function SignUp() {
+  const [passMatch, setPassMatch] = useState(false);
   const initialState = {
     email: '',
     username: '',
     password: '',
     verifyPassword: '',
-    valid: null,
   };
+
+  //
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
+
+  //
   let getUser = () => {
+    console.log('getUser Running Now');
     const requestData = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -46,26 +51,35 @@ function SignUp() {
   // useEffect(() => {
   //   getUser();
   // }, []);
+
+  //
   const handleChange = (e) => {
     setFormState({
       ...formState,
       [e.target.id]: e.target.value,
     });
   };
+
+  //
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    console.log('handle submit is called here');
+    e.preventDefault();
     if (formState.password === formState.verifyPassword) {
-      formState.valid = true;
+      setFormState({ ...formState, valid: true });
+      // ^^^^ move this out of formState and into passMatch
+      setPassMatch(true);
       setMessage(`welcome ${formState.username}`);
       console.log(message);
       getUser();
     } else {
-      formState.valid = false;
+      setPassMatch(false);
       setMessage(`passwords do not match`);
       console.log(message);
     }
     setFormState(initialState);
   };
+
+  //
   return (
     <div className='form'>
       <h1>Sign Up</h1>
@@ -154,41 +168,49 @@ function SignUp() {
         <label htmlFor='confirmPassword'></label>
 
         {formState.password === formState.verifyPassword ? (
-          <Link to='/feed'>
-            <div class='btn_2'>
-              <button class='btn block-cube block-cube-hover' type='button'>
-                <div class='bg-top'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='bg-right'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='bg'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='text'>Register</div>
-              </button>
-              <div class='credits'></div>
-            </div>
-          </Link>
+          // <Link to='/feed'>
+          <div class='btn_2'>
+            <button
+              class='btn block-cube block-cube-hover'
+              type='button'
+              onClick={handleSubmit}
+            >
+              <div class='bg-top'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='bg-right'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='bg'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='text'>Register</div>
+            </button>
+            <div class='credits'></div>
+          </div>
         ) : (
-          <Link to='/login'>
-            <div class='btn_2'>
-              <button class='btn block-cube block-cube-hover' type='button'>
-                <div class='bg-top'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='bg-right'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='bg'>
-                  <div class='bg-inner'></div>
-                </div>
-                <div class='text'>passwords must match</div>
-              </button>
-              <div class='credits'></div>
-            </div>
-          </Link>
+          // </Link>
+          // <Link to='/login'>
+          <div class='btn_2'>
+            <button
+              class='btn block-cube block-cube-hover'
+              type='button'
+              onClick={handleSubmit}
+            >
+              <div class='bg-top'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='bg-right'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='bg'>
+                <div class='bg-inner'></div>
+              </div>
+              <div class='text'>passwords must match</div>
+            </button>
+            <div class='credits'></div>
+          </div>
+          // </Link>
         )}
         <p style={{ color: 'white' }}>{message}</p>
       </form>

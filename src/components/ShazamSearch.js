@@ -1,29 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import '../CSS/dog.css';
 
 const ShazamSearch = () => {
-  const [shazamResult, setShazamResult] = useState([]);
+  const [imgUrl, setImgUrl] = useState();
 
-  fetch('https://shazam.p.rapidapi.com/auto-complete?term=tool&locale=en-US', {
-    method: 'GET',
-    headers: {
-      'x-rapidapi-host': 'shazam.p.rapidapi.com',
-      'x-rapidapi-key': 'de91e903e1msh0087fa72dd2b24fp138b95jsnf50fd45612e1',
-    },
-  })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  let getImgUrl = async () => {
+    let data = await fetch('https://dog.ceo/api/breeds/image/random');
+    let json = await data.json();
+    setImgUrl(json.message);
+    console.log(json.message);
+  };
+
+  useEffect(() => {
+    getImgUrl();
+  }, []);
 
   return (
     <div>
-      {' '}
-      <form className='CreatePost' action=''>
-        <input id='SearchBox' type='text' placeholder='Search Shazam' />
-        <input type='button' value='submit' />
-      </form>
+      <img src={imgUrl} alt='' className='dogImage' />
     </div>
   );
 };
