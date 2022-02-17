@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../CSS/post.css';
 
+
+
+
+
 const ShowCard = ({
   post,
   note,
@@ -41,6 +45,31 @@ const ShowCard = ({
   //   console.log('delete function ran.');
   // };
 
+
+  // let addLike = async (note) => {
+  //   //console.log(note)
+  //   let data = await fetch('http://localhost:4000/notes/' + note._id, {
+  //     method: 'PUT',
+  //     body: JSON.stringify({ likes: note.likes + 1 }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  //   let json = await data.json();
+  //   if (json) {
+  //     let data = notes.map((datum) => {
+  //       if (datum._id === note._id) {
+  //         return json;
+  //       }
+  //       return datum;
+  //     });
+  //     setNotes(data);
+  //   }
+  //   //console.log('add like function ran.')
+  // };
+
+
+
   let getNote = async (id) => {
     let data = await fetch('http://localhost:4000/notes/' + id);
     let json = await data.json();
@@ -53,7 +82,7 @@ const ShowCard = ({
     getNote(id);
   }, []);
 
-  console.log(deleteNote)
+  console.log(addLike)
   console.log(doc);
 
   return (
@@ -76,20 +105,23 @@ const ShowCard = ({
         {/* <h4>{doc ? doc.owner : null}</h4> */}
         <h4>{doc ? doc.post : null}</h4>
         <p>
+        <div className='buttonTagDiv'>
         {' '}
           { doc ? doc.tags.map((value, index) => {
-
+            
             return (
+            
               <button className='tagButton' key={index}>
                 <div className='tagDiv'>{value} </div>
               </button>
+            
             );
           }) : null}
           {/* Why can't it read map? Edit - it can now :) - justin*/}
-          
+          </div>
           <span className='likeBlock'>
             <p className='likeButton' onClick={() => addLike(doc ? doc : null)}>
-              <span><img src='/images/heart.jpg' alt='like'/>Likes: {doc ? doc.likes : null}</span>
+              <span> <span className='heartEmoji'>♡</span> Likes: {doc ? doc.likes : null} <span className='heartEmoji'>♡</span> </span>
             </p>{' '}
           </span>
 
@@ -99,6 +131,7 @@ const ShowCard = ({
         </p>
         <Link
           to={`/edit/${id}`}
+
         >
         <span class='link-text'>
           Edit
@@ -118,8 +151,9 @@ const ShowCard = ({
           </svg>
         </span>
         </Link>
+        
         <span onClick={() => deleteNote(doc ? doc : null)} class='link-text'>
-          <button onClick={() => deleteNote(doc ? doc : null)}>Delete</button>
+          <button className='deleteButton' onClick={() => deleteNote(doc ? doc : null)}>Delete</button>
           <svg
             width='25'
             height='16'
