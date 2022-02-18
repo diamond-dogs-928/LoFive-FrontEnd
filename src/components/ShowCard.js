@@ -102,7 +102,7 @@ const ShowCard = ({
                 <span>
                   {' '}
                   <span className='heartEmoji'>♡</span> Likes:{' '}
-                  {doc ? doc.likes : null} <span className='heartEmoji'>♡</span>{' '}
+                  {doc ? doc.likes : null}{' '}
                 </span>
               </p>{' '}
             </span>

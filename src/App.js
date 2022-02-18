@@ -14,7 +14,7 @@ function App() {
   const [setPosts, posts] = useState([]);
 
   return (
-    <div className='bg-dark container-flex' id='backgroundColor'>
+    <div className='bg-dark container-flex block' id='backgroundColor'>
       <TopBar />
       <div className='row'>
         <div className='col-2'>

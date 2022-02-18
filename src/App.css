@@ -4,6 +4,15 @@
   text-decoration: none;
 }
 
+
+
+@media only screen and (max-device-width: 480px) {
+  .background{
+    display: inline-block;
+  }
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
