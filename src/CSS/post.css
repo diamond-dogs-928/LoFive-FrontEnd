@@ -81,3 +81,12 @@
 .heartEmoji:hover {
   cursor: pointer;
 }
+
+@media (max-width: 800px) {
+  .main-post-return-div,
+  .postCard,
+  .postBottom,
+  .data-card {
+    width: 100%;
+  }
+}

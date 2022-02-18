@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import '../CSS/topBar.css';
 
 import logo from '../images/logo.png';
+import name from '../images/name.png';
 
 const TopBar = () => {
   const [today, setToday] = useState();
@@ -18,18 +19,17 @@ const TopBar = () => {
   }).format(Date.now());
 
   return (
-    <div className='topBarContainer border'>
+    <div className='topBarContainer'>
+      <img src={name} alt='' className='name-logo' />
       <div className='topbarItems border' id='topBarText'>
         <img
           className='topBarItems topBarLogo border'
           src='/images/Logo_Solo.jpg'
           alt='Logo'
         />
-        <div className='border'>
-          <h3 className='border' id='topBarUsernameText'>
-            Christian410
-          </h3>
-        </div>
+        <h3 className='border' id='topBarUsernameText'>
+          Christian410
+        </h3>
         <div id='topBarDateTextContainer' className='border'>
           <h3 className='' id='topBarDateText'>
             {tester}

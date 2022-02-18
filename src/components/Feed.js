@@ -75,16 +75,16 @@ const Feed = () => {
   };
 
   return (
-    <div>
-      <div id="createPostDiv">
+    <div className='feed-column'>
+      <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>
-      <div className="postsContainer">
-        <ul className="postUl">
+      <div className='postsContainer'>
+        <ul className='postUl'>
           {notes
             .map((note) => {
               return (
-                <li key={note._id} className="postLi">
+                <li key={note._id} className='postLi'>
                   <Post
                     post={note}
                     note={note.post}
@@ -103,7 +103,7 @@ const Feed = () => {
         </ul>
       </div>
       <Routes>
-        <Route element={<ShowCard addLike={addLike} deleteNote={deleteNote}/>}>
+        <Route element={<ShowCard addLike={addLike} deleteNote={deleteNote} />}>
           {' '}
         </Route>
       </Routes>

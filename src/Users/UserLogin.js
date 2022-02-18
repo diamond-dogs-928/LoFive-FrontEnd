@@ -13,7 +13,7 @@ function UserLogin() {
   const [formState, setFormState] = useState(initialState);
   const [userToLogin, setUserToLogin] = useState();
   const [message, setMessage] = useState('');
-  const [loginMsg, setLoginMsg] = useState;
+  const [loginMsg, setLoginMsg] = useState();
 
   // post and existing to login
   const login = async () => {

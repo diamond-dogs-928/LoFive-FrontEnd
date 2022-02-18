@@ -4,16 +4,16 @@ import { Route, Link } from 'react-router-dom';
 const Navigation = () => {
   const logOut = () => {
     console.log('login is running');
-    // const options = {
-    //   method: 'GET',
-    //   headers: { 'content-type': 'application/json' },
-    //   credentials: 'include',
-    //   body: null
-    // };
-    fetch('http://localhost:4000/session/logout');
+    const options = {
+      method: 'GET',
+      headers: { 'content-type': 'application/json' },
+      credentials: 'include',
+      body: null,
+    };
+    fetch('http://localhost:4000/session/logout', options);
     console
       .log('logout is happening')
-      // .then((data) => data.json())
+      .then((data) => data.json())
       .then(() => {
         console.log('logged out');
       })
@@ -29,25 +29,26 @@ const Navigation = () => {
 
   return (
     <div className='LiAndBar'>
-      <div id='navBar'>
-        {/* ROUTES NEED TO BE PUT IN HERE INSTEAD OF THE TEXT */}
-        <ul className='NavBarUl'>
-          <Link to='/feed' className='NavBarLink'>
-            <li className='NavBarLi effect-underline'>Feed</li>
-          </Link>
-
+      <ul className='NavBarUl'>
+        <Link to='/feed'>
+          <li className='NavBarLi'>Feed</li>
+        </Link>
+        <Link to='/feed'>
           <li className='NavBarLi'>Profile</li>
+        </Link>
+        <Link to='/feed'>
           <li className='NavBarLi'>Friends</li>
+        </Link>
+        <Link to='/feed'>
           <li className='NavBarLi'>Messages</li>
-
-          {/* <Link to='/' className='NavBarLink'> */}
+        </Link>
+        <Link to='/feed'>
           <li className='NavBarLi effect-underline' onClick={handleSubmit}>
             {' '}
             Logout
           </li>
-          {/* </Link> */}
-        </ul>
-      </div>
+        </Link>
+      </ul>
     </div>
   );
 };

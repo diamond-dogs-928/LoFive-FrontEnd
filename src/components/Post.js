@@ -26,6 +26,7 @@ const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
 
   return (
     <div
+      className='main-post-return-div'
       post={post}
       note={note}
       name={name}
