@@ -35,6 +35,10 @@
   justify-content: center;
 }
 
+.name-logo {
+  display: none;
+}
+
 /*///////////////////////////////////////////////////*/
 
 /*Search Box*/
@@ -85,8 +89,6 @@ input:focus {
   object-fit: cover;
 }
 
-
-
 /*Spin Effect*/
 @media (prefers-reduced-motion: no-preference) {
   .topBarLogo {
@@ -102,7 +104,6 @@ input:focus {
     transform: rotate(360deg);
   }
 }
-
 
 /*///////////////////////////////////////////////////*/
 
@@ -136,3 +137,30 @@ input:focus {
   border: blue solid 1px;
 } */
 /*///////////////////////////////////////////////////*/
+
+@media (max-width: 800px) {
+  .topBarContainer,
+  #topBarDateTextContainer,
+  .topbarItems,
+  #topBarDateText,
+  #topBarText {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: flex-start;
+    /* flex-basis: auto; */
+  }
+  #topBarDateText {
+    display: none;
+  }
+  .topBarLogo {
+    display: none;
+  }
+  .border {
+    display: none;
+  }
+  .name-logo {
+    display: block;
+    width: 100%;
+  }
+}

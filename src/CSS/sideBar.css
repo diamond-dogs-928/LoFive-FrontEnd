@@ -2,6 +2,12 @@
   margin-right: 4%;
 }
 
-.kanyeQuoteDiv{
+.kanyeQuoteDiv {
   margin: 3%;
+}
+
+@media (max-width: 880px) {
+  .sidebar {
+    display: none;
+  }
 }

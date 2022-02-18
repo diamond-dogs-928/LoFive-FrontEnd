@@ -20,7 +20,9 @@ input:focus {
   font-weight: bold;
 }
 
-input, select, textarea{
+input,
+select,
+textarea {
   color: #606a71;
   font-weight: bold;
 }
@@ -31,13 +33,32 @@ input, select, textarea{
   padding-left: 0;
 }
 
-
 .postsContainer {
   display: flex;
   justify-content: center;
   margin-top: 60px;
 }
 
-.postLi{
+.postLi {
   margin-bottom: 5rem;
+}
+
+@media (max-width: 800px) {
+  .feed-column {
+    width: 80vw;
+  }
+  #createPostDiv,
+  #createPost {
+    width: 80vw;
+    max-height: 500px;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 3%;
+  }
+  .postUl,
+  .postLi,
+  .postsContainer {
+    width: 90vw;
+    margin-top: 3%;
+  }
 }

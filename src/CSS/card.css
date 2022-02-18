@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
 * {
   box-sizing: border-box;
@@ -8,7 +7,7 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: #E7F3F1;
+  background: #e7f3f1;
   border: 0.75em solid white;
   padding: 2em;
   font-family: 'Open Sans', sans-serif;
@@ -27,7 +26,7 @@
   transition: transform 0.45s ease, background 0.45s ease;
 }
 .data-card h3 {
-  color: #2E3C40;
+  color: #2e3c40;
   font-size: 3.5em;
   font-weight: 600;
   line-height: 1;
@@ -48,7 +47,7 @@
 }
 .data-card p {
   opacity: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 600;
   line-height: 1.8;
   transform: translateY(-1em);
@@ -66,7 +65,7 @@
 }
 
 .data-card .link-text:hover {
-color: #701555;
+  color: #701555;
 }
 
 .data-card .link-text svg {
@@ -81,18 +80,18 @@ color: #701555;
   transform: scale(1.02);
 }
 .data-card:hover h3 {
-  color: #FFFFFF;
+  color: #ffffff;
   border-bottom-color: #627084;
 }
 .data-card:hover h4 {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .data-card:hover p {
   opacity: 1;
   transform: none;
 }
 .data-card:hover .link-text {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .data-card:hover .link-text svg {
   animation: point 1.25s infinite alternate;
@@ -109,41 +108,11 @@ color: #701555;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (800px) {
+  .data-card {
+    width: 100%;
+  }
+}
 
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
@@ -223,28 +192,6 @@ body{
     color: rgba(59, 59, 59, 0.514);
     text-shadow: inset 0 0 10px rgba(255, 53, 53, .342);
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
 
