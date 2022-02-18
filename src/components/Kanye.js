@@ -8,7 +8,6 @@ const Kanye = () => {
     let data = await fetch('https://api.kanye.rest');
     let json = await data.json();
     setQuote(json);
-    console.log(json.quote);
   };
 
   useEffect(() => {
@@ -16,7 +15,7 @@ const Kanye = () => {
   }, []);
 
   return (
-    <div className='kanyeQuoteDiv' style={{ width: '100%' }}>
+    <div className='kanyeQuoteDiv'>
       <p>{quote.quote}</p>
       <p>-Kanye</p>
     </div>

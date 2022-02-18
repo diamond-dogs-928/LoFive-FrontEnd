@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { FormGroup } from 'react-bootstrap';
 import '../CSS/users.css';
 
 function SignUp() {
@@ -59,8 +58,7 @@ function SignUp() {
     console.log('handle submit is called here');
     e.preventDefault();
     if (formState.password === formState.verifyPassword) {
-      setFormState({ ...formState, valid: true });
-      // ^^^^ move this out of formState and into passMatch
+      setFormState({ ...formState });
       setPassMatch(true);
       setMessage(`welcome ${formState.username}`);
       console.log(message);
@@ -78,7 +76,7 @@ function SignUp() {
     <div className='form'>
       <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
-        <div class='control block-cube block-input'>
+        <div className='control block-cube block-input'>
           <input
             type='text'
             placeholder='Username'
@@ -86,76 +84,74 @@ function SignUp() {
             value={formState.username}
             onChange={handleChange}
           />
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
         </div>
 
-        <div class='control block-cube block-input'>
+        <div className='control block-cube block-input'>
           <input
             type='text'
             placeholder='Email'
+            name='email'
             id='email'
             value={formState.email}
             onChange={handleChange}
           />
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
         </div>
 
-        {/* Should this htmlFor label be for username? I think it is meant to be password */}
-        <label htmlFor='username'></label>
-
-        <label htmlFor='password'></label>
-
-        <div class='control block-cube block-input'>
+        <div className='control block-cube block-input'>
           <input
             type='password'
             placeholder='Password'
+            name='password'
             id='password'
             value={formState.password}
             onChange={handleChange}
           />
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
         </div>
 
-        <div class='control block-cube block-input'>
+        <div className='control block-cube block-input'>
           <input
             type='password'
             placeholder='Verify password'
+            name='verifyPassword'
             id='verifyPassword'
             value={formState.verifyPassword}
             onChange={handleChange}
           />
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
         </div>
 
@@ -163,46 +159,46 @@ function SignUp() {
 
         {formState.password === formState.verifyPassword ? (
           // <Link to='/feed'>
-          <div class='btn_2'>
+          <div className='btn_2'>
             <button
-              class='btn block-cube block-cube-hover'
+              className='btn block-cube block-cube-hover'
               type='button'
               onClick={handleSubmit}
             >
-              <div class='bg-top'>
-                <div class='bg-inner'></div>
+              <div className='bg-top'>
+                <div className='bg-inner'></div>
               </div>
-              <div class='bg-right'>
-                <div class='bg-inner'></div>
+              <div className='bg-right'>
+                <div className='bg-inner'></div>
               </div>
-              <div class='bg'>
-                <div class='bg-inner'></div>
+              <div className='bg'>
+                <div className='bg-inner'></div>
               </div>
-              <div class='text'>Register</div>
+              <div className='text'>Register</div>
             </button>
-            <div class='credits'></div>
+            <div className='credits'></div>
           </div>
         ) : (
           // </Link>
           // <Link to='/login'>
-          <div class='btn_2'>
+          <div className='btn_2'>
             <button
-              class='btn block-cube block-cube-hover'
+              className='btn block-cube block-cube-hover'
               type='button'
-              onClick={handleSubmit}
+              // onClick={handleSubmit}
             >
-              <div class='bg-top'>
-                <div class='bg-inner'></div>
+              <div className='bg-top'>
+                <div className='bg-inner'></div>
               </div>
-              <div class='bg-right'>
-                <div class='bg-inner'></div>
+              <div className='bg-right'>
+                <div className='bg-inner'></div>
               </div>
-              <div class='bg'>
-                <div class='bg-inner'></div>
+              <div className='bg'>
+                <div className='bg-inner'></div>
               </div>
-              <div class='text'>passwords must match</div>
+              <div className='text'>passwords must match</div>
             </button>
-            <div class='credits'></div>
+            <div className='credits'></div>
           </div>
           // </Link>
         )}

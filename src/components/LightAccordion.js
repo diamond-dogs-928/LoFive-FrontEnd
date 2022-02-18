@@ -14,7 +14,7 @@ const LightAccordion = () => (
           src='https://widget.deezer.com/widget/auto/playlist/1282495565'
           width='100%'
           height='300'
-          frameborder='0'
+          frameBorder='0'
           allowtransparency='true'
           allow='encrypted-media; clipboard-write'
         ></iframe>
