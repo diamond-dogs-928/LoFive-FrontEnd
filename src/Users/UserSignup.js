@@ -16,6 +16,7 @@ function SignUp() {
   //
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
   // post a new user
   let getUser = () => {
@@ -31,19 +32,20 @@ function SignUp() {
         verifyPassword: formState.verifyPassword,
       }),
     };
+
     fetch('http://localhost:4000/session/register', requestData)
       .then((data) => data.json())
       .then((parsedData) => {
         console.log(parsedData);
         setFormState(parsedData);
+        parsedData.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  // useEffect(() => {
-  //   getUser();
-  // }, []);
+
+  console.log(loggedIn);
 
   //
   const handleChange = (e) => {
@@ -63,6 +65,7 @@ function SignUp() {
       setMessage(`welcome ${formState.username}`);
       console.log(message);
       getUser();
+      loggedIn ? navigate('/feed') : console.log('not happening');
     } else {
       setPassMatch(false);
       setMessage(`passwords do not match`);
@@ -185,7 +188,9 @@ function SignUp() {
             <button
               className='btn block-cube block-cube-hover'
               type='button'
-              // onClick={handleSubmit}
+              onClick={() => {
+                loggedIn ? navigate('/feed') : console.log('not happening');
+              }}
             >
               <div className='bg-top'>
                 <div className='bg-inner'></div>

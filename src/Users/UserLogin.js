@@ -13,7 +13,7 @@ function UserLogin() {
   const [formState, setFormState] = useState(initialState);
   const [userToLogin, setUserToLogin] = useState();
   const [message, setMessage] = useState('');
-  const [loginMsg, setLoginMsg] = useState();
+  const [loggedIn, setLoggedIn] = useState(false);
 
   // post and existing to login
   const login = async () => {
@@ -32,6 +32,10 @@ function UserLogin() {
       const loginResponse = await fetch(url, options);
       const loginJson = await loginResponse.json();
       console.log(loginJson);
+      setUserToLogin(loginJson.user);
+      console.log(userToLogin.username);
+      setMessage(`Welcome to LoFive ${userToLogin.username}`);
+      loginJson.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
     } catch (error) {
       console.log(error);
     }
@@ -50,10 +54,13 @@ function UserLogin() {
     setFormState({ ...formState });
     login();
     setFormState(initialState);
+    loggedIn ? navigate('/feed') : console.log('not happening');
+    // setLoggedIn(false);
   };
 
   return (
     <div className='UserLogin'>
+      <p style={{ color: 'white' }}>{message}</p>
       <form onSubmit={handleSubmit} className='form'>
         <div className='control block-cube block-input'>
           <input
