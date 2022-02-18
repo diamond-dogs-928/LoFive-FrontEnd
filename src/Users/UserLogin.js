@@ -13,6 +13,7 @@ function UserLogin() {
   const [formState, setFormState] = useState(initialState);
   const [userToLogin, setUserToLogin] = useState();
   const [message, setMessage] = useState('');
+  const [loginMsg, setLoginMsg] = useState;
 
   // post and existing to login
   const login = async () => {
@@ -34,20 +35,6 @@ function UserLogin() {
     } catch (error) {
       console.log(error);
     }
-    // console.log(options);
-    // await fetch('http://localhost:4000/session/login', options)
-    // .then((data) => {
-    //   data.json();
-    //   console.log(data);
-    // })
-    // .then((parsedData) => {
-    //   // setMessage('welcome' + parsedData.username);
-    //   console.log(parsedData);
-    //   setUserToLogin(parsedData);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
   };
 
   const handleChange = (e) => {
