@@ -8,7 +8,6 @@ const ShazamSearch = () => {
     let data = await fetch('https://dog.ceo/api/breeds/image/random');
     let json = await data.json();
     setImgUrl(json.message);
-    console.log(json.message);
   };
 
   useEffect(() => {

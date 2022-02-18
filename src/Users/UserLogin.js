@@ -2,37 +2,52 @@ import { Route, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import SignUp from './UserSignup';
 import '../CSS/users.css';
+import { Next } from 'react-bootstrap/esm/PageItem';
 
 function UserLogin() {
   const navigate = useNavigate();
-  const initialState = useState({
+  const initialState = {
     username: '',
     password: '',
-  });
+  };
   const [formState, setFormState] = useState(initialState);
   const [userToLogin, setUserToLogin] = useState();
+  const [message, setMessage] = useState('');
 
   // post and existing to login
-  const login = () => {
-    console.log('login clicked');
-    const options = {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({
-        username: formState.username,
-        password: formState.password,
-      }),
-    };
-    fetch('http://localhost:4000/session/login', options)
-      .then((data) => data.json())
-      .then((parsedData) => {
-        console.log(parsedData);
-        setUserToLogin(parsedData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const login = async () => {
+    console.log('login is running');
+    try {
+      const options = {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify({
+          username: formState.username,
+          password: formState.password,
+        }),
+        headers: { 'content-type': 'application/json' },
+      };
+      const url = 'http://localhost:4000/session/login';
+      const loginResponse = await fetch(url, options);
+      const loginJson = await loginResponse.json();
+      console.log(loginJson);
+    } catch (error) {
+      console.log(error);
+    }
+    // console.log(options);
+    // await fetch('http://localhost:4000/session/login', options)
+    // .then((data) => {
+    //   data.json();
+    //   console.log(data);
+    // })
+    // .then((parsedData) => {
+    //   // setMessage('welcome' + parsedData.username);
+    //   console.log(parsedData);
+    //   setUserToLogin(parsedData);
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   };
 
   const handleChange = (e) => {
@@ -43,88 +58,91 @@ function UserLogin() {
   };
 
   const handleSubmit = (e) => {
+    console.log('handle submit is called');
+    e.preventDefault();
+    setFormState({ ...formState });
     login();
+    setFormState(initialState);
   };
 
   return (
     <div className='UserLogin'>
-      <form onSubmit={login} className='form'>
-        <div class='control block-cube block-input'>
+      <form onSubmit={handleSubmit} className='form'>
+        <div className='control block-cube block-input'>
           <input
             name='username'
             type='text'
+            id='username'
             placeholder='Username'
             value={formState.username}
             onChange={handleChange}
           />
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
         </div>
 
-        {/* OLD USER BLOCK */}
-        {/* <input type='text' placeholder='username'></input> */}
-
-        <div class='control block-cube block-input'>
+        <div className='control block-cube block-input'>
           <input
             name='password'
             type='password'
+            id='password'
             placeholder='Password'
             value={formState.password}
             onChange={handleChange}
           />
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
         </div>
 
         {/* LOGIN BUTTON */}
         <button
-          class='btn block-cube block-cube-hover'
+          className='btn block-cube block-cube-hover'
           type='button'
-          onClick={login}
+          onClick={handleSubmit}
         >
-          <div class='bg-top'>
-            <div class='bg-inner'></div>
+          <div className='bg-top'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg-right'>
-            <div class='bg-inner'></div>
+          <div className='bg-right'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='bg'>
-            <div class='bg-inner'></div>
+          <div className='bg'>
+            <div className='bg-inner'></div>
           </div>
-          <div class='text'>Log In</div>
+          <div className='text'>Log In</div>
         </button>
-        <div class='credits'></div>
+        <div className='credits'></div>
 
-        <div class='btn_2'>
-          <button class='btn block-cube block-cube-hover' type='button'>
-            <div class='bg-top'>
-              <div class='bg-inner'></div>
+        <div className='btn_2'>
+          <button className='btn block-cube block-cube-hover' type='button'>
+            <div className='bg-top'>
+              <div className='bg-inner'></div>
             </div>
-            <div class='bg-right'>
-              <div class='bg-inner'></div>
+            <div className='bg-right'>
+              <div className='bg-inner'></div>
             </div>
-            <div class='bg'>
-              <div class='bg-inner'></div>
+            <div className='bg'>
+              <div className='bg-inner'></div>
             </div>
             <Link to='/signup'>
-              <div class='text'>Register</div>
+              <div className='text'>Register</div>
             </Link>
           </button>
-          <div class='credits'></div>
+          <div className='credits'></div>
         </div>
       </form>
     </div>
