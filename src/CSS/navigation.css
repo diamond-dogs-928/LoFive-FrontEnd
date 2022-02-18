@@ -75,6 +75,10 @@ a.effect-underline:hover:after {
   -webkit-transform: translate(-50%,-50%);
 } */
 
+.disabled-link {
+  pointer-events: none;
+}
+
 @media (max-width: 800px) {
   .NavBarUl,
   .LiAndBar {

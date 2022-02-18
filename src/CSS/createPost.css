@@ -37,6 +37,8 @@
 /* Form */
 #createPost {
   /*Why won't the search bar center?*/
+  /* display: flex; */
+  /* flex-direction: row; */
   height: 2rem;
   font-size: 15px;
   background-color: #1f2124;
@@ -44,11 +46,19 @@
   font-family: Roboto Mono;
 }
 
+#createPost,
+#createPostDiv {
+  flex-direction: row;
+  /* gap: 20%; */
+  padding: 0;
+  margin: 0;
+}
+
 /* input */
 .createPostInput {
   margin-top: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
   background-color: #1f2124;
   outline: none;
   font-family: Roboto Mono;
@@ -171,7 +181,7 @@ input:focus {
   outline: 0;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   .button-56 {
     padding: 0px;
   }

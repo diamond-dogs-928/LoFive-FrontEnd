@@ -1,5 +1,6 @@
 #createPostDiv {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
 }
 
@@ -7,6 +8,7 @@
   color: #696969;
   margin-top: 2rem;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -20,7 +22,7 @@ input:focus {
   font-weight: bold;
 }
 
-input,
+/* input, */
 select,
 textarea {
   color: #606a71;

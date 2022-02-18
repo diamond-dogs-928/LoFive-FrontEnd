@@ -1,7 +1,10 @@
 import '../CSS/navigation.css';
 import { Route, Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Navigation = () => {
+  const [isActive, setIsActive] = useState(false);
+
   const logOut = () => {
     console.log('login is running');
     const options = {
@@ -42,7 +45,7 @@ const Navigation = () => {
         <Link to='/feed'>
           <li className='NavBarLi'>Messages</li>
         </Link>
-        <Link to='/feed'>
+        <Link to={isActive ? '/link-to-route' : '#'}>
           <li className='NavBarLi effect-underline' onClick={handleSubmit}>
             {' '}
             Logout
