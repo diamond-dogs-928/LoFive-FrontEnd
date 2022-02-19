@@ -61,6 +61,12 @@
   width: 20%;
 }
 
+.footer {
+  display: flex;
+  margin: auto;
+  width: 100%vw;
+}
+
 @media (max-width: 800px) {
   .body-container {
     width: 100vw;
