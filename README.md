@@ -16,7 +16,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -89,26 +88,24 @@ Features:
 - There is the ability to search LoFive's database for users and posts.
 - XXX.
 
-
-
-
-
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With:
 
 **Front End:**
+
 - HTML
 - CSS
 - React.js
 
 **Back End:**
+
 - MongoDB
 - Express
 - Mongoose
 
 **Packages and Libraries:**
+
 - Bootstrap
 - React-light-accordion
 - React-router-dom
@@ -144,14 +141,13 @@ This is an example of how to list things you need to use the software and how to
    git clone https://github.com/diamond-dogs-928/LoFive-BackEnd.git
    ```
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
-Our application is available on Desktop and Mobile devices. 
+Our application is available on Desktop and Mobile devices.
 
 ![Landing Page](./images/landingPage.png)
 ![Mobile View](./images/mobileView.png)
@@ -175,12 +171,10 @@ _For more examples, please refer to the [Documentation](https://github.com/diamo
 - [x] Comment on a user's post.
 - [x] Like a user's post.
   - [] Share a user's post
- 
 
 See the [open issues](https://github.com/diamond-dogs-928/LoFive-FrontEnd/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 
@@ -195,7 +189,6 @@ Nazar Basistyy -[GitHub](https://github.com/nazar301) - nazar.basistyy@gmail.com
 Christian Fortin -[GitHub](https://github.com/JustinDHerpin?tab=repositories) - justindherpin@yahoo.com - [LinkedIn](https://www.linkedin.com/in/justin-herpin-ba5a8a217/) - Back End
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- CONTRIBUTING -->
 
@@ -239,3 +232,5 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/charmille-coleen-dizon
 [product-screenshot]: ./images/productDemo.gif
+
+const currentUsername = useUsername();

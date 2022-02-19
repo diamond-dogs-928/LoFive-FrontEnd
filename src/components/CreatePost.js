@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import '../CSS/createPost.css';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+} from './UserContext';
 
 const CreatePost = ({ addNote }) => {
-  // addNote is a function passed as props from the "Feed" component
+  const currentUsername = useUsername();
 
   const initialState = { name: '', note: '', tags: [] };
   const [formState, setFormState] = useState(initialState);
@@ -14,7 +20,11 @@ const CreatePost = ({ addNote }) => {
 
     fetch('http://localhost:4000/notes', {
       method: 'POST',
-      body: JSON.stringify({ owner: formState.name, post: formState.note, tags: formState.tags }),
+      body: JSON.stringify({
+        owner: currentUsername,
+        post: formState.note,
+        tags: formState.tags,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -36,7 +46,7 @@ const CreatePost = ({ addNote }) => {
   return (
     <>
       <form onSubmit={handleSubmit} id='createPost'>
-        <label htmlFor='name'></label>
+        {/* <label htmlFor='name'></label>
         <textarea
           type='text'
           id='name'
@@ -45,11 +55,12 @@ const CreatePost = ({ addNote }) => {
           placeholder='Name'
           onChange={handleChange}
           className='createPostNameInput'
-        />
+        /> */}
 
         <label htmlFor='note'></label>
         <textarea
-          rows='5'
+          rows='100'
+          cols='30'
           type='text'
           id='note'
           name='note'
@@ -70,8 +81,6 @@ const CreatePost = ({ addNote }) => {
           onChange={handleChange}
           className='createPostInput'
         />
-
-
 
         <button type='submit' value='Post' class='button-56'>
           <strong>Post</strong>

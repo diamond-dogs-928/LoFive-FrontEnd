@@ -8,15 +8,12 @@ const UsernameUpdateContext = React.createContext();
 export function useLogin() {
   return useContext(LoginContext);
 }
-
 export function useLoginUpdate() {
   return useContext(LoginUpdateContext);
 }
-
 export function useUsername() {
   return useContext(UsernameContext);
 }
-
 export function useUsernameUpdate() {
   return useContext(UsernameUpdateContext);
 }
@@ -25,8 +22,8 @@ export const UserContext = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('garrigoose');
 
-  function toggleLogin() {
-    setLoggedIn((loggedIn) => !loggedIn);
+  function toggleLogin(v) {
+    setLoggedIn(v);
   }
 
   function setTheUsername(val) {
