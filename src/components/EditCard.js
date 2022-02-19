@@ -1,50 +1,55 @@
-import { useParams } from 'react-router-dom';
-import {useEffect, useState} from 'react'
+// import { useParams } from 'react-router-dom';
+// import {useEffect, useState} from 'react'
 
 
 
-const EditCard = () => {
+// const EditCard = () => {
 
-  const initialState = { name: '', note: '', tags: [] };
-  const [formState, setFormState] = useState(initialState);
-  const [doc, setdoc] = useState()
-  const { id } = useParams()
+//   const initialState = { name: '', note: '', tags: [] };
+//   const [formState, setFormState] = useState(initialState);
+//   const [doc, setdoc] = useState(null)
+//   const { id } = useParams()
 
-  let getNote = async (id) => {
-    let data = await fetch('http://localhost:4000/notes/' + id);
-    let json = await data.json();
-    if (json) {
-      setdoc(json);
-    }
-  };
+//   let handleChange = (e) => {
+//     setFormState({ ...formState, [e.target.id]: e.target.value });
+//   };
 
-  useEffect(() => {
-    getNote();
-  }, []);
+//   let getNote = async (id) => {
+//     let data = await fetch('http://localhost:4000/notes/' + id);
+//     let json = await data.json();
+//     if (json) {
+//       console.log(json)
+//       setdoc(json);
+//     }
+//   };
 
-  const options = {
-    method: 'PUT',
-    body: JSON.stringify({ owner: doc.name, post: doc.note, tags: doc.tags }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }
+  // useEffect(() => {
+  //   getNote();
+  // }, []);
+
+  // const options = {
+  //   method: 'PUT',
+  //   body: JSON.stringify({ owner: doc.name, post: doc.note, tags: doc.tags }),
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // }
   
-  let editCard = async (note) => {
-    let data = await fetch('http://localhost:4000/notes/' + id, options) 
-    let json = await data.json()
-    if (json) {
+  // let editCard = async (note) => {
+  //   let data = await fetch('http://localhost:4000/notes/' + id, options) 
+  //   let json = await data.json()
+  //   if (json) {
       //addNote(resJson);
       //console.log(resJson)
       //setFormState(initialState);
-    }
+    // }
 
       //     .catch((error) => console.error({ Error: error }));
       // };
 
   // return (
   //   <>
-  //   <form onSubmit={handleSubmit} id='createPost'>
+  //   <form onSubmit={editCard} id='createPost'>
   //     <label htmlFor='name'></label>
   //     <textarea
   //       type='text'
@@ -88,6 +93,6 @@ const EditCard = () => {
   //   </form>
   // </>
   // )
-  }}
+   //}}
 
-export default EditCard;
+// export default EditCard;
