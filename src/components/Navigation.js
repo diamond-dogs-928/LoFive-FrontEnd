@@ -1,9 +1,12 @@
 import '../CSS/navigation.css';
 import { Route, Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
+import { useLogin, useLoginUpdate, useUsername } from './UserContext';
 
 const Navigation = () => {
   const [isActive, setIsActive] = useState(false);
+  const loginStatus = useLogin();
+  const currentUsername = useUsername();
 
   const logOut = () => {
     console.log('login is running');
@@ -35,6 +38,7 @@ const Navigation = () => {
   return (
     <div className='LiAndBar'>
       <ul className='NavBarUl'>
+        <li>{currentUsername}</li>
         <Link to='/feed'>
           <li className='NavBarLi'>Feed</li>
         </Link>

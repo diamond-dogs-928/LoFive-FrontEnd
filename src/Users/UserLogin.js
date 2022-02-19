@@ -3,6 +3,12 @@ import { useState, useEffect, useContext } from 'react';
 import SignUp from './UserSignup';
 import '../CSS/users.css';
 import { Next } from 'react-bootstrap/esm/PageItem';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+} from '../components/UserContext';
 
 function UserLogin() {
   const navigate = useNavigate();
@@ -14,6 +20,10 @@ function UserLogin() {
   const [userToLogin, setUserToLogin] = useState();
   const [message, setMessage] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
+  const loginStatus = useLogin();
+  const updateLoginStatus = useLoginUpdate();
+  const usernameStatus = useUsername();
+  const updateUsernameStatus = useUsernameUpdate();
 
   // post and existing to login
   const login = async () => {
@@ -33,7 +43,7 @@ function UserLogin() {
       const loginJson = await loginResponse.json();
       console.log(loginJson);
       setUserToLogin(loginJson.user);
-      console.log(userToLogin.username);
+      console.log(loginJson.user);
       setMessage(`Welcome to LoFive ${userToLogin.username}`);
       loginJson.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
     } catch (error) {
@@ -48,13 +58,17 @@ function UserLogin() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     console.log('handle submit is called');
     e.preventDefault();
     setFormState({ ...formState });
-    login();
-    setFormState(initialState);
-    loggedIn ? navigate('/feed') : console.log('not happening');
+    console.log(formState);
+    await login();
+    // setFormState(initialState);
+    (await loggedIn)
+      ? updateUsernameStatus(userToLogin.username)
+      : console.log('something went wrong');
+    (await loggedIn) ? navigate('/feed') : console.log('not happening');
     // setLoggedIn(false);
   };
 

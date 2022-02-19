@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Route, Link } from 'react-router-dom';
 import '../CSS/topBar.css';
+import { useLogin, useLoginUpdate, useUsername } from './UserContext';
 
 import logo from '../images/logo.png';
 import name from '../images/name.png';
 
 const TopBar = () => {
   const [today, setToday] = useState();
+  const currentUsername = useUsername();
 
   const setDay = () => {
     setToday('blueberry');
@@ -28,7 +30,7 @@ const TopBar = () => {
           alt='Logo'
         />
         <h3 className='border' id='topBarUsernameText'>
-          Christian410
+          {currentUsername}
         </h3>
         <div id='topBarDateTextContainer' className='border'>
           <h3 className='' id='topBarDateText'>

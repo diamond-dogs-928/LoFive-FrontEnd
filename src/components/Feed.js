@@ -6,7 +6,12 @@ import '../CSS/card.css';
 import { useState, useEffect, useContext, createContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ShowCard from './ShowCard';
-import { useLogin, useLoginUpdate } from './UserContext';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+} from './UserContext';
 
 const Feed = () => {
   const [notes, setNotes] = useState([]);
@@ -79,8 +84,6 @@ const Feed = () => {
 
   return (
     <div className='feed-column'>
-      <h1>{loginStatus ? 'true' : 'false'}</h1>
-      <button onClick={updateLoginStatus}>Update</button>
       <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>
