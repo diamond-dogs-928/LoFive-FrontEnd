@@ -84,6 +84,8 @@ const Feed = () => {
 
   return (
     <div className='feed-column'>
+      {/* <h1>{loginStatus ? 'true' : 'false'}</h1>
+      <button onClick={updateLoginStatus}>Update</button> */}
       <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>

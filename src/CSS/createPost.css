@@ -48,6 +48,8 @@
 
 #createPost,
 #createPostDiv {
+  width: 100%;
+  max-height: 7rem;
   flex-direction: row;
   /* gap: 20%; */
   padding: 0;
