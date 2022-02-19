@@ -14,13 +14,13 @@ const EditCard = () => {
   
 
   let handleChange = (e) => {
-    e.preventDefault()
+    //e.preventDefault()
     setFormState({ ...formState, [e.target.id]: e.target.value });
   };
 
   let handleSubmit = (e) => {
     e.preventDefault()
-    editCard()
+    editCard(formState)
   }
 
   let getNote = async (id) => {
@@ -41,7 +41,7 @@ const EditCard = () => {
 
   const options = {
     method: 'PUT',
-    body: JSON.stringify({ owner: formState.name, post: formState.note, tags: formState.tags }),
+    body: JSON.stringify({ owner: formState.owner, post: formState.post, tags: formState.tags }),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -60,13 +60,15 @@ const EditCard = () => {
     //.catch((error) => console.error({ Error: error }));
   };
 
+  console.log(formState)
+
   return (
     <>
     <form onSubmit={handleSubmit} id='createPost'>
       <label htmlFor='name'></label>
       <textarea
         type='text'
-        id='name'
+        id='owner'
         name='name'
         value={ formState.owner }
         placeholder='Name'
@@ -78,7 +80,7 @@ const EditCard = () => {
       <textarea
         rows='5'
         type='text'
-        id='note'
+        id='post'
         name='note'
         //value={formState.note}
         value={ formState.post }
