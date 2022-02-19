@@ -3,12 +3,15 @@ import Post from './Post';
 import CreatePost from './CreatePost';
 import '../CSS/feed.css';
 import '../CSS/card.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, createContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ShowCard from './ShowCard';
+import { useLogin, useLoginUpdate } from './UserContext';
 
 const Feed = () => {
   const [notes, setNotes] = useState([]);
+  const loginStatus = useLogin();
+  const updateLoginStatus = useLoginUpdate();
 
   // Function to pull Notes from backend
   let getNotes = async () => {
@@ -76,6 +79,8 @@ const Feed = () => {
 
   return (
     <div className='feed-column'>
+      <h1>{loginStatus ? 'true' : 'false'}</h1>
+      <button onClick={updateLoginStatus}>Update</button>
       <div id='createPostDiv'>
         <CreatePost addNote={addNote} />
       </div>
