@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const Navigation = () => {
   const [isActive, setIsActive] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const logOut = () => {
     console.log('login is running');
@@ -13,12 +14,15 @@ const Navigation = () => {
       credentials: 'include',
       body: null,
     };
-    fetch('http://localhost:4000/session/logout', options);
+    fetch(
+      'http://localhost:4000/session/logout'
+      // , options
+    );
     console
       .log('logout is happening')
       .then((data) => data.json())
-      .then(() => {
-        console.log('logged out');
+      .then((response) => {
+        console.log(response);
       })
       .catch((err) => {
         console.log(err);
@@ -28,6 +32,7 @@ const Navigation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     logOut();
+    console.log();
   };
 
   return (
