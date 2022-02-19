@@ -26,8 +26,8 @@ function App() {
           <div className='col-6'>
             <Routes>
               <Route path='/signup' element={<SignUp />}></Route>
-              <Route path='/' element={<UserLogin />}></Route>
-              <Route path='/feed/' element={<Feed />}></Route>
+              <Route path='/*' element={<UserLogin />}></Route>
+              <Route path='/feed//*' element={<Feed />}></Route>
               <Route path='/:id' element={<ShowCard />}></Route>
               <Route path='/edit/:id' element={<EditCard />}></Route>
             </Routes>
