@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../CSS/post.css';
 
@@ -15,6 +15,7 @@ const ShowCard = ({
 }) => {
   const [doc, setdoc] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   let getNote = async (id) => {
     let data = await fetch('http://localhost:4000/notes/' + id);
@@ -57,6 +58,7 @@ const ShowCard = ({
     let json = await data.json();
     if (json) {
       setdoc(data);
+      navigate('/feed');
     }
   };
 

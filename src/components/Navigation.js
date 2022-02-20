@@ -16,6 +16,7 @@ const Navigation = () => {
   const loginStatus = useLogin();
   const updateLoginStatus = useLoginUpdate();
   const currentUsername = useUsername();
+  const updateCurrentUsername = useUsernameUpdate();
 
   // get to logoust
   const logOut = async () => {
@@ -23,35 +24,37 @@ const Navigation = () => {
       method: 'GET',
       headers: { 'content-type': 'application/json' },
       credentials: 'include',
-      body: null,
+      // body: null,
     };
     const url = 'http://localhost:4000/session/logout';
-    const logoutResponse = await fetch(url, options);
-    const logoutJson = await logoutResponse.json();
-    await setIsLoggedIn(!logoutResponse.loggedOut);
-    console.log('isLoggedIn: ' + isLoggedIn);
-    await updateLoginStatus(isLoggedIn);
-    // console
-    //   .log(isLoggedIn)
-    //   .then((data) => data.json())
-    //   .then((returnData) => {
-    //     console.log(returnData);
-    //     returnData.loggedOut
-    //       ? updateLoginStatus(false)
-    //       : updateLoginStatus(true);
-    //   })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
+    // try {
+    fetch(url, options)
+      .then((data) => data.json())
+      .then((logoutJson) => {
+        console.log(logoutJson);
+        updateLoginStatus(false);
+        console.log('login status:  ' + loginStatus);
+      });
+    // const logoutResponse = await fetch(url, options);
+    // console.log((await 'logout response: >>>') + logoutResponse);
+    // console.log('login status: >> ' + loginStatus);
+    // const logoutJson = await logoutResponse.json();
+    // console.log(logoutJson);
+    // // setIsLoggedIn(!logoutJson.loggedOut);
+    // // console.log('isLoggedIn: ?');
+    // // updateLoginStatus(false);
+    // } catch (err) {
+    // console.log(err);
+    // }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     logOut();
-    (await loginStatus) ? navigate('/') : navigate('/');
+    (await isLoggedIn) ? navigate('/') : navigate('/');
+    console.log(await loginStatus);
+    updateCurrentUsername('LoFive');
   };
-
-  // setLoginContext('purple');
 
   return (
     <div className='LiAndBar'>
