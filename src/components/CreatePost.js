@@ -9,7 +9,6 @@ import {
 
 const CreatePost = ({ addNote }) => {
   const currentUsername = useUsername();
-
   const initialState = { name: '', note: '', tags: [] };
   const [formState, setFormState] = useState(initialState);
   // const [name, setName] = useState('')
@@ -76,7 +75,10 @@ const CreatePost = ({ addNote }) => {
           type='text'
           id='tags'
           name='tags'
-          value={formState.tags}
+          value={
+            'banana'
+            // formState.tags
+          }
           placeholder='Tag IT!'
           onChange={handleChange}
           className='createPostInput'
