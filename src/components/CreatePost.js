@@ -75,10 +75,7 @@ const CreatePost = ({ addNote }) => {
           type='text'
           id='tags'
           name='tags'
-          value={
-            'banana'
-            // formState.tags
-          }
+          value={formState.tags}
           placeholder='Tag IT!'
           onChange={handleChange}
           className='createPostInput'

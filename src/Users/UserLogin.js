@@ -43,16 +43,12 @@ function UserLogin() {
       const url = 'http://localhost:4000/session/login';
       const loginResponse = await fetch(url, options);
       const loginJson = await loginResponse.json();
-      // await console.log(loginJson);
-      // await console.log(loginJson.user);
-      await setUserToLogin(loginJson.user);
-      await setIsLoggedIn(loginJson.loggedIn);
-      // await console.log(isLoggedIn);
-      await updateLoginStatus(isLoggedIn);
-      await updateUsernameStatus(loginJson.username);
-      // await console.log('loginStatus: ' + loginStatus);
-      // await console.log('userToLogin ' + userToLogin);
-      await setMessage(`Welcome to LoFive ${userToLogin.username}`);
+      console.log(loginJson);
+      setUserToLogin(await loginJson.user);
+      setIsLoggedIn(await loginJson.loggedIn);
+      updateLoginStatus(await isLoggedIn);
+      updateUsernameStatus(await loginJson.username);
+      setMessage(await `Welcome to LoFive ${userToLogin.username}`);
       (await loginJson.loggedIn) ? setIsLoggedIn(true) : setIsLoggedIn(false);
     } catch (error) {
       console.log(error);
