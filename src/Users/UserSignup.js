@@ -2,10 +2,18 @@ import React, { useEffect } from 'react';
 import { Link, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import '../CSS/users.css';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+} from '../components/UserContext';
 
 function SignUp() {
   const navigate = useNavigate();
   const [passMatch, setPassMatch] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userToLogin, setUserToLogin] = useState('');
   const initialState = {
     email: '',
     username: '',
@@ -16,38 +24,49 @@ function SignUp() {
   //
   const [formState, setFormState] = useState(initialState);
   const [message, setMessage] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  // context
+  const loginStatus = useLogin();
+  const updateLoginStatus = useLoginUpdate();
+  const usernameStatus = useUsername();
+  const updateUsernameStatus = useUsernameUpdate();
 
   // post a new user
-  let getUser = () => {
+  let getUser = async () => {
     console.log('getUser Running Now');
-    const requestData = {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({
-        email: formState.email,
-        username: formState.username,
-        password: formState.password,
-        verifyPassword: formState.verifyPassword,
-      }),
-    };
-
-    fetch('http://localhost:4000/session/register', requestData)
-      .then((data) => data.json())
-      .then((parsedData) => {
-        console.log(parsedData);
-        setFormState(parsedData);
-        parsedData.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const options = {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          email: formState.email,
+          username: formState.username,
+          password: formState.password,
+          verifyPassword: formState.verifyPassword,
+        }),
+      };
+      const url = 'http://localhost:4000/session/register';
+      const registerReponse = await fetch(url, options);
+      const registerJson = await registerReponse.json();
+      console.log(registerJson);
+      setUserToLogin(registerJson.user);
+      console.log(registerJson.user);
+      setMessage(`Welcome to LoFive ${userToLogin.username}`);
+      (await registerJson.loggedIn)
+        ? setIsLoggedIn(true)
+        : setIsLoggedIn(false);
+      // parsedData.loggedIn
+      //   ? setUserToLogin(parsedData.user.username)
+      //   : setUserToLogin('');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  console.log(loggedIn);
+  console.log(loginStatus);
 
-  //
+  // handlchange
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -55,9 +74,8 @@ function SignUp() {
     });
   };
 
-  //
-  const handleSubmit = (e) => {
-    console.log('handle submit is called here');
+  // handle submit
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formState.password === formState.verifyPassword) {
       setFormState({ ...formState });
@@ -65,7 +83,12 @@ function SignUp() {
       setMessage(`welcome ${formState.username}`);
       console.log(message);
       getUser();
-      loggedIn ? navigate('/feed') : console.log('not happening');
+      isLoggedIn ? updateLoginStatus(true) : updateLoginStatus(false);
+      isLoggedIn
+        ? updateUsernameStatus(usernameStatus)
+        : console.log('something went wrong');
+      console.log(usernameStatus);
+      loginStatus ? navigate('/feed') : console.log('not happening');
     } else {
       setPassMatch(false);
       setMessage(`passwords do not match`);
@@ -189,7 +212,7 @@ function SignUp() {
               className='btn block-cube block-cube-hover'
               type='button'
               onClick={() => {
-                loggedIn ? navigate('/feed') : console.log('not happening');
+                loginStatus ? navigate('/feed') : console.log('not happening');
               }}
             >
               <div className='bg-top'>

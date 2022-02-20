@@ -64,7 +64,7 @@
   background-color: #1f2124;
   outline: none;
   font-family: Roboto Mono;
-  height: 2rem;
+  /* height: 2rem; */
 }
 
 .createPostNameInput {
@@ -74,7 +74,7 @@
   background-color: #1f2124;
   outline: none;
   font-family: Roboto Mono;
-  height: 2rem;
+  /* height: 2rem; */
 }
 
 input::placeholder {
@@ -85,6 +85,13 @@ textarea:focus,
 input:focus {
   color: #606a71;
   font-weight: bold;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 20px;
 }
 
 /*BUTTON*/

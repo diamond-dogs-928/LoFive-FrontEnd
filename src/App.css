@@ -67,6 +67,13 @@
   width: 100%vw;
 }
 
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 20px;
+}
+
 @media (max-width: 800px) {
   .body-container {
     width: 100vw;
