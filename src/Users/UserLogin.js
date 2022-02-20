@@ -17,15 +17,17 @@ function UserLogin() {
     password: '',
   };
   const [formState, setFormState] = useState(initialState);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userToLogin, setUserToLogin] = useState();
   const [message, setMessage] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  // context
   const loginStatus = useLogin();
   const updateLoginStatus = useLoginUpdate();
   const usernameStatus = useUsername();
   const updateUsernameStatus = useUsernameUpdate();
 
-  // post and existing to login
+  // post to login
   const login = async () => {
     console.log('login is running');
     try {
@@ -41,16 +43,23 @@ function UserLogin() {
       const url = 'http://localhost:4000/session/login';
       const loginResponse = await fetch(url, options);
       const loginJson = await loginResponse.json();
-      console.log(loginJson);
-      setUserToLogin(loginJson.user);
-      console.log(loginJson.user);
-      setMessage(`Welcome to LoFive ${userToLogin.username}`);
-      loginJson.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
+      // await console.log(loginJson);
+      // await console.log(loginJson.user);
+      await setUserToLogin(loginJson.user);
+      await setIsLoggedIn(loginJson.loggedIn);
+      // await console.log(isLoggedIn);
+      await updateLoginStatus(isLoggedIn);
+      await updateUsernameStatus(loginJson.username);
+      // await console.log('loginStatus: ' + loginStatus);
+      // await console.log('userToLogin ' + userToLogin);
+      await setMessage(`Welcome to LoFive ${userToLogin.username}`);
+      (await loginJson.loggedIn) ? setIsLoggedIn(true) : setIsLoggedIn(false);
     } catch (error) {
       console.log(error);
     }
   };
 
+  // handlchange
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -58,18 +67,18 @@ function UserLogin() {
     });
   };
 
+  // handle submit
   const handleSubmit = async (e) => {
     console.log('handle submit is called');
     e.preventDefault();
     setFormState({ ...formState });
-    console.log(formState);
+    // console.log(formState);
     await login();
-    // setFormState(initialState);
-    (await loggedIn)
-      ? updateUsernameStatus(userToLogin.username)
-      : console.log('something went wrong');
-    (await loggedIn) ? navigate('/feed') : console.log('not happening');
-    // setLoggedIn(false);
+    // (await loginStatus)
+    //   ? updateUsernameStatus(usernameStatus)
+    //   : console.log('something went wrong');
+    (await isLoggedIn) ? navigate('/feed') : console.log('not happening');
+    setFormState(initialState);
   };
 
   return (
