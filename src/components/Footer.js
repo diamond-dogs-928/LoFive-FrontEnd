@@ -40,7 +40,6 @@ const Footer = () => {
           />
         </span>
         <span>
-          {/* <Link to={'https://github.com/diamond-dogs-928'}> */}
           <SocialMediaIconsReact
             borderColor='rgba(0,0,0,0.25)'
             icon='github'
@@ -49,12 +48,11 @@ const Footer = () => {
             url='https://github.com/diamond-dogs-928'
             size='48'
           />
-          {/* </Link> */}
         </span>
         <span>
           <SocialMediaIconsReact
             borderColor='rgba(0,0,0,0.25)'
-            icon='twitter'
+            icon='apple'
             iconColor='rgba(255,255,255,1)'
             backgroundColor='rgba(105,105,105,0.25)'
             url='https://some-website.com/my-social-media-url'
