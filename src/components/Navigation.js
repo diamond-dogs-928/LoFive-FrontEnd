@@ -18,7 +18,7 @@ const Navigation = () => {
   const currentUsername = useUsername();
   const updateCurrentUsername = useUsernameUpdate();
 
-  // get to logoust
+  // get to logout
   const logOut = async () => {
     const options = {
       method: 'GET',

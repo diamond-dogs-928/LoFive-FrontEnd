@@ -20,7 +20,7 @@ export function useUsernameUpdate() {
 
 export const UserContext = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userName, setUserName] = useState('garrigoose');
+  const [userName, setUserName] = useState('LoFive');
 
   function toggleLogin(v) {
     setLoggedIn(v);
