@@ -50,6 +50,7 @@ function UserLogin() {
       updateUsernameStatus(await loginJson.username);
       setMessage(await `Welcome to LoFive ${userToLogin.username}`);
       (await loginJson.loggedIn) ? setIsLoggedIn(true) : setIsLoggedIn(false);
+      (await isLoggedIn) ? navigate('/feed') : console.log('not happening');
     } catch (error) {
       console.log(error);
     }
@@ -64,17 +65,17 @@ function UserLogin() {
   };
 
   // handle submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     console.log('handle submit is called');
     e.preventDefault();
     setFormState({ ...formState });
     // console.log(formState);
-    await login();
+    login();
     // (await loginStatus)
     //   ? updateUsernameStatus(usernameStatus)
     //   : console.log('something went wrong');
-    (await isLoggedIn) ? navigate('/feed') : console.log('not happening');
-    setFormState(initialState);
+    // isLoggedIn ? navigate('/feed') : console.log('not happening');
+    // setFormState(initialState);
   };
 
   return (

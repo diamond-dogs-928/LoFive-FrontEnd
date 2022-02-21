@@ -33,9 +33,10 @@ const TopBar = () => {
           {currentUsername}
         </h3>
         <div id='topBarDateTextContainer' className='border'>
-          <h3 className='' id='topBarDateText'>
-            {tester}
-          </h3>
+          <h5 className='' id='topBarDateText'>
+            {/* {tester} */}
+            Listen Up
+          </h5>
         </div>
         <form className='SearchLoFive' action=''>
           <input id='SearchBox' type='text' placeholder='Search LoFive' />
