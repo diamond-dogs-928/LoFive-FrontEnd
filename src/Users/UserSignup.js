@@ -94,7 +94,7 @@ function SignUp() {
       setMessage(`passwords do not match`);
       console.log(message);
     }
-    setFormState(initialState);
+    // setFormState(initialState);
   };
 
   //

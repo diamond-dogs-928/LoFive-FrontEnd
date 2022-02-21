@@ -69,7 +69,7 @@ const Navigation = () => {
             <li className='NavBarLi'>Login</li>
           </Link>
         ) : (
-          console.log('you must log in. login status: ' + loginStatus)
+          ' '
         )}
         {loginStatus ? (
           <Link to='/feed'>
@@ -80,7 +80,7 @@ const Navigation = () => {
         )}
 
         {loginStatus ? (
-          <Link to='/feed'>
+          <Link to='/profile'>
             <li className='NavBarLi'>Profile</li>
           </Link>
         ) : (

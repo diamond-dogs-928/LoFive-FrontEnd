@@ -76,7 +76,9 @@ const ShowCard = ({
           }}
         >
           {/* <h4>{note}</h4> */}
-          <h4>{doc ? doc.owner : null}</h4>
+          <Link to={`/profile/${doc ? doc.owner : null}`}>
+            <h4>{doc ? doc.owner : null}</h4>
+          </Link>
           {/* <h4>{doc ? doc.post : null}</h4> */}
           {/* Make the href the users profile --- Show route goes here*/}
           <div className='postBottom'></div>

@@ -10,6 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 import ShowCard from './components/ShowCard';
 import EditCard from './components/EditCard';
 import Footer from './components/Footer';
+import Profile from './components/Profile';
 import { UserContext } from './components/UserContext';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <div className='col-6'>
             <Routes>
               <Route path='/signup' element={<SignUp />}></Route>
+              <Route path='/profile/:owner' element={<Profile />}></Route>
               <Route path='/*' element={<UserLogin />}></Route>
               <Route path='/feed//*' element={<Feed />}></Route>
               <Route path='/:id' element={<ShowCard />}></Route>
