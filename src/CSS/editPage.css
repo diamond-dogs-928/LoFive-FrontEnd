@@ -1,0 +1,69 @@
+#editPageTitle{
+    display: flex;
+    justify-content: center;
+    color: #696969;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.editPostInput {
+
+    margin: 0 auto;
+
+    background-color: #1f2124;
+    outline: none;
+    font-family: Roboto Mono;
+
+    margin-bottom: 2rem;
+    margin-top: .5rem;
+    width: 75%;
+    height: 3rem;
+  }
+
+.editText{
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+    
+}
+
+
+label{
+margin-left: 5rem;
+font-size: larger;
+font-weight: bold;
+}
+
+
+#editButton{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+#editPost {
+    color: #696969;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  input::placeholder {
+    color: #606a71;
+  }
+  
+  textarea:focus,
+  input:focus {
+    color: #606a71;
+    font-weight: bold;
+  }
+  
+  /* input, */
+  select,
+  textarea {
+    color: #606a71;
+    font-weight: bold;
+  }

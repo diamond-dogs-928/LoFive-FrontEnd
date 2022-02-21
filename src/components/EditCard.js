@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../CSS/editPage.css';
 
 const EditCard = () => {
   const navigate = useNavigate();
@@ -65,19 +66,11 @@ const EditCard = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} id='createPost'>
-        <label htmlFor='name'></label>
-        <textarea
-          type='text'
-          id='owner'
-          name='name'
-          value={formState.owner}
-          placeholder='Name'
-          onChange={handleChange}
-          className='createPostNameInput'
-        />
-
-        <label htmlFor='note'></label>
+    <h1 id='editPageTitle'>Edit Your Post</h1>
+      
+      <form onSubmit={handleSubmit} id='editPost'>
+  
+        <label htmlFor='note' id='editText'>Say Something:</label>
         <textarea
           rows='5'
           type='text'
@@ -87,10 +80,9 @@ const EditCard = () => {
           value={formState.post}
           placeholder='Say something'
           onChange={handleChange}
-          className='createPostInput'
+          className='editPostInput'
         />
-
-        <label htmlFor='tags'></label>
+        <label htmlFor='tags'  id='editText'>Tags:</label>
         <textarea
           rows='5'
           type='text'
@@ -100,7 +92,7 @@ const EditCard = () => {
           value={formState.tags}
           placeholder='Tag IT!'
           onChange={handleChange}
-          className='createPostInput'
+          className='editPostInput'
         />
 
         <button
@@ -108,8 +100,9 @@ const EditCard = () => {
           type='submit'
           value='Post'
           class='button-56'
+          id='editButton'
         >
-          <strong>Post</strong>
+          <strong>Confirm Edit</strong>
         </button>
       </form>
     </>
