@@ -60,7 +60,9 @@ const Navigation = () => {
   return (
     <div className='LiAndBar'>
       <ul className='NavBarUl'>
-        <li>{currentUsername}</li>
+      <Link to="/feed">
+        <li className='NavBarLi effect-underline'>{currentUsername}</li>
+      </Link>
         {/* <li>{loginStatus ? 'logged in: true' : 'logged in false'}</li>
         <li>
           <button onClick={updateLoginStatus}>Update</button>

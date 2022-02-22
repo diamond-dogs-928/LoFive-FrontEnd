@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Navigate, useNavigate } from 'react-router-dom';
 import '../CSS/topBar.css';
 import { useLogin, useLoginUpdate, useUsername } from './UserContext';
 
@@ -21,48 +21,52 @@ const TopBar = () => {
   }).format(Date.now());
 
   return (
-    <div className='topBarContainer'>
-      <img src={name} alt='' className='name-logo' />
-      <div className='topbarItems border' id='topBarText'>
-        <img
-          className='topBarItems topBarLogo border'
-          src='/images/Logo_Solo.jpg'
-          alt='Logo'
-        />
-        <h3 className='border' id='topBarUsernameText'>
+    <div className="topBarContainer">
+      <img src={name} alt="" className="name-logo" />
+      <div className="topbarItems border" id="topBarText">
+        <Link to="/feed">
+          {' '}
+          <img
+            className="topBarItems topBarLogo border"
+            src="/images/Logo_Solo.jpg"
+            alt="Logo"
+          />
+        </Link>
+
+        <h3 className="border" id="topBarUsernameText">
           {currentUsername}
         </h3>
-        <div id='topBarDateTextContainer' className='border'>
-          <h5 className='' id='topBarDateText'>
+        <div id="topBarDateTextContainer" className="border">
+          <h5 className="" id="topBarDateText">
             {/* {tester} */}
             Listen Up
           </h5>
         </div>
-        <form className='SearchLoFive' action=''>
-          <input id='SearchBox' type='text' placeholder='Search LoFive' />
+        <form className="SearchLoFive" action="">
+          <input id="SearchBox" type="text" placeholder="Search LoFive" />
         </form>
       </div>
-      <div id='lineHolders'>
-        <div id='lineOrange'>
+      <div id="lineHolders">
+        <div id="lineOrange">
           <a
-            href='https://open.spotify.com/'
-            alt='Link to Spotify'
-            target='_blank'
-            rel='noreferrer'
+            href="https://open.spotify.com/"
+            alt="Link to Spotify"
+            target="_blank"
+            rel="noreferrer"
           >
-            <span className='link'></span>
+            <span className="link"></span>
           </a>
         </div>
 
-        <div id='lineMaroon'>
+        <div id="lineMaroon">
           <a
-            href='https://www.apple.com/apple-music/'
-            alt='Link to apple Music'
-            target='_blank'
-            rel='noreferrer'
+            href="https://www.apple.com/apple-music/"
+            alt="Link to apple Music"
+            target="_blank"
+            rel="noreferrer"
           >
             {' '}
-            <span className='link'></span>
+            <span className="link"></span>
           </a>
         </div>
       </div>
