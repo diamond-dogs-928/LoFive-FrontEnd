@@ -26,7 +26,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/diamond-dogs-928">
-    <img src="" alt="Logo" width="80" height="80">
+![ezgif-2-50ac21570a](https://user-images.githubusercontent.com/83780176/155134225-93505f08-1d45-45b4-92ef-59a4b11a8e9f.gif)
+
   </a>
 
 <h3 align="center">LoFive</h3>
