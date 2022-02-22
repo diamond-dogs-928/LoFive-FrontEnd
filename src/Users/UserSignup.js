@@ -7,10 +7,13 @@ import {
   useLoginUpdate,
   useUsername,
   useUsernameUpdate,
+  useBackendUrl,
 } from '../components/UserContext';
 
 function SignUp() {
   const navigate = useNavigate();
+  const backendUrl = useBackendUrl();
+  console.log(backendUrl);
   const [passMatch, setPassMatch] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userToLogin, setUserToLogin] = useState('');
@@ -47,15 +50,18 @@ function SignUp() {
         }),
       };
       const url = 'http://localhost:4000/session/register';
-      const registerReponse = await fetch(url, options);
+      const registerReponse = await fetch(
+        backendUrl + 'session/register',
+        options
+      );
       const registerJson = await registerReponse.json();
       console.log(registerJson);
       setUserToLogin(registerJson.user);
       console.log(registerJson.user);
       setMessage(`Welcome to LoFive ${userToLogin.username}`);
-      (await registerJson.loggedIn)
-        ? setIsLoggedIn(true)
-        : setIsLoggedIn(false);
+      // (await registerJson.loggedIn)
+      //   ? setIsLoggedIn(true)
+      //   : setIsLoggedIn(false);
       // parsedData.loggedIn
       //   ? setUserToLogin(parsedData.user.username)
       //   : setUserToLogin('');

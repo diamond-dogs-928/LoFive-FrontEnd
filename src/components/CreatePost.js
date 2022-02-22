@@ -5,10 +5,12 @@ import {
   useLoginUpdate,
   useUsername,
   useUsernameUpdate,
+  useBackendUrl,
 } from './UserContext';
 
 const CreatePost = ({ addNote }) => {
   const currentUsername = useUsername();
+  const backendUrl = useBackendUrl();
   const initialState = { name: '', note: '', tags: [] };
   const [formState, setFormState] = useState(initialState);
   // const [name, setName] = useState('')

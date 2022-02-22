@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../CSS/post.css';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+  useBackendUrl,
+} from '../components/UserContext';
 
 const ShowCard = ({
   post,
@@ -16,9 +23,10 @@ const ShowCard = ({
   const [doc, setdoc] = useState();
   const { id } = useParams();
   const navigate = useNavigate();
+  const backendUrl = useBackendUrl();
 
   let getNote = async (id) => {
-    let data = await fetch('http://localhost:4000/notes/' + id);
+    let data = await fetch(backendUrl + 'notes/' + id);
     let json = await data.json();
     if (json) {
       setdoc(json);
@@ -33,7 +41,8 @@ const ShowCard = ({
 
   let addLike = async (note) => {
     //console.log(note)
-    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+    const url = 'https://git.heroku.com/lo-five-backend.git';
+    let data = await fetch(backendUrl + 'notes/' + note._id, {
       method: 'PUT',
       body: JSON.stringify({ likes: note.likes + 1 }),
       headers: {
@@ -48,7 +57,7 @@ const ShowCard = ({
 
   let deleteNote = async (note) => {
     console.log(note);
-    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+    let data = await fetch(backendUrl + 'notes/' + note._id, {
       method: 'DELETE',
       body: null,
       headers: {

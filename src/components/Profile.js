@@ -11,6 +11,7 @@ import {
   useLoginUpdate,
   useUsername,
   useUsernameUpdate,
+  useBackendUrl,
 } from './UserContext';
 
 const Feed = () => {
@@ -18,10 +19,11 @@ const Feed = () => {
   const [notes, setNotes] = useState([]);
   const loginStatus = useLogin();
   const updateLoginStatus = useLoginUpdate();
+  const backendUrl = useBackendUrl();
 
   // Function to pull Notes from backend
   let getNotes = async () => {
-    let data = await fetch('http://localhost:4000/notes/profile/' + owner);
+    let data = await fetch(backendUrl + 'notes/profile/' + owner);
     let json = await data.json();
     if (json) {
       setNotes(json);
@@ -39,7 +41,7 @@ const Feed = () => {
 
   let addLike = async (note) => {
     //console.log(note)
-    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+    let data = await fetch(backendUrl + 'notes/' + note._id, {
       method: 'PUT',
       body: JSON.stringify({ likes: note.likes + 1 }),
       headers: {
@@ -61,7 +63,7 @@ const Feed = () => {
 
   let deleteNote = async (note) => {
     console.log(note);
-    let data = await fetch('http://localhost:4000/notes/' + note._id, {
+    let data = await fetch(backendUrl + 'notes/' + note._id, {
       method: 'DELETE',
       body: null,
       headers: {
