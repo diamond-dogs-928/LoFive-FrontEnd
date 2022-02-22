@@ -19,7 +19,7 @@ const CreatePost = ({ addNote }) => {
   let handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:4000/notes', {
+    fetch(backendUrl + 'notes', {
       method: 'POST',
       body: JSON.stringify({
         owner: currentUsername,
