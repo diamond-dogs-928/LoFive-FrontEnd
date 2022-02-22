@@ -1,4 +1,5 @@
 import React, { useContext, useState, createContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginContext = React.createContext();
 const LoginUpdateContext = React.createContext();
@@ -21,13 +22,16 @@ export function useUsernameUpdate() {
 export const UserContext = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('LoFive');
+  const navigate = useNavigate();
 
   function toggleLogin(v) {
+    navigate('/feed');
     setLoggedIn(v);
   }
 
   function setTheUsername(val) {
     setUserName(val);
+    navigate('/feed');
   }
 
   return (

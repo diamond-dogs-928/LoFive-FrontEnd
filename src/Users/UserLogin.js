@@ -44,13 +44,16 @@ function UserLogin() {
       const loginResponse = await fetch(url, options);
       const loginJson = await loginResponse.json();
       console.log(loginJson);
-      setUserToLogin(await loginJson.user);
-      setIsLoggedIn(await loginJson.loggedIn);
-      updateLoginStatus(await isLoggedIn);
-      updateUsernameStatus(await loginJson.username);
-      setMessage(await `Welcome to LoFive ${userToLogin.username}`);
+      if (loginJson.loggedIn) {
+        setIsLoggedIn(loginJson.loggedIn);
+        setUserToLogin(loginJson.user);
+        updateLoginStatus(isLoggedIn);
+        updateUsernameStatus(loginJson.username);
+        setMessage(`Welcome to LoFive ${userToLogin.username}`);
+        // navigate('/feed');
+      }
+
       (await loginJson.loggedIn) ? setIsLoggedIn(true) : setIsLoggedIn(false);
-      (await isLoggedIn) ? navigate('/feed') : console.log('not happening');
     } catch (error) {
       console.log(error);
     }
