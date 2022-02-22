@@ -45,7 +45,7 @@ const CreatePost = ({ addNote }) => {
   return (
     <>
       <form onSubmit={handleSubmit} id='createPost'>
-        {/* <label htmlFor='name'></label>
+        <label htmlFor='name'></label>
         <textarea
           type='text'
           id='name'
@@ -54,7 +54,7 @@ const CreatePost = ({ addNote }) => {
           placeholder='Name'
           onChange={handleChange}
           className='createPostNameInput'
-        /> */}
+        />
 
         <label htmlFor='note'></label>
         <textarea
