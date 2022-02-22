@@ -34,6 +34,7 @@ const Navigation = () => {
       .then((logoutJson) => {
         // console.log(logoutJson);
         updateLoginStatus(false);
+        navigate('/');
         // console.log('login status:  ' + loginStatus);
       });
     // const logoutResponse = await fetch(url, options);
@@ -52,17 +53,18 @@ const Navigation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     logOut();
-    (await isLoggedIn) ? navigate('/') : navigate('/');
-    console.log(await loginStatus);
+    isLoggedIn ? navigate('/') : navigate('/');
+    // console.log(await loginStatus);
     updateCurrentUsername('LoFive');
+    // console.log(loginStatus);
   };
 
   return (
     <div className='LiAndBar'>
       <ul className='NavBarUl'>
-      <Link to="/feed">
-        <li className='NavBarLi effect-underline'>{currentUsername}</li>
-      </Link>
+        <Link to='/feed'>
+          <li className='NavBarLi effect-underline'>{currentUsername}</li>
+        </Link>
         {/* <li>{loginStatus ? 'logged in: true' : 'logged in false'}</li>
         <li>
           <button onClick={updateLoginStatus}>Update</button>
@@ -103,7 +105,13 @@ const Navigation = () => {
         ) : (
           ''
         )}
-        {loginStatus ? (
+        <Link to={'#'}>
+          <li className='NavBarLi effect-underline' onClick={handleSubmit}>
+            {' '}
+            Logout
+          </li>
+        </Link>
+        {/* {loginStatus ? (
           <Link to={'#'}>
             <li className='NavBarLi effect-underline' onClick={handleSubmit}>
               {' '}
@@ -112,7 +120,7 @@ const Navigation = () => {
           </Link>
         ) : (
           ''
-        )}
+        )} */}
       </ul>
     </div>
   );
