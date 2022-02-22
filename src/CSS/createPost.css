@@ -160,6 +160,7 @@ input:focus {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 1rem;
 }
 
 .button-56:after {
