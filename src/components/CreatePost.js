@@ -47,7 +47,7 @@ const CreatePost = ({ addNote }) => {
   return (
     <>
       <form onSubmit={handleSubmit} id='createPost'>
-        <textarea
+        {/* <textarea
           rows='10'
           cols='20'
           type='text'
@@ -57,7 +57,7 @@ const CreatePost = ({ addNote }) => {
           placeholder='Name'
           onChange={handleChange}
           className='createPostInput'
-        />
+        /> */}
 
         <textarea
           rows='10'

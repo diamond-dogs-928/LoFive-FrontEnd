@@ -56,9 +56,9 @@ function SignUp() {
       );
       const registerJson = await registerReponse.json();
       console.log(registerJson);
-      setUserToLogin(registerJson.user);
+      setUserToLogin(await registerJson.user);
       console.log(registerJson.user);
-      setMessage(`Welcome to LoFive ${userToLogin.username}`);
+      setMessage(await `Welcome to LoFive ${userToLogin.username}`);
       // (await registerJson.loggedIn)
       //   ? setIsLoggedIn(true)
       //   : setIsLoggedIn(false);
