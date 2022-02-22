@@ -28,7 +28,7 @@ export const UserContext = ({ children }) => {
   const [userName, setUserName] = useState('LoFive');
   const [url, setUrl] = useState();
   //   const [backendUrl, setBackendUrl] = useState(
-  //     'https://git.heroku.com/lo-five-backend.git'
+  //     'https://lo-five-backend.herokuapp.com/'
   //   );
   //   const [localUrl, setLocalUrl] = useState('http://localhost:4000/');
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ export const UserContext = ({ children }) => {
   useEffect(() => {
     const backendUrl =
       process.env.REACT_APP_ENV === 'production'
-        ? 'https://git.heroku.com/lo-five-backend.git'
+        ? 'https://lo-five-backend.herokuapp.com/'
         : 'http://localhost:4000/';
     setUrl(backendUrl);
   }, []);
