@@ -13,7 +13,7 @@ import {
   useUsernameUpdate,
 } from './UserContext';
 
-const Feed = () => {
+const SearchResults = () => {
   const [notes, setNotes] = useState([]);
   const loginStatus = useLogin();
   const updateLoginStatus = useLoginUpdate();
@@ -119,4 +119,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default SearchResults;
