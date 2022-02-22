@@ -2,8 +2,16 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/editPage.css';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+  useBackendUrl,
+} from './UserContext';
 
 const EditCard = () => {
+  const backendUrl = useBackendUrl();
   const navigate = useNavigate();
   console.log('hello');
   const initialState = { name: '', note: '', tags: [] };
@@ -22,7 +30,7 @@ const EditCard = () => {
   };
 
   let getNote = async (id) => {
-    let data = await fetch('http://localhost:4000/notes/' + id);
+    let data = await fetch(backendUrl + 'notes/' + id);
     let json = await data.json();
     if (json) {
       console.log(json);
@@ -50,7 +58,7 @@ const EditCard = () => {
   };
 
   let editCard = async () => {
-    let data = await fetch('http://localhost:4000/notes/edit/' + id, options);
+    let data = await fetch(backendUrl + 'notes/edit/' + id, options);
     let json = await data.json();
     if (json) {
       console.log(json);
@@ -66,11 +74,12 @@ const EditCard = () => {
 
   return (
     <>
-    <h1 id='editPageTitle'>Edit Your Post</h1>
-      
+      <h1 id='editPageTitle'>Edit Your Post</h1>
+
       <form onSubmit={handleSubmit} id='editPost'>
-  
-        <label htmlFor='note' id='editText'>Say Something:</label>
+        <label htmlFor='note' id='editText'>
+          Say Something:
+        </label>
         <textarea
           rows='5'
           type='text'
@@ -82,7 +91,9 @@ const EditCard = () => {
           onChange={handleChange}
           className='editPostInput'
         />
-        <label htmlFor='tags'  id='editText'>Tags:</label>
+        <label htmlFor='tags' id='editText'>
+          Tags:
+        </label>
         <textarea
           rows='5'
           type='text'
