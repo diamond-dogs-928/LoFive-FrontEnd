@@ -11,6 +11,7 @@ import ShowCard from './components/ShowCard';
 import EditCard from './components/EditCard';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
+import SearchResults from './components/SearchResults';
 import { UserContext } from './components/UserContext';
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
               <Route path='/feed//*' element={<Feed />}></Route>
               <Route path='/:id' element={<ShowCard />}></Route>
               <Route path='/edit/:id' element={<EditCard />}></Route>
+              <Route
+                path='/search/:keyword'
+                element={<SearchResults />}
+              ></Route>
             </Routes>
           </div>
           <div className='col-3'>
