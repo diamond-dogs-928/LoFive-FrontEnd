@@ -50,7 +50,7 @@ function UserLogin() {
       if (loginJson.loggedIn) {
         setIsLoggedIn(loginJson.loggedIn);
         setUserToLogin(loginJson.user);
-        updateLoginStatus(isLoggedIn);
+        updateLoginStatus(true);
         updateUsernameStatus(loginJson.username);
         setMessage(`Welcome to LoFive ${userToLogin.username}`);
         // navigate('/feed');

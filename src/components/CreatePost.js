@@ -47,21 +47,21 @@ const CreatePost = ({ addNote }) => {
   return (
     <>
       <form onSubmit={handleSubmit} id='createPost'>
-        <label htmlFor='name'></label>
-        <textarea
+        {/* <textarea
+          rows='10'
+          cols='20'
           type='text'
           id='name'
           name='name'
           value={formState.name}
           placeholder='Name'
           onChange={handleChange}
-          className='createPostNameInput'
-        />
+          className='createPostInput'
+        /> */}
 
-        <label htmlFor='note'></label>
         <textarea
-          rows='100'
-          cols='30'
+          rows='10'
+          cols='20'
           type='text'
           id='note'
           name='note'
@@ -71,9 +71,9 @@ const CreatePost = ({ addNote }) => {
           className='createPostInput'
         />
 
-        <label htmlFor='tags'></label>
         <textarea
-          rows='5'
+          rows='10'
+          cols='20'
           type='text'
           id='tags'
           name='tags'
