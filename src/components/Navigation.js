@@ -6,6 +6,7 @@ import {
   useLoginUpdate,
   useUsername,
   useUsernameUpdate,
+  useBackendUrl,
 } from './UserContext';
 
 const Navigation = () => {
@@ -17,7 +18,7 @@ const Navigation = () => {
   const updateLoginStatus = useLoginUpdate();
   const currentUsername = useUsername();
   const updateCurrentUsername = useUsernameUpdate();
-
+  const backendUrl = useBackendUrl();
   // get to logout
   const logOut = async () => {
     const options = {
@@ -26,14 +27,14 @@ const Navigation = () => {
       credentials: 'include',
       // body: null,
     };
-    const url = 'http://localhost:4000/session/logout';
+    const url = backendUrl + 'session/logout';
     // try {
     fetch(url, options)
       .then((data) => data.json())
       .then((logoutJson) => {
-        console.log(logoutJson);
+        // console.log(logoutJson);
         updateLoginStatus(false);
-        console.log('login status:  ' + loginStatus);
+        // console.log('login status:  ' + loginStatus);
       });
     // const logoutResponse = await fetch(url, options);
     // console.log((await 'logout response: >>>') + logoutResponse);

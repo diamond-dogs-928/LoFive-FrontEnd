@@ -2,15 +2,23 @@ import { useState, useEffect } from 'react';
 import '../CSS/post.css';
 import { Link } from 'react-router-dom';
 import heart from '../images/heart-removebg-preview.png';
+import {
+  useLogin,
+  useLoginUpdate,
+  useUsername,
+  useUsernameUpdate,
+  useBackendUrl,
+} from '../components/UserContext';
 
 const Post = ({ post, note, name, likes, tags, addLike, date, deleteNote }) => {
   // const [postDate, setPostDate] = useState('');
 
   // use
   // setPostDate(date);
+  const backendUrl = useBackendUrl();
 
   let getNote = async (id) => {
-    let data = await fetch('http://localhost:4000/notes/' + id);
+    let data = await fetch(backendUrl + 'notes/' + id);
     let json = await data.json();
     if (json) {
     }

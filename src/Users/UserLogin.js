@@ -8,10 +8,13 @@ import {
   useLoginUpdate,
   useUsername,
   useUsernameUpdate,
+  useBackendUrl,
 } from '../components/UserContext';
 
 function UserLogin() {
   const navigate = useNavigate();
+  const backendUrl = useBackendUrl();
+  // console.log(backendUrl);
   const initialState = {
     username: '',
     password: '',
@@ -29,7 +32,7 @@ function UserLogin() {
 
   // post to login
   const login = async () => {
-    console.log('login is running');
+    // console.log('login is running');
     try {
       const options = {
         method: 'POST',
@@ -40,10 +43,10 @@ function UserLogin() {
         }),
         headers: { 'content-type': 'application/json' },
       };
-      const url = 'http://localhost:4000/session/login';
-      const loginResponse = await fetch(url, options);
+      // const url = 'http://localhost:4000/session/login';
+      const loginResponse = await fetch(backendUrl + 'session/login', options);
       const loginJson = await loginResponse.json();
-      console.log(loginJson);
+      // console.log(loginJson);
       if (loginJson.loggedIn) {
         setIsLoggedIn(loginJson.loggedIn);
         setUserToLogin(loginJson.user);
@@ -55,7 +58,7 @@ function UserLogin() {
 
       (await loginJson.loggedIn) ? setIsLoggedIn(true) : setIsLoggedIn(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -69,7 +72,7 @@ function UserLogin() {
 
   // handle submit
   const handleSubmit = (e) => {
-    console.log('handle submit is called');
+    // console.log('handle submit is called');
     e.preventDefault();
     setFormState({ ...formState });
     // console.log(formState);
