@@ -233,5 +233,3 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/charmille-coleen-dizon
 [product-screenshot]: ./images/productDemo.gif
-
-const currentUsername = useUsername();
