@@ -105,13 +105,13 @@ const Navigation = () => {
         ) : (
           ''
         )}
-        <Link to={'#'}>
+        {/* <Link to={'#'}>
           <li className='NavBarLi effect-underline' onClick={handleSubmit}>
             {' '}
             Logout
           </li>
-        </Link>
-        {/* {loginStatus ? (
+        </Link> */}
+        {loginStatus ? (
           <Link to={'#'}>
             <li className='NavBarLi effect-underline' onClick={handleSubmit}>
               {' '}
@@ -120,7 +120,7 @@ const Navigation = () => {
           </Link>
         ) : (
           ''
-        )} */}
+        )}
       </ul>
     </div>
   );

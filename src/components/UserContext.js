@@ -27,10 +27,6 @@ export const UserContext = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('LoFive');
   const [url, setUrl] = useState();
-  //   const [backendUrl, setBackendUrl] = useState(
-  //     'https://lo-five-backend.herokuapp.com/'
-  //   );
-  //   const [localUrl, setLocalUrl] = useState('http://localhost:4000/');
   const navigate = useNavigate();
 
   function toggleLogin(v) {
