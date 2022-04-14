@@ -16,21 +16,14 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/diamond-dogs-928">
-![ezgif-2-50ac21570a](https://user-images.githubusercontent.com/83780176/155134225-93505f08-1d45-45b4-92ef-59a4b11a8e9f.gif)
+<img width="400" height="400" src="https://github.com/diamond-dogs-928/LoFive-FrontEnd/blob/main/public/images/Logo.JPEG?raw=true"/>
 
   </a>
-
-<h3 align="center">LoFive</h3>
 
   <p align="center">
     This project was built for the purpose of adding a social media element to sharing music. 
@@ -81,13 +74,11 @@ LoFive is a social media application for users to share and post about music int
 Features:
 
 - User's are able to create their own profile with a secure password.
-- User's are able to customize and edit their interests on their profile page.
 - A user has the ability to create a post, as well as update and delete a post they own.
-- The application allows for the social interactions of liking a post, commenting on a post, and sharing a post.
+- The application allows for the social interaction of liking a post.
 - There is a central feed consisting of all user's posts in chronological order.
-- The application also consists of an explore section, consisting of a random song finder, shazam, a music fact generator **(fact of the day?)**, and a artist/lyric/album search for users to explore new music.
+- The application also consists of an explore section, consisting of a random song finder, shazam,and a kanye quote.
 - There is the ability to search LoFive's database for users and posts.
-- XXX.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -112,6 +103,7 @@ Features:
 - React-router-dom
 - Reactjs-popip
 - Shazam API
+- Kanye API
 - Deezer-widget API
 
 <p align="right">(<a href="#top">back to top</a>)</p>
