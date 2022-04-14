@@ -67,11 +67,14 @@
 
 ## About The Project
 
-![Screen Shot 2022-02-12 at 1 50 29 PM](https://user-images.githubusercontent.com/83780176/153724728-46b036ca-ba6d-4ec6-9eeb-47f2b70bdf85.png)
+<div align="center">
+  
+<img  align="center" width="500" height="320" src="https://github.com/diamond-dogs-928/LoFive-FrontEnd/blob/main/public/images/ezgif.com-gif-maker.gif?raw=true"/>
 
+  </div>
 LoFive is a social media application for users to share and post about music interests, songs, albums, artists, and more.
 
-Features:
+#### Features:
 
 - User's are able to create their own profile with a secure password.
 - A user has the ability to create a post, as well as update and delete a post they own.
@@ -141,12 +144,14 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 
 Our application is available on Desktop and Mobile devices.
+<div align="center">
+<img  align="center" width="500" height="320" src="https://github.com/diamond-dogs-928/LoFive-FrontEnd/blob/main/public/images/Screen%20Shot%202022-04-14%20at%2011.22.27%20AM.png"/>
 
-![Landing Page](./images/landingPage.png)
-![Mobile View](./images/mobileView.png)
-![Mobile View](./images/scoreBoard.png)
-![In Game Play](./images/inGame.png)
 
+<img  align="center" width="500" height="320" src="https://github.com/diamond-dogs-928/LoFive-FrontEnd/blob/main/public/images/Screen%20Shot%202022-04-14%20at%2011.22.27%20AM.png?raw=true"/>
+
+<img  align="center" width="500" height="320" src="https://github.com/diamond-dogs-928/LoFive-FrontEnd/blob/main/public/images/Screen%20Shot%202022-04-14%20at%2011.23.01%20AM.png?raw=true"/>
+</div>
 _For more examples, please refer to the [Documentation](https://github.com/diamond-dogs-928)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
