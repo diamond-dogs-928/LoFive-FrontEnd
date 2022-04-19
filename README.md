@@ -98,6 +98,8 @@ LoFive is a social media application for users to share and post about music int
 - MongoDB
 - Express
 - Mongoose
+- Bcrypt
+- Cors
 
 **Packages and Libraries:**
 
